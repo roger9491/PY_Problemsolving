@@ -5,3 +5,5 @@ def rec(n):
         rec(n//10)
 
 s = rec(136)
+
+
