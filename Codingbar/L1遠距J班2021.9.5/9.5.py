@@ -51,17 +51,41 @@ b = 7
 實作 q23 作業
 '''
 
-n=int(input())
-a=''
-while n>=1:
-    a+=str(10-n*2)
-    n-=1
-print(a)
+# n=int(input())
+# a=''
+# while n>=1:
+#     a+=str(10-n*2)
+#     n-=1
+# print(a)
 
 
 '''
 實作 q2
 '''
+
+
+
+'''
+輸入一列數列 把第一個搬到最後面
+ex  
+1 2 4 6 7
+
+2 4 6 7 1
+輸出串列
+
+'''
+
+# num = input().split()
+
+# for i in range(len(num)-1): #0~3
+#     temp = num[i]
+#     num[i] = num[i+1]
+#     num[i+1] = temp
+
+# print(num)
+
+
+
 
 
 '''
@@ -70,4 +94,16 @@ print(a)
 
 '''
 實作 星星
+'''
+
+
+
+'''
+C55B5A5
+num = ""
+num = "5"
+num = "55"
+012345689
+
+cccccbbbbbaaaaa
 '''
