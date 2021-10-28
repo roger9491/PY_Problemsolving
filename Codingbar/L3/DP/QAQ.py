@@ -12,6 +12,21 @@ A  1/3
 Q  4/3
 Y  4/3
 S  4/3
+qaq 1
+
+qaqa 3
+
+qaqaq 4
+qaq 1 +3
+q  aq
+  qaq
+qa  q
+
+
+qaq = a
+
+
+
 
 '''
 

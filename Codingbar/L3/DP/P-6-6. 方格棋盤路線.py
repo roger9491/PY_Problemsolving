@@ -18,3 +18,11 @@ for i in range(m):
         else:
             dp[i][j] = matrix[i][j] + max(dp[i][j-1],dp[i-1][j])
 print(dp[-1][-1])
+
+'''
+
+    2 1 1 7 3 2 9 2
+0   1 2 3 4 5 6 7 8
+(1) 1
+(2) 2
+'''
