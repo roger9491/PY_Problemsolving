@@ -60,26 +60,17 @@ Longest Increasing Subsequence
 
 
 '''
-TSP
+b181: 2. 網路設計
+https://zerojudge.tw/ShowProblem?problemid=b181
 '''
+n,m = map(int,input().split())
 
-# matrix = [[10**9]*10 for i in range(10)]
+dic = {}
+matrix = [[0]*(n+1) for i in range(n+1)]
+for i in range(m):
+    s = input().split()
 
-# #測試數據
-# edges =  [[0, 1, 3], [1, 2, 5], [2, 3, 5], [3, 4, 3], [4, 0, 7], [4, 1, 6], [0, 3, 4], [2, 0, 4]]
-# for u, v, l in edges:
-#     matrix[u][v] = l
-
-# dp = [[10**9]*5 for i in range(1<<5)]
-# dp[0][0] = 0
-# #1 << 5 => 32 => 100000 
-# for s in range(1,(1 << 5)):    #遍歷狀態
-#     for u in range(5):
-#         for v in range(5):
-#             if (s >> v) & 1 == 0:
-#                 continue
-#             dp[s][v] = min(dp[s][v], dp[s - (1 << v)][u] + matrix[u][v])
-#     print(bin(s))
-#     print(dp[s])
-# print(dp[(1 << 5) - 1][0])
-# #dp[s][v]表示的是：从0出发，经过s中所有点，到达v点的最短开销
+    for j in s[:2]:
+        if j not in dic:
+            dic[j] = j[1]
+    
