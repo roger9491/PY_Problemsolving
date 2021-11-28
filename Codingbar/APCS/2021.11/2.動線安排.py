@@ -23,6 +23,17 @@ def find4(i,j):  #右
             return x
     return "NO"
 
+def delete(record,i,j): # 刪掉樁
+    for i in range(count):
+        if record[i] == [i,j]:
+            del record[i]
+            break
+
+
+
+def printm():
+    for i in range(m):
+        print(matrix[i])
 
 def count_array(matrix):
     temp = 0
@@ -45,6 +56,7 @@ for i in range(h):
     r,c,a = map(int,input().split())
     if a == 0:
         matrix[r][c] = "@"
+
         #上 下 左 右
         x1,x2,y1,y2 = find1(r,c),find2(r,c),find3(r,c),find4(r,c)
         # print(x1,x2,y1,y2)
