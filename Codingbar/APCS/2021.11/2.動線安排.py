@@ -1,26 +1,25 @@
-def find1(record,i,j):  #上
-    for x in range(count):
-        # print("11",record,count)
-        if record[x][1] == j and i > record[x][0]:
+def find1(i,j):  #上
+    for x in range(i-1,-1,-1):
+        if matrix[x][j] == "@":
             return x
     return "NO"
 
-def find2(record,i,j):  #下
-    for x in range(count):
-        if record[x][1] == j and i < record[x][0]:
+def find2(i,j):  #下
+    for x in range(i+1,m):
+        if matrix[x][j] == "@":
             return x
     return "NO"
 
-def find3(record,i,j):  #左
-    for x in range(count):
-        if record[x][0] == i and j > record[x][1]:
+def find3(i,j):  #左
+    for x in range(j-1,-1,-1):
+        if matrix[i][x] == "@":
             return x
     return "NO"
 
 
-def find4(record,i,j):  #右
-    for x in range(count):
-        if record[x][0] == i and j < record[x][1]:
+def find4(i,j):  #右
+    for x in range(j+1,n):
+        if matrix[i][x] == "@":
             return x
     return "NO"
 
@@ -36,93 +35,80 @@ def printm():
     for i in range(m):
         print(matrix[i])
 
+def count_array(matrix):
+    temp = 0
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] != "":
+                temp += 1
+    return temp
+
+
 m,n,h = map(int,input().split())
 
-matrix = [['0']*n for i in range(m)]
+matrix = [['']*n for i in range(m)]
 # print(matrix)
 record = []
 count = 0
-maxv = 0
-now = 0
+max_ans = 0
+now_ans = 0
 for i in range(h):
     r,c,a = map(int,input().split())
     if a == 0:
-        record.append([r,c])
-        count += 1
         matrix[r][c] = "@"
 
         #上 下 左 右
-        x1,x2,y1,y2 = find1(record,r,c),find2(record,r,c),find3(record,r,c),find4(record,r,c)
-        # print(x1,x2,y1,y2,c)
+        x1,x2,y1,y2 = find1(r,c),find2(r,c),find3(r,c),find4(r,c)
+        # print(x1,x2,y1,y2)
         if x1 != "NO":
-            for j in range(r-1,record[x1][0],-1):
-                if matrix[j][c] == "0":
-                    matrix[j][c] = str(r)+str(c)
- 
-        # printm()
+            for j in range(r-1,x1,-1):
+                if 'x' not in matrix[j][c]:
+                    matrix[j][c] += "x"
         if x2 != "NO":
-            for j in range(r+1,record[x2][0]):
-                if matrix[j][c] == "0":
-                    matrix[j][c] = str(r)+str(c)
- 
-        # printm()
+            for j in range(r+1,x2):
+                if 'x' not in matrix[j][c]:
+                    matrix[j][c] += "x"
         if y1 != "NO":
-            for j in range(c-1,record[y1][1],-1):
-                if matrix[r][j] == "0":
-                    matrix[r][j] = str(r)+str(c)
-
-        # printm()
+            for j in range(c-1,y1,-1):
+                if 'y' not in matrix[r][j]:
+                    matrix[r][j] += "y"
         if y2 != "NO":
-            for j in range(c+1,record[y2][1]):
-                if matrix[r][j] == "0":
-                    matrix[r][j] = str(r)+str(c)
-
-        maxv = max(now,maxv)
-        # printm()
-        # print(now)
-    elif a == 1:
-        printm()
-        now = 0
-        for i in range(m):
-            for j in range(n):
-                if matrix[i][j] != "0":
-                    now += 1
-        maxv = max(now,maxv)
-        matrix[r][c] = '0'
-        delete(record,r,c)
-        now -= 1
-        count -= 1
-        x1,x2,y1,y2 = find1(record,r,c),find2(record,r,c),find3(record,r,c),find4(record,r,c)
-        # print(x1,x2,y1,y2,c)
+            for j in range(c+1,y2):
+                if 'y' not in matrix[r][j]:
+                    matrix[r][j] += "y"
+    else:
+        max_ans = max(max_ans,count_array(matrix))
+        matrix[r][c] = ""
+        x1,x2,y1,y2 = find1(r,c),find2(r,c),find3(r,c),find4(r,c)
         if x1 != "NO":
-            for j in range(r-1,record[x1][0],-1):
-                if matrix[j][c] == str(r)+str(c):
-                    matrix[j][c] = '0'
-
-        # printm()
+            for j in range(r-1,x1,-1):
+                if len(matrix[j][c]) == 2:
+                    matrix[j][c] = "y"
+                else:
+                    matrix[j][c] = ""
         if x2 != "NO":
-            for j in range(r+1,record[x2][0]):
-                if matrix[j][c] == str(r)+str(c):
-                    matrix[j][c] = '0'
- 
-        # printm()
+            for j in range(r+1,x2):
+                if len(matrix[j][c]) == 2:
+                    matrix[j][c] = "y"
+                else:
+                    matrix[j][c] = ""
         if y1 != "NO":
-            for j in range(c-1,record[y1][1],-1):
-                if matrix[i][j] == str(r)+str(c):
-                    matrix[r][j] = '0'
-     
-        # printm()
+            for j in range(c-1,y1,-1):
+                if len(matrix[r][j]) == 2:
+                    matrix[r][j] = "x"
+                else:
+                    matrix[r][j] = ""
         if y2 != "NO":
-            for j in range(c+1,record[y2][1]):
-                if matrix[i][j] == str(r)+str(c):
-                    matrix[r][j] = '0'
-now = 0
-for i in range(m):
-    for j in range(n):
-        if matrix[i][j] != "0":
-            now += 1
-printm()
+            for j in range(c+1,y2):
+                if len(matrix[r][j]) == 2:
+                    matrix[r][j] = "x"
+                else:
+                    matrix[r][j] = ""
 
+    # for i in range(m):
+    #     print(matrix[i])
 
-print(maxv)
-print(now)
+now_ans = count_array(matrix)
+max_ans = max(max_ans,now_ans)
+print(max_ans)
+print(now_ans)
