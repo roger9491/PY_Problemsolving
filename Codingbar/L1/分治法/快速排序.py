@@ -7,6 +7,7 @@ def quicksort(i, j):
         right = j
         print(left,right)
         pivot = i
+        print("pivot",pivot)
         i += 1
         while i < j:
             if nums[i] > nums[pivot] and nums[j] < nums[pivot]: 
@@ -56,3 +57,4 @@ print(quicksort(0, len(nums)-1))
 
 #     return quick(0, n - 1)
 
+'''
