@@ -1,45 +1,145 @@
 '''
-https://leetcode-cn.com/problems/rearrange-words-in-a-sentence/
+輸入兩個數字 m n
+接著輸入 m 行
 
-「句子」是一个用空格分隔单词的字符串。给你一个满足下述格式的句子 text :
+判斷 0的個格子 上下左右 總共有多少個1
 
-句子的首字母大写
-text 中的每个单词都用单个空格分隔。
-请你重新排列 text 中的单词，使所有单词按其长度的升序排列。如果两个单词的长度相同，则保留其在原句子中的相对顺序。
-
-请同样按上述格式返回新的句子。
-
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/rearrange-words-in-a-sentence
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+印出 數量
+ex
+2 4
+0 1 1 0 
+1 0 1 1 
+[[0, 1, 1, 0], [1, 0, 1, 1]]
+    matrix[0][0] ~ matrix[3]   matrix[1]
+7
 '''
-# class Solution:
-#     def arrangeWords(self, text: str) -> str:
-#         text = text.lower()
-#         text = text.split() 
-#         for i in range(len(text)):
-#             text[i] = [len(text[i]),i,text[i]]
-#         text.sort()
-#         ans = ""
-#         print(text[0][1])
-#         text[0][2] = text[0][2][0].upper() + text[0][2][1:]
-#         for i in text[:-1]:
-#             ans += i[2] + " "
-#         ans += text[-1][2]
-                
-#         print(ans)
-        
-#         return ans
-text = input()
-text = text.lower()
-text = text.split() 
+# count = 0
+# matrix = []
+# m, n = map(int, input().split())
+# for i in range(m):
+#     matrix.append(list(map(int,input().split())))
+# for i in range(m):
+#     for j in range(n):
+#         print(matrix[i][j])
 
-for i in range(len(text) - 1):
-    for j in range(len(text) - 1 - i):
-        if len(text[j]) > len(text[j+1]):
-            temp = text[j]
-            text[j] = text[j+1]
-            text[j+1] = temp
-text[0] = text[0][0].upper() + text[0][1:]
-return " ".join(text)
-print(" ".join(text))
+
+
+
+
+'''
+輸入兩個數字 m n
+接著輸入 m 列
+
+判斷 每一個格子 上下左右 有多少個1
+
+輸出每一個格子上下左右 多少個1
+
+ex
+input
+2 4
+0 1 1 0
+1 0 1 1
+
+output
+2 1 2 2
+0 3 2 1
+
+
+'''
+
+
+
+'''
+輸入 一行 數字 空格隔開
+
+把最大值放在最後一項
+輸出 串列
+
+
+ex
+temp = -9999
+9 8 7 6 5 4 
+(1)
+8 7 6 5 4 9
+
+(2)
+7 6 5 4 8 9
+
+for i in rang
+
+
+
+
+
+
+'''
+# l=list(map(int,input().split()))
+# l.reverse()
+# l.sort(reverse=True)    #改變遠本的串列
+# print(l)
+# t = []
+# for i in range(len(l)-1,-1,-1):
+#     t.append(l[i])
+
+
+'''
+輸入一行數字 
+
+5 1 7 3 7 2
+
+2 7 3 7 1 5
+
+
+
+'''
+
+
+#-------------------------
+
+# n = 0
+# while n < 10:
+#     n += 1
+#     print(n)
+
+# a= [ 1,2,3,4,5,6,7]
+
+# n = 0
+# while n < 10:
+#     n += 1
+#     print(a[n])
+
+
+#-------------------------
+
+# n = 11
+# while 1 < n < 12:
+#     n -= 1
+#     print(n)
+
+#-------------------------
+# a= [ 1,2,3,4,5,6,7]
+# n = 11
+# while 1 < n < 12:
+#     n -= 1
+#     print(n)
+clas,messay,avg=map(int,input().split())
+t=[]
+
+for i in range(clas):
+    n=list(map(int,input().split()))
+    t.append([n[1],n[0]])
+t.sort()
+al=0
+for i in range(len(t)):
+    al+=t[i][1]
+count=0
+while 1:
+    if al/clas>=avg:
+        print(count)
+        break
+    for i in range(len(t)):
+        if t[i][1]<messay:
+            count+=t[i][0]
+            t[i][1]+=1
+            break
+    al+=1

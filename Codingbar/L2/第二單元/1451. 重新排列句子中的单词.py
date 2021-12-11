@@ -43,3 +43,11 @@ for i in range(len(text) - 1):
 text[0] = text[0][0].upper() + text[0][1:]
 return " ".join(text)
 print(" ".join(text))
+
+
+
+
+'''
+a = [[1,2],[2,3,4]]
+
+'''
