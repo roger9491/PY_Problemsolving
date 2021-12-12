@@ -1,4 +1,51 @@
 '''
+輸入包含多筆測資。
+
+while True:
+    try:
+        code
+
+
+    except:
+        break
+
+
+
+'''
+
+
+'''
+狀態定義:   每一個格子代表的意思
+
+    最長共同子序列的長度
+
+
+狀態轉移:
+    if 當前的字一樣
+        + 1
+
+    elif 當前的字不一樣
+        dp[i][j] = 
+
+
+  T A T G C A
+A 0 1 1 1 1 1 
+T 1 1 2 2 2 2
+C 1 1 2 2 3 3
+A 1 2 2 2 3 4 
+G 1 2 2 3 3 4
+A 1 2 2 3 3 4
+T 1 2 3 3 3 4
+
+釐清 (1)當前的格子是多少(正確的答案) (想像法)
+     (2) 思考 若轉換程式碼 它是怎麼寫?
+                          它是怎麼來的?
+                          它是誰決定的?
+
+'''
+
+
+'''
 分組背包
 https://www.luogu.com.cn/problem/P1757
 3 5
@@ -373,82 +420,248 @@ DFS 搜索所有點
 #                 del record2[-1]
 #                 path[now_i][now_j] = 0
 #                 count -= 1
+'''
+1.dfs 搜索所有點
+
+'''
+# def dfs(i,j):
+#     print("索引值",i,j)
+#     print(matrix1[i][j])
+#     print(record)
+#     # input()
+
+#     for x in dir:
+#         now_i = i + x[0]
+#         now_j = j + x[1]
+#         if 0 <= now_i < 3 and 0 <= now_j < 3:
+#             if matrix1[now_i][now_j] not in record:
+#                 record.append(matrix1[now_i][now_j])    #紀錄
+#                 dfs(now_i,now_j)    #走這條路
+
+# matrix1 = [[1,2,3],
+#            [4,5,6],
+#            [7,8,9],]
+# record = [1]    #用來記錄你走過路
+# #       下     右    上     左
+# dir = [[1,0],[0,1],[-1,0],[0,-1]]
+# dfs(0,0)
 
 
 '''
-3.dfs 搜索最短路徑
-'''
-
-'''
-4.bfs 搜索所有點
+3.dfs 搜索所有的路徑
 
 
 '''
+# def dfs(i,j):
+#     print("索引值",i,j)
+#     print(matrix1[i][j])
+#     print(record)
+#     # input()
 
+#     for x in dir:
+#         now_i = i + x[0]
+#         now_j = j + x[1]
+#         if 0 <= now_i < 3 and 0 <= now_j < 3:
+#             if matrix1[now_i][now_j] not in record:
+#                 record.append(matrix1[now_i][now_j])    #紀錄
+#                 dfs(now_i,now_j)    #走這條路
+#                 del record[-1]
+
+# matrix1 = [[1,2,3],
+#            [4,5,6],
+#            [7,8,9],]
+# record = [1]    #用來記錄你走過路
+# #       下     右    上     左
+# dir = [[1,0],[0,1],[-1,0],[0,-1]]
+# dfs(0,0)
 '''
-5.bfs 搜索最短路徑距離
-
-'''
-
-
-def bfs(i,j):
-    queue = [[i,j]]
-    ans = 10**9
-    ans_list = []
-    count = 0
-    while queue:
-        size = len(queue)
-        while size != 0:
-            node = queue.pop(0)
-            print(node,count,size)
-            print(queue)
-            if matrix3[node[0]][node[1]] == "E":
-                ans = count
-                print("ans",ans)
-            
-            for x in dire:
-                now_i = node[0] + x[0]
-                now_j = node[1] + x[1]
-                if 0 <= now_i < 4 and 0 <= now_j < 4:
-                    if path[now_i][now_j] != 1 and matrix3[now_i][now_j] != "x":
-                        path[now_i][now_j] = 1
-                        queue.append([now_i,now_j])
-            size -= 1
-        count += 1
-
-
-
-
-matrix1 = [[1,2,3],
-          [4,5,6],
-          [7,8,9],]
-record = [1]
-
-
-matrix2 = [["s", 1, 1, "x", 1, 1],
-          [1, "x", 1, "x", 1, "x"],
-          [1, 1, "x", 1, 1, 1],
-          ["x", 1, 1, 1, "x", 1],
-          [1, 1, "x", 1, "x", 1],
-          [1, "x", 1, 1, "x", "E"]]
-
+dfs 搜索最短路徑 + 最短路徑距離
 matrix3 = [["s", 1 , 1 ,"x"],
            [ 1 ,"x", 1 , 1 ],
            [ 1 , 1 ,"x","x"],
            [ 1 , 1 , 1 , "E"]]
 
-path = [[0]*4 for i in range(4)]
-path2 = [[0]*6 for i in range(6)]
+最短路徑距離
+6
+所有最短路徑 
+[[s,5,6,7,9,10,e],[s,5,6,8,9,10,e]]
+global c 
+
+'''
+#dfs搜索最短路徑距離
+# matrix3 = [["s", 1 , 1 ,"x"],
+#            [ 1 ,"x", 1 , 1 ],
+#            [ 1 , 1 ,"x","x"],
+#            [ 1 , 1 , 1 , "E"]]
+
+# def dfs(i,j):
+#     # print("索引值",i,j)
+#     # print(matrix3[i][j])
+#     # print(record)
+#     O=matrix3[i][j] #original 
+#     for x in dir:
+#         now_i = i + x[0]
+#         now_j = j + x[1]
+#         if 0 <= now_i < len(matrix3) and 0 <= now_j < len(matrix3):
+#             if matrix3[now_i][now_j]=="E":
+#                 print("ANS")
+#                 ans_list.append([len(record),record.copy()])
+#                 print(ans_list)
+#                 return
+#             if matrix3[now_i][now_j]!="x":
+#                 if [now_i,now_j] not in record:
+#                     record.append([now_i,now_j])    #紀錄
+#                     dfs(now_i,now_j)    #走這條路
+#                     del record[-1]
+                    
+
+# record = [[0,0]]    #用來記錄你走過路
+# #       下     右    上     左
+# dir = [[1,0],[0,1],[-1,0],[0,-1]]
+# ans_list = []
+
+# dfs(0,0)
+# print("aa",ans_list)
+# ans_list.sort()
+# temp = 10**9
+# for x in ans_list:
+#     if x[0] <= temp:
+#         temp = x[0]
+#         print("temp",temp)
+#         print("list",x[1])
+#     else:
+#         break
+
+'''
+4.bfs 搜索所有點
+'''
+# def bfs(i,j):
+#     queue = [[0,0]]
+#     path = [[0]*4 for i in range(4)]
+#     path[0][0] = 1
+#     while queue:    
+#         node = queue.pop(0) #=> #temp = queue[0]， del queue[0]
+#         print(node)
+#         for x in dire:
+#             now_i = node[0] + x[0]
+#             now_j = node[1] + x[1]
+#             if 0 <= now_i < 4 and 0 <= now_j < 4:
+#                 if matrix3[now_i][now_j] != "x":
+#                     if path[now_i][now_j] != 1:
+#                         path[now_i][now_j] = 1
+#                         queue.append([now_i,now_j])
 
 
+
+
+# matrix3 = [["s", 1 , 1 ,"x"],
+#            [ 1 ,"x", 1 , 1 ],
+#            [ 1 , 1 ,"x","x"],
+#            [ 1 , 1 , 1 , "E"]]
+# dire = [[1, 0], [0, 1], [-1, 0], [0, -1]]
+# bfs(0,0)
+
+'''
+5.bfs 搜索最短路徑距離
+
+'''
+def bfs(i,j):
+    queue = [[0,0]]
+    path = [[0]*4 for i in range(4)]
+    path[0][0] = 1
+    count = 0
+    while queue:    
+        size = len(queue)
+        print("s",size)
+        while size != 0:
+            node = queue.pop(0) #=> #temp = queue[0]， del queue[0]
+            if matrix3[node[0]][node[1]] == "E":
+                print(count)
+            print(node)
+            for x in dire:  #node的所有點 [2,3 ,4,5]
+                now_i = node[0] + x[0]
+                now_j = node[1] + x[1]
+                if 0 <= now_i < 4 and 0 <= now_j < 4:
+                    if matrix3[now_i][now_j] != "x":
+                        if path[now_i][now_j] != 1:
+                            path[now_i][now_j] = 1
+                            queue.append([now_i,now_j])
+            size -= 1
+        count += 1
+    # print(count)
+matrix3 = [["s", 1 , 1 ,"x"],
+           [ 1 ,"x", 1 , 1 ],
+           [ 1 , 1 ,"x","x"],
+           [ 1 , 1 , 1 , "E"]]
 dire = [[1, 0], [0, 1], [-1, 0], [0, -1]]
-
-count = 0
-path[0][0] = 1
-ans = 10**9
-record2 = [[0,0]]
-ans_list = []
 bfs(0,0)
+
+
+'''
+1. 路徑
+    dfs
+2. 兩點之間有沒有路徑 最短路徑距離 
+     dfs/bfs            bfs
+
+'''
+# def bfs(i,j):
+#     queue = [[i,j]]
+#     ans = 10**9
+#     ans_list = []
+#     count = 0
+#     while queue:
+#         size = len(queue)
+#         while size != 0:
+#             node = queue.pop(0)
+#             print(node,count,size)
+#             print(queue)
+#             if matrix3[node[0]][node[1]] == "E":
+#                 ans = count
+#                 print("ans",ans)
+            
+#             for x in dire:
+#                 now_i = node[0] + x[0]
+#                 now_j = node[1] + x[1]
+#                 if 0 <= now_i < 4 and 0 <= now_j < 4:
+#                     if path[now_i][now_j] != 1 and matrix3[now_i][now_j] != "x":
+#                         path[now_i][now_j] = 1
+#                         queue.append([now_i,now_j])
+#             size -= 1
+#         count += 1
+
+
+
+
+# matrix1 = [[1,2,3],
+#           [4,5,6],
+#           [7,8,9],]
+# record = [1]
+
+
+# matrix2 = [["s", 1, 1, "x", 1, 1],
+#           [1, "x", 1, "x", 1, "x"],
+#           [1, 1, "x", 1, 1, 1],
+#           ["x", 1, 1, 1, "x", 1],
+#           [1, 1, "x", 1, "x", 1],
+#           [1, "x", 1, 1, "x", "E"]]
+
+# matrix3 = [["s", 1 , 1 ,"x"],
+#            [ 1 ,"x", 1 , 1 ],
+#            [ 1 , 1 ,"x","x"],
+#            [ 1 , 1 , 1 , "E"]]
+
+# path = [[0]*4 for i in range(4)]
+# path2 = [[0]*6 for i in range(6)]
+
+
+# dire = [[1, 0], [0, 1], [-1, 0], [0, -1]]
+
+# count = 0
+# path[0][0] = 1
+# ans = 10**9
+# record2 = [[0,0]]
+# ans_list = []
+# bfs(0,0)
 # print(record2)
 # print(ans_list,ans)
 

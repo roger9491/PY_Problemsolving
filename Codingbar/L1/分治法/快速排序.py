@@ -57,4 +57,3 @@ print(quicksort(0, len(nums)-1))
 
 #     return quick(0, n - 1)
 
-'''
