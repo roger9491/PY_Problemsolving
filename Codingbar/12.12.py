@@ -1,40 +1,4 @@
-'''
-二維矩陣練習
 
-week2 邊緣偵測
-
-'''
-# def check(i,j):
-#     dire = [[1,0],[0,1],[-1,0],[0,-1]]
-#     for x in dire:
-#         if g[x[0]+i][x[1]+j] == '0':
-#             return False
-#     return True
-
-
-
-# n1 = int(input())
-# n2 = int(input())
-
-# g = []
-# for i in range(n1):
-#     s = input().split()
-#     g.append(s)
-
-# ans = [[0]*n2 for i in range(n1)]
-
-# for i in range(n1):
-#     for j in range(n2):
-#         if g[i][j] == "0":
-#             ans[i][j] = "_"
-#         elif g[i][j] == "1":
-#             if check(i,j):
-#                 ans[i][j] = "_"
-#             else:
-#                 ans[i][j] = "0"
-            
-# for i in range(n1):
-#     print(" ".join(ans[i]))
 '''
 監聽
 
@@ -59,32 +23,35 @@ week2 邊緣偵測
 均攤時間複雜度
 
 每一次insert 花的時間複雜度是多少
-
-
-
-
+O(1)
 '''
-
-
-# def insert(val):
+# def insert(val):    #(1) 0
 #     global count
 #     if count == len(array):
 #         sum = 0
-#         for i in range(len(array)):
+#         for i in range(len(array)): #O(n)
 #             sum = sum + array[i]
 #         array[0] = sum
 #         count = 1
 #     array[count] = val
 #     count += 1
 
-# n = int(input())
+# n = int(input())   # 4
 # array = [0]*n
-
+# #len(array)
 # count = 0
+# insert(0)   #O(1)
+# insert(0)   #O(1)
+# insert(0)   #O(1)
+# insert(0)   #O(1)
+
+# insert(0)   #O(1)
+# insert(0)   #O(n) 
 
 '''
-https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/
 
+剑指 Offer 59 - II. 队列的最大值
+https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/
 
 '''
 # class MaxQueue:
@@ -207,65 +174,13 @@ n 皇后
 
 # print(count)
 
-'''
-第一單元 
-符號不動冥王
-'''
 
 
 
-'''
-
-最大消波塊
 
 
-'''
 
-# a = list(map(int,input().split()))
 
-# i = 0
-# j = len(a) - 1
-# ans = 0
-# while i < j:
-
-#     if ans < (j - i) * min(a[i],a[j]):
-#         ans = (j - i) * min(a[i],a[j])
-    
-#     if a[i] > a[j]:
-#         j -= 1
-#     elif a[i] < a[j]:
-#         i += 1
-#     else:
-#         i += 1
-#         j -= 1
-# print(ans)
-
-'''
-
-點石成金
-
-'''
-
-a = list(map(int,input().split()))
-
-b = list(map(int,input().split()))
-
-n = int(input())
-
-total = 0
-
-for i in range(len(a)): #n
-    if b[i]:
-        total += a[i]
-# print(total)
-maxv = 0
-for i in range(len(a)-n+1): #n /2
-    temp = 0
-    for j in range(i,i+n):  #n/2
-        if b[j] == 0:
-            temp += a[j]
-    maxv = max(maxv,temp)
-print(total + maxv)
 
 '''
 時間複雜度還是  n**2
@@ -277,3 +192,20 @@ print(total + maxv)
 输入一个长度为n的整数序列。接下来再输入m个询问，每个询问输入一对l, r。
 对于每个询问，输出原序列中从第l个数到第r个数的和。
 '''
+
+# num = int(input())
+# if num > 1:
+#     for i in range(num):
+#         if num % i == 0:
+#             print('no')
+#         else:
+#             print('yes')
+
+# else:
+#     print('no')
+
+
+
+
+
+
