@@ -22,6 +22,7 @@ while c < k:
     if c == 0:
         for i in range(1,n-1):
             temp = pre2[-1] - (i+1) * pre1[-1]
+            # print(temp,i)
             if temp < 0:
                 temp = temp*-1
             if temp < min_v:
@@ -34,19 +35,18 @@ while c < k:
         temp_list = []
         for i in range(1,len(record)):
             # print("record",record)
-            if (record[i]-1) - (record[i-1] + 1) > 2:
+            if (record[i]- record[i-1] - 1) > 2:
                 start = record[i-1]
                 end = record[i]
-                if start == -1:
-                    start = 0
-                if end == n:
-                    end -= 1
+                start += 1
+                end -= 1
                 index = 0
                 min_v = 10**9
-                # print(start,end)
-                for j in range(start+1,end-1):
+                # print("s,e",start,end)
+                for j in range(start+1,end):
                     # print(i+1)
-                    temp = pre2[end] - pre2[start] - (i+1) * (pre1[end] - pre1[start])
+                    temp = pre2[end+1] - pre2[start] - (j+1) * (pre1[end+1] - pre1[start])
+                    # print(j,temp)
                     if temp < 0:
                         temp = temp*-1
                     if temp < min_v:
@@ -59,8 +59,38 @@ while c < k:
                 # print(ans)
         record = record + temp_list
         record.sort()
+    # print(record)
     # print(ans)
     c += 1
 # print(index)
 print(ans)
 
+
+
+'''
+9 2
+69 80 38 93 47 57 65 96 74
+1  2  3  4
+218 93 = 125
+224 - 69 = 155
+
+
+181
+0 3
+1
+715 - 280
+
+
+
+0 8
+03
+58
+
+
+38 + 47 + 96 = 85 + 96 = 181
+2   4 7
+3181 - 2*619
+3181 - 1238
+
+
+'''
