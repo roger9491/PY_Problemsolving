@@ -39,7 +39,24 @@ week2 邊緣偵測
 第一單元 
 符號不動冥王
 '''
+# letter = "abcdefghijklmnopqrstuvwxyz"
 
+
+# string = list(input())
+# i = 0
+# j = len(string) - 1
+# while i < j:
+#     if string[i] in letter and string[j] in letter:
+#         string[i],string[j] = string[j],string[i]
+#         i += 1
+#         j -= 1
+#     else:
+#         if string[i] not in letter:
+#             i += 1
+#         if string[j] not in letter:
+#             j -= 1
+
+# print("".join(string))
 
 
 '''
@@ -68,6 +85,8 @@ week2 邊緣偵測
 #         j -= 1
 # print(ans)
 
+
+
 '''
 
 點石成金
@@ -94,6 +113,21 @@ week2 邊緣偵測
 #             temp += a[j]
 #     maxv = max(maxv,temp)
 # print(total + maxv)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

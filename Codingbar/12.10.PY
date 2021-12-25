@@ -317,25 +317,40 @@ Longest Increasing Subsequence
 '''
 DFS 搜索所有點
 
+s
+
+
 '''
-# def dfs(i,j):
-#     print(matrix[i][j])
-#     print(record)
-#     for x in direction:
-#         now_i = i + x[0]
-#         now_j = j + x[1]
-#         if 0 <= now_i < n and 0 <= now_j < n:
-#             if matrix[now_i][now_j] not in record:
-#                 record.append(matrix[now_i][now_j])
-#                 dfs(now_i,now_j)
-#                 del record[-1]
-# n = 3
-# matrix = [[1,2,3],
-#           [4,5,6],
-#           [7,8,9],]
-# record = [1]
-# direction = [[1,0],[0,1],[-1,0],[0,-1]]
-# dfs(0,0)
+def dfs(i,j):
+    print(matrix[i][j])
+    for x in direction:
+        now_i = i + x[0]
+        now_j = j + x[1]
+        if 0 <= now_i < n and 0 <= now_j < n:
+            if path[now_i][now_j] != 1:  #最糟糕的時間複雜度:
+                path[now_i][now_j] = 1
+                dfs(now_i,now_j)
+                # del record[-1]
+                # path[now_i][now_j] = 0
+n = 3
+matrix = [[1,2,3],
+          [4,5,6],
+          [7,8,9],]
+record = [1]
+path = [[0]*3 for i in range(3)]
+direction = [[1,0],[0,1],[-1,0],[0,-1]]
+dfs(0,0)
+'''
+判斷一個值有沒有在串列 in 
+'''
+a = []
+b = "1"
+for i in range(len(a)): #最糟糕的 n 次 O(n)  ->   O(1)
+    if b == a[i]:
+        print("找到")
+        break
+
+
 
 
 # def dfs_stack(i,j):
@@ -535,31 +550,28 @@ global c
 '''
 4.bfs 搜索所有點
 '''
-# def bfs(i,j):
-#     queue = [[0,0]]
-#     path = [[0]*4 for i in range(4)]
-#     path[0][0] = 1
-#     while queue:    
-#         node = queue.pop(0) #=> #temp = queue[0]， del queue[0]
-#         print(node)
-#         for x in dire:
-#             now_i = node[0] + x[0]
-#             now_j = node[1] + x[1]
-#             if 0 <= now_i < 4 and 0 <= now_j < 4:
-#                 if matrix3[now_i][now_j] != "x":
-#                     if path[now_i][now_j] != 1:
-#                         path[now_i][now_j] = 1
-#                         queue.append([now_i,now_j])
+def bfs(i,j):
+    queue = [[0,0]]
+    path = [[0]*4 for i in range(4)]
+    path[0][0] = 1
+    while queue:    
+        node = queue.pop(0) #=> #temp = queue[0]， del queue[0]
+        print(node)
+        for x in dire:
+            now_i = node[0] + x[0]
+            now_j = node[1] + x[1]
+            if 0 <= now_i < 4 and 0 <= now_j < 4:
+                if matrix3[now_i][now_j] != "x":
+                    if path[now_i][now_j] != 1:
+                        path[now_i][now_j] = 1
+                        queue.append([now_i,now_j])
 
-
-
-
-# matrix3 = [["s", 1 , 1 ,"x"],
-#            [ 1 ,"x", 1 , 1 ],
-#            [ 1 , 1 ,"x","x"],
-#            [ 1 , 1 , 1 , "E"]]
-# dire = [[1, 0], [0, 1], [-1, 0], [0, -1]]
-# bfs(0,0)
+matrix3 = [["s", 1 , 1 ,"x"],
+           [ 1 ,"x", 1 , 1 ],
+           [ 1 , 1 ,"x","x"],
+           [ 1 , 1 , 1 , "E"]]
+dire = [[1, 0], [0, 1], [-1, 0], [0, -1]]
+bfs(0,0)
 
 '''
 5.bfs 搜索最短路徑距離
@@ -569,9 +581,9 @@ def bfs(i,j):
     queue = [[0,0]]
     path = [[0]*4 for i in range(4)]
     path[0][0] = 1
-    count = 0
+    count = 0   #距離
     while queue:    
-        size = len(queue)
+        size = len(queue)   #當前的要找的點的數目
         print("s",size)
         while size != 0:
             node = queue.pop(0) #=> #temp = queue[0]， del queue[0]
