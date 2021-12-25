@@ -57,3 +57,6 @@ ans=[]
 for i in range(l[0]):
     ans.append(bean[i][1])
 print(" ".join(ans))
+
+
+
