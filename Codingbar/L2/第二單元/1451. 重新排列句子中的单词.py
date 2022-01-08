@@ -1,4 +1,8 @@
 '''
+字母變大寫 字串.upper()
+字母變小寫 字串.lower()
+
+
 https://leetcode-cn.com/problems/rearrange-words-in-a-sentence/
 
 「句子」是一个用空格分隔单词的字符串。给你一个满足下述格式的句子 text :
@@ -43,11 +47,3 @@ for i in range(len(text) - 1):
 text[0] = text[0][0].upper() + text[0][1:]
 return " ".join(text)
 print(" ".join(text))
-
-
-
-
-'''
-a = [[1,2],[2,3,4]]
-
-'''
