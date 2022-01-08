@@ -41,36 +41,17 @@
 
 n,m=map(int,input().split())
 mapp=[]
+ans = 0 
 for i in range(n):
-    mapp.append(list(map(int,input().split())))
-copymap=[[0]*m for i in range(n)]
-start=1000000
-y=0
-for i in mapp:
-    x=0
-    for k in i:
-        if k<start:
-            start=k
-            startx=x
-            starty=y
-        x+=1
-    y+=1
-direction=[[1,0],[-1,0],[0,1],[0,-1]]
-add=0
-copymap[startx][starty]=1
-while True:
-    minnnn=1000000
-    for i in direction:
-        if m>startx+i[1]>=0 and n>starty+i[0]>=0:
-            if mapp[starty+i[0]][startx+i[1]]<minnnn and copymap[starty+i[0]][startx+i[1]]==0:
-                minnnn=mapp[starty+i[0]][startx+i[1]]
-                minnnnx=startx+i[1]
-                minnnny=starty+i[0]
-    if minnnn==1000000:
-        print(add)
-        break
-    add+=minnnn
-    startx=minnnnx
-    starty=minnnny
-    # print(startx,starty)
-    copymap[starty][startx]=1
+    a = list(map(int,input().split()))
+    ans += sum(a)
+
+print(ans)
+'''
+10**9   次方
+
+10 11 12
+13 2  3
+14 1  4
+
+'''

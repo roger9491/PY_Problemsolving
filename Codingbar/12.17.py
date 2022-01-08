@@ -184,6 +184,48 @@ https://www.luogu.com.cn/problem/P1757
 class
 
 '''
+
+
+
+# class people(): #模板
+#     def __init__(self,val,next): #初始化
+#         self.val = val
+#         self.next = None
+
+    # def print1(self):
+    #     print(self.h)
+    #     print(self.w)
+
+    
+
+# p1 = people(200,100)
+# head = p1
+# print(p1)
+
+# #記憶體位置不同
+# # print(id(p1),id(p2))
+# p1.print1()
+
+
+
+# a = 1
+# b = a
+# print(id(a),id(b))
+#認為變數的不同 代表本體的不同
+
+#值才是物體
+
+
+
+
+
+
+
+
+
+
+
+
 # class role():
 #     def __init__(self) -> None:
 #         self.name = "asda"
@@ -205,11 +247,41 @@ Linked List
 (1) 查詢
 (2) 插入
 
+(1)新增節點在頭
 
+''' 
+# class node():   #節點定義
+#   def __init__(self,val):
+#       self.val = val    #資料
+#       self.next = None  #下一個
 
+# class function():
+#     def __init__(self):    #定義 頭
+#         self.head = None
+        
+#     def add_head(self,val):     #新增節點在頭
+#         new_node = node(val)    #2
+#         if self.head == None:
+#             self.head = new_node
+#             return
+#         new_node.next = self.head
+
+'''
+新增節點1  2
+寫個function 印出節點1的資料，並且head指向節點1
 
 
 '''
+
+
+        
+
+
+
+
+
+
+
 
 
 '''
@@ -327,64 +399,103 @@ https://leetcode-cn.com/problems/reverse-linked-list/
 反轉鏈表
 
 '''
-class node():
-    def __init__(self,data) -> None:
-        self.data = data
-        self.next = None
+# class node():
+#     def __init__(self,data) -> None:
+#         self.data = data
+#         self.next = None
 
-class function():
-    def __init__(self) -> None:
-        self.head = None    #頭指標
+# class function():
+#     def __init__(self) -> None:
+#         self.head = None    #頭指標
 
-    def add_head(self,data):
-        new_node = node(data)
+#     def add_head(self,data):
+#         new_node = node(data)
 
-        temp = self.head
-        self.head = new_node
-        new_node.next = temp
+#         temp = self.head
+#         self.head = new_node
+#         new_node.next = temp
 
-    def add_i_node(self,i,data):
-        temp = self.head
-        count = 0
-        while count < i - 1:
-            count += 1
-            temp = temp.next
-        temp2 = node(data)
-        temp2.next = temp.next
-        temp.next = temp2
+#     def add_i_node(self,i,data):
+#         temp = self.head
+#         count = 0
+#         while count < i - 1:
+#             count += 1
+#             temp = temp.next
+#         temp2 = node(data)
+#         temp2.next = temp.next
+#         temp.next = temp2
 
-    def traverse_list(self):
+#     def traverse_list(self):
+#         temp = self.head
+#         while temp != None:
+#             print(temp.data)
+#             temp = temp.next
+
+#     def reverseList(self) :
+#         head = self.head
+#         head2 = head
+#         temp = head.next
+#         head.next = None
+#         head = temp
+#         while head != None:
+#             temp = head.next
+#             head.next = head2
+#             head2 = head
+#             head = temp
+#             print(head2.data)
+#             print(head) 
+#         head = head2
+# link_function = function()
+
+# link_function.add_head(4)
+# link_function.add_head(3)
+# link_function.add_head(2)
+# link_function.add_head(1)
+
+# link_function.traverse_list()
+# print("start")
+# link_function.reverseList()
+
+# link_function.traverse_list()
+
+
+# 新增節點1  2
+# 寫個function 印出節點1的資料，並且head指向節點1
+# (1)新增節點在頭
+
+class node():   #模板
+    def __init__(self,val):
+        self.val = val
+        self.next=None  #指向下一格節點
+
+class function1():
+    def __init__(self):
+        self.head=None
+
+    # def head_to_node1(self,node):   #head_to_node1 head指向節點1
+    #     self.head = node
+    #     print(self.head.val)
+    #     print(node.val)
+    #     print(self.head)
+    #     print(node)
+    def add_to_head(self,val):  #
+        new_node = node(val)    #建立節點
+        
+        if self.head == None:
+            self.head = new_node
+        else:   #若 有一個以上節點時
+            new_node.next = self.head
+            self.head = new_node
+    
+    def traverse_linked_list(self):
         temp = self.head
         while temp != None:
-            print(temp.data)
+            print(temp.val)
             temp = temp.next
 
-    def reverseList(self) :
-        head = self.head
-        head2 = head
-        temp = head.next
-        head.next = None
-        head = temp
-        while head != None:
-            temp = head.next
-            head.next = head2
-            head2 = head
-            head = temp
-            print(head2.data)
-            print(head) 
-        head = head2
-link_function = function()
 
-link_function.add_head(4)
-link_function.add_head(3)
-link_function.add_head(2)
-link_function.add_head(1)
-
-link_function.traverse_list()
-print("start")
-link_function.reverseList()
-
-link_function.traverse_list()
-
-
-
+function1 = function1()
+function1.add_to_head(100)
+function1.add_to_head(200)
+function1.add_to_head(300)
+function1.traverse_linked_list()
