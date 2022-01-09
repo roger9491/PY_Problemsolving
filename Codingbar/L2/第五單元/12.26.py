@@ -1,23 +1,9 @@
+
+
 '''
 前綴和
 
 求出最小連續子數組之和
-
-
-7 3
-    1   2   6   1   1   7   1
-
-0   1   3   9   10  11  18  19
-
-0   1   2
-1   2   3
-2   3   4
-3   4   5
-4   5   6
-0       2   => summ[3] - summ[0]
-1       3   => summ[4] - summ[1]
-2       4   => summ[5] - summ[2]
-3       5   => summ[6] - summ[3]
 
 
 '''
@@ -47,11 +33,6 @@
 
 點石成金
 
-
-
-
-(1)球 1
-(2) 前綴合 沒有1 
 '''
 # a=input().split() #2 1 3 0 2 8 5
 # a=list(map(int,a))
@@ -144,10 +125,36 @@ https://zerojudge.tw/ShowProblem?problemid=f638
 
 
 
+'''
+https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/
+给定一个已按照 非递减顺序排列  的整数数组 numbers ，请你从数组中找出两个数满足相加之和等于目标数 target 。
+
+函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 1 开始计数 ，所以答案数组应当满足 1 <= answer[0] < answer[1] <= numbers.length 。
+
+你可以假设每个输入 只对应唯一的答案 ，而且你 不可以 重复使用相同的元素。
+
+numbers = [2,7,11,15], target = 9
+[1,2]
+
+输入：numbers = [2,3,4], target = 6
+输出：[1,3]
+
+
+输入：numbers = [-1,0], target = -1
+输出：[1,2]
+'''
+
+
+'''
+https://leetcode-cn.com/problems/merge-sorted-array/
+
+给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
+
+请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
 
 
 
-
+'''
 
 
 
@@ -158,27 +165,27 @@ https://zerojudge.tw/ShowProblem?problemid=f638
 target位置為 0 且mid值平均為 10
 '''
 
-# target = int(input())
-# num = list(map(int,input().split()))
+target = int(input())
+num = list(map(int,input().split()))
 
-# i = 0
-# j = len(num) - 1
-# average = 0
-# c = 0
-# while i <= j:
-#     # print(i,j)
-#     mid = (i + j) // 2
-#     average += num[mid]
-#     c += 1
-#     if num[mid] == target:
-#         print("target位置為",mid,"且mid值平均為",average//c)
-#         break
-#     elif num[mid] > target:
-#         j = mid - 1
-#     else:
-#         i = mid + 1
-# else:
-#     print("找不到target且mid值平均為",average//c)
+i = 0
+j = len(num) - 1
+average = 0
+c = 0
+while i <= j:
+    # print(i,j)
+    mid = (i + j) // 2
+    average += num[mid]
+    c += 1
+    if num[mid] == target:
+        print("target位置為",mid,"且mid值平均為",average//c)
+        break
+    elif num[mid] > target:
+        j = mid - 1
+    else:
+        i = mid + 1
+else:
+    print("找不到target且mid值平均為",average//c)
 
 
 
@@ -187,8 +194,8 @@ target位置為 0 且mid值平均為 10
 '''
 二分搜尋
 
-輸入一個數字n 
 輸入 數列
+輸入一個數字n 
 不會輸入 大於 數列最大值
 找出最靠近大於n的索引值(利用二分搜尋)
 
@@ -250,127 +257,37 @@ https://zerojudge.tw/ShowProblem?problemid=f581
 4 1
 
 '''
+# n,m = map(int,input().split())
+# p = list(map(int,input().split()))
+# t = list(map(int,input().split()))
 
+# sum_pre = [0]
+# c = 0
+# for i in range(n):
+#     c += p[i]
+#     sum_pre.append(c)
 
-'''
-0 ~ 200
-193
-100  ~ 200大
-100 ~　195       小
+# # print(sum_pre)
+# now = 1
+# for x in t:
+#     target = x + sum_pre[now-1]
 
-二分搜尋法 猜的數字 固定 當前範圍 一半
-0 ~ 200
-100  ~ 200
-150 ~ 200
-175 ~ 200
-187 ~ 200   387 // 2 => 193
-193 ~ 200
-193 ~ 196
-193 ~ 194
-   193
-0   2
-1 2 3
-i = 1
-j = 2
-i = 1 + 1
-i == j
-
-
-3
-'''
-# target = int(input())
-# a = [1,2,3,4,5,6,7,8,9,10,11]
-# i = 0
-# j = len(a) - 1
-
-
-
-
-
-
-
-
-
-
-# while i <= j:
-#     mid = (i + j) // 2
-    
-#     if a[mid] > target:
-#         j = mid - 1
-#     elif a[mid] < target:
-#         i = mid + 1
-#     else:   #a[mid] == target
-#         print(mid)
-#         break
-# else:
-#     print("找不到")
-
-
-'''
-1 ~ 100     1 ~ 100 
-<50  小     50
-1 ~ 50      1 ~ 49
->25  大     25
-25 ~ 50     25 ~ 50
-<37  小     37
-25 ~ 37     25 ~ 37
->31  大     31
-31 ~ 37     31 ~ 37
-<34         34
-31 ~ 34     31 ~ 34
->32         32
-32 ~ 34     32 ~ 34
-33 == 33    33
-break
-
-'''
-# target = int(input())
-# a = [1,2,3,4,5,6,7,8,9,10,11]
-# i = 0
-# j = len(a) - 1
-
-# while i <= j:
-#     mid = (i + j) // 2
-
-#     if a[mid] > target:
-#         j = mid - 1
-#     elif a[mid] < target:
-#         i = mid + 1
+#     if target > sum_pre[-1]:
+#         target -= sum_pre[-1]
+#         now = 1
+#     i = now
+#     j = n
+#     while i < j:
+#         mid = (i+j) // 2
+#         if sum_pre[mid] == target:
+#             now = mid + 1
+#             break
+#         elif sum_pre[mid] > target:
+#             j = mid 
+#         else:
+#             i = mid + 1
 #     else:
-#         print(mid)
-#         break
-import random
-
-num = []
-c = random.randint(5,16)
-while len(num) < c:
-    n = random.randint(1,50)
-    if n not in num:
-        num.append(n)
-
-target = random.randint(1,50)
-
-
-n= target
-l= num
-print(target)
-
-l1=sorted(l)
-print(l1)
-i=0
-j=len(l)-1
-flag=1
-while i<=j:
-    mid=(i+j)//2
-    if n>l1[mid]:
-        i=mid+1
-    elif n<l1[mid]:
-        j=mid-1
-    else:
-        print(mid+1)
-        flag-=1
-        break
-
-if flag:
-    print(mid)
+#         now = j + 1
+#     now = ((now-1)%n+1)
+# print(now-1)
 

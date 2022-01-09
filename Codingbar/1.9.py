@@ -144,10 +144,36 @@ https://zerojudge.tw/ShowProblem?problemid=f638
 
 
 
+'''
+https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/
+给定一个已按照 非递减顺序排列  的整数数组 numbers ，请你从数组中找出两个数满足相加之和等于目标数 target 。
+
+函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 1 开始计数 ，所以答案数组应当满足 1 <= answer[0] < answer[1] <= numbers.length 。
+
+你可以假设每个输入 只对应唯一的答案 ，而且你 不可以 重复使用相同的元素。
+
+numbers = [2,7,11,15], target = 9
+[1,2]
+
+输入：numbers = [2,3,4], target = 6
+输出：[1,3]
+
+
+输入：numbers = [-1,0], target = -1
+输出：[1,2]
+'''
+
+
+'''
+https://leetcode-cn.com/problems/merge-sorted-array/
+
+给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
+
+请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
 
 
 
-
+'''
 
 
 
@@ -250,7 +276,39 @@ https://zerojudge.tw/ShowProblem?problemid=f581
 4 1
 
 '''
+# n,m = map(int,input().split())
+# p = list(map(int,input().split()))
+# t = list(map(int,input().split()))
 
+# sum_pre = [0]
+# c = 0
+# for i in range(n):
+#     c += p[i]
+#     sum_pre.append(c)
+
+# # print(sum_pre)
+# now = 1
+# for x in t:
+#     target = x + sum_pre[now-1]
+
+#     if target > sum_pre[-1]:
+#         target -= sum_pre[-1]
+#         now = 1
+#     i = now
+#     j = n
+#     while i < j:
+#         mid = (i+j) // 2
+#         if sum_pre[mid] == target:
+#             now = mid + 1
+#             break
+#         elif sum_pre[mid] > target:
+#             j = mid 
+#         else:
+#             i = mid + 1
+#     else:
+#         now = j + 1
+#     now = ((now-1)%n+1)
+# print(now-1)
 
 '''
 0 ~ 200
