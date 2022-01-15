@@ -78,7 +78,7 @@ len(a) == 10000 => 10000*10000 => 10**8
 c/c++/py : 10**6~7  基準判斷
 
 '''
-#(1) O(n**2) 一組測資
+# (1) O(n**2) 一組測資
 # n=int(input())
 
 # for i in range(n):
@@ -127,13 +127,14 @@ import random
 a = []
 for i in range(5):
     a.append(random.randint(1,30))
-
+print(sorted(a))    #用sorted()來排序 跟 下面寫的程式碼 做比對
 for k in range(len(a)-1): #len(a) * (len(a) - 1)  O(n*(n-1)) => O(n**2)
     for j in range(len(a)-1-k):
         if a[j]>a[j+1]:
             temp = a[j]
             a[j] = a[j+1]
             a[j+1]=temp
+print(a)
 
 
 
