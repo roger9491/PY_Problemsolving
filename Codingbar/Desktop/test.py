@@ -1,54 +1,54 @@
-n,field=map(int,input().split())
-felll=list(map(int,input().split()))
-tall=list(map(int,input().split()))
+class treeNode:
+    def __init__(self, val):
+         self.val = val
+         self.left = None
+         self.right = None
 
-felll.append(field)
-fell=[]
-for i in range(len(felll)):
-    if i==0:
-        fell.append(felll[0])
-    else:
-        fell.append(felll[i]-felll[i-1])
+    def insertT(self, val):
+         if val <= self.val:
+             if self.left == None:
+                 self.left = treeNode(val)
+             else:
+                 self.left.insertT(val)
+         else:
+             if self.right == None:
+                 self.right = treeNode(val)
+             else:
+                 self.right.insertT(val)
 
-count=0
-maxx=-111111111111
-stackf=[fell[0]]
-stackt=[]
-for i in range(n):
-    stackf.append(fell[i+1])
-    stackt.append(tall[i])
-    if tall[i]<=stackf[-2]:
-        maxx=max(maxx,tall[i])
-        count+=1
-        del stackt[-1]
-        stackf[-2]+=stackf[-1]
-        del stackf[-1]
-        
-        while 1:
-            if stackt:
-                if stackt[-1]<=stackf[-1]:
-                    maxx=max(maxx,stackt[-1])
-                    count+=1
-                    del stackt[-1]
-                    stackf[-2]+=stackf[-1]
-                    del stackf[-1]
-                    
-                else:
-                    break
-            else:
-                break
-    elif tall[i]<=stackf[-1]:
-        maxx=max(maxx,tall[i])
-        count+=1
-        del stackt[-1]
-        stackf[-2]+=stackf[-1]
-        del stackf[-1]
-        
+    def inorderT(self, root):
+        res = []
+        if root:
+            res = self.inorderT(root.left)
+            res.append(root.val)
+            res = res + self.inorderT(root.right)
+        return res
 
-print(count)
-print(maxx)
+    def PreorderT(self, root):
+        res = []
+        if root:
+            res.append(root.val)
+            res = res + self.PreorderT(root.left)
+            res = res + self.PreorderT(root.right)
+        return res
+   
+    def PostorderT(self, root):
+        res = []
+        if root:
+            res = self.PostorderT(root.left)
+            res = res + self.PostorderT(root.right)
+            res.append(root.val)
+        return res
 
-'''
-7 198 [52, 68, 106, 146, 157, 166, 198, 198] [65, 82, 96, 82, 84, 89, 51]
 
-'''
+root = treeNode(50)
+root.insertT(19)
+root.insertT(28)
+root.insertT(88)
+root.insertT(95)
+root.insertT(31)
+root.insertT(22)
+
+print('中序:' , root.inorderT(root))
+print('前序:' , root.PreorderT(root))
+print('後序:' , root.PostorderT(root))
