@@ -65,10 +65,9 @@ a = {1:2}
 2**3 2**2    2**1    2**0
 
 '''
+# int = 1
 
-n=input().split('1')
-zero=0
-a = "" 
-for i in n:
-    zero+=1
-print(zero)
+a = "month" 
+b = "1"
+a = 3891.31417
+print(f"{a:10.2f}")

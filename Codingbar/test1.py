@@ -1,6 +1,5 @@
-t = [[[[0]*3 for i in range(3)] for i in range(3)] for i in range(3)] 
+data = open("test123.txt","w",encoding="utf-8-sig")
+print(data)
+data.close()
 
-t[0][1][1] = 1
-
-
-print(t)
+print(1)
