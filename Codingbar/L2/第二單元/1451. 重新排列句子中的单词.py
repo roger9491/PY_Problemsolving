@@ -16,6 +16,14 @@ text 中的每个单词都用单个空格分隔。
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/rearrange-words-in-a-sentence
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+
+text = "Leetcode is cool"
+text = text.split()
+text = text.lower()
+text = "Leetcode is cool"
+text = text.lower()
+print(text)
 '''
 # class Solution:
 #     def arrangeWords(self, text: str) -> str:
@@ -34,16 +42,20 @@ text 中的每个单词都用单个空格分隔。
 #         print(ans)
         
 #         return ans
-text = input()
-text = text.lower()
-text = text.split() 
-
-for i in range(len(text) - 1):
-    for j in range(len(text) - 1 - i):
-        if len(text[j]) > len(text[j+1]):
-            temp = text[j]
-            text[j] = text[j+1]
-            text[j+1] = temp
-text[0] = text[0][0].upper() + text[0][1:]
-return " ".join(text)
-print(" ".join(text))
+text = "Keep calm and code on"
+text = list(text.split())
+ans = ""
+for j in range(len(text)):
+    for i in range(len(text)-1):
+        if len(text[i])>len(text[i+1]):
+            temp = text[i]
+            text[i]= text[i+1]
+            text[i+1]=temp
+for i in range(len(text)):
+    if i==0:
+        text[i]=text[i][0].upper()+text[i][1:]
+    else:
+        text[i]=text[i].lower()
+    ans+=text[i]
+    ans+=" "
+print(ans)
