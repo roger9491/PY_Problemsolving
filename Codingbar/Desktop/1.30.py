@@ -70,7 +70,14 @@ numbers = [2,7,11,15], target = 9
 
 输入：numbers = [-1,0], target = -1
 输出：[1,2]
+
+ 非递减數列
+O(n)
 '''
+
+# numbers = [2,7,11,15]
+# target = 9
+
 
 
 '''
@@ -80,9 +87,44 @@ https://leetcode-cn.com/problems/merge-sorted-array/
 
 请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
 
+nums1 = [1,3,5]
+nums2 = [2,4]
 
-
+O(n+m)
 '''
+# nums1 = [4, 5, 6, 10, 11, 13] 
+
+# m = 3
+# nums2 = [5, 9, 11, 13, 17, 19]
+# n = 3
+# left1=0
+# left2=0
+# #right1=len(num1)-1
+# #right2=len(num2)-1
+# new=[]
+# while len(new)<len(nums1)+len(nums2):
+#     print(left1,left2)
+#     if nums1[left1]<=nums2[left2]:
+#         if  left1 == len(nums1) - 1:
+#             new.append(nums1[left1])
+#             #加入後半部
+#             new=new+nums2[left2:]
+#             break   
+#         new.append(nums1[left1])
+#         left1+=1
+
+#     else:
+#         if  left2 == len(nums2) - 1:
+#             new.append(nums2[left2])
+#             #加入後半部
+#             new=new+nums1[left1:]
+#             break   
+#         new.append(nums2[left2])
+#         left2+=1
+
+#     print(new)
+# print(new)
+    
 
 
 '''
@@ -252,27 +294,27 @@ https://zerojudge.tw/ShowProblem?problemid=f638
 target位置為 0 且mid值平均為 10
 '''
 
-target = int(input())
-num = list(map(int,input().split()))
+# target = int(input())
+# num = list(map(int,input().split()))
 
-i = 0
-j = len(num) - 1
-average = 0
-c = 0
-while i <= j:
-    # print(i,j)
-    mid = (i + j) // 2
-    average += num[mid]
-    c += 1
-    if num[mid] == target:
-        print("target位置為",mid,"且mid值平均為",average//c)
-        break
-    elif num[mid] > target:
-        j = mid - 1
-    else:
-        i = mid + 1
-else:
-    print("找不到target且mid值平均為",average//c)
+# i = 0
+# j = len(num) - 1
+# average = 0
+# c = 0
+# while i <= j:
+#     # print(i,j)
+#     mid = (i + j) // 2
+#     average += num[mid]
+#     c += 1
+#     if num[mid] == target:
+#         print("target位置為",mid,"且mid值平均為",average//c)
+#         break
+#     elif num[mid] > target:
+#         j = mid - 1
+#     else:
+#         i = mid + 1
+# else:
+#     print("找不到target且mid值平均為",average//c)
 
 
 
@@ -378,3 +420,116 @@ https://zerojudge.tw/ShowProblem?problemid=f581
 #     now = ((now-1)%n+1)
 # print(now-1)
 
+
+
+'''
+right = [6,2,1,5]
+forward = [4,1,3,6]
+
+向前 - 1
+right[0] = forward[0]
+right[2] = forward[2]
+temp = forward[0]
+forward[0] = forward[1]
+forward[1] = forward[2]
+forward[2] = forward[3]
+forward[3] = temp
+right = [4,2,3,5]
+forward = [1,3,6,4]
+
+
+'''
+# a = list(map(int,input().split()))
+# b = []
+# right = [6,2,1,5]
+# forward = [4,1,3,6]
+# for i in range(a[0]):
+#     b.append(1)
+# for i in range(a[1]):
+#     c = list(map(int,input().split()))
+#     if c[1]==-1:
+#         for j in range(len(forward)):
+#             if b[c[0]-1]==forward[j]:
+#                 if j==3:
+#                     b[c[0]-1]=forward[0]
+#                 else:
+#                     b[c[0]-1]=forward[j+1]
+#                 break
+#             elif b[c[0]-1]==5 or b[c[0]-1]==2:
+#                 b[c[0]-1]=3
+#                 break
+#     elif c[1]==-2:
+#         for j in range(len(right)):
+#             if b[c[0]-1]==right[j]:
+#                 if j==3:
+#                     b[c[0]-1]=right[0]
+#                 else:
+#                     b[c[0]-1]=right[j+1]
+#                 break
+#             elif b[c[0]-1]==3 or b[c[0]-1]==4:
+#                 b[c[0]-1]=5
+#                 break
+#     elif c[0]>0 and c[1]>0:
+#         temp = b[c[0]-1]
+#         b[c[0]-1]=b[c[1]-1]
+#         b[c[1]-1]=temp
+# b = list(map(str,b))
+# print(" ".join(b))
+
+'''
+135
+13256
+35001
+1001
+
+
+list():只能對可迭代的物件進行使用
+
+'''
+# while True:
+#     # try:
+#         n=int(input())
+#         a = n
+#         n = str(n)
+#         n = list(n)
+#         temp = []
+#         temp = n.copy()
+#         flag = False
+#         for i in range(len(n)):
+#             if int(n[i])%2==0:
+#                 flag = True
+#         if flag == False:
+#             print(0)
+#         elif flag == True:
+#             flag = False
+#             for i in range(len(n)):
+#                 if flag == False:
+#                     if int(n[i])%2==0:
+#                         n[i]=int(n[i])+1
+#                         flag = True
+#                 elif flag == True:
+#                     n[i]=1
+#             flag = False
+#             print(temp)
+#             for i in range(len(temp)):
+#                 if flag == False:
+#                     if int(temp[i])%2==0:
+#                         if temp[i]==0:
+#                             temp[i]=9
+#                         else:
+#                             temp[i]=int(temp[i])-1
+#                         flag = True
+#                 elif flag == True:
+#                     temp[i]=9
+
+#                 print(i,temp)
+
+
+#             n = list(map(str,n))
+#             temp = list(map(str,temp))
+#             n = "".join(n)
+#             temp = "".join(temp)
+#             if (int(n)-a)>(a-int(temp)):
+#                 print(a-int(temp))
+#             else:
+#                 print(int(n)-a)
