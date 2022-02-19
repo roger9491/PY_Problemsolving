@@ -25,27 +25,28 @@ def merge(x,y):
 
 n, m = map(int,input().split())
 a = list(map(int,input().split()))
-
-p ,k = map(int,input().split())
-
 par = [0]*(2*n + 1)
 
 for i in range(2*n + 1):
     par[i] = i    
 
-color = [-1]*n
-for i in range(0,2*m-1,2):
-    if color 
-print(par)
+for i in range(0,2*m,2):
+    merge(a[i],a[i+1]+n)
+    merge(a[i+1],a[i]+n)
 
-for i in range(p):
+p ,k = map(int,input().split())
+
+for j in range(p):
     a = list(map(int,input().split()))
-    for j in range(k):
-        print(find(a[i]),find(a[i+1]))
+    temp = par.copy()
+    for i in range(0,2*k,2):
+        # print(a[i],a[i+1])
+        # print(find(a[i]),find(a[i+1]))
         if find(a[i]) == find(a[i+1]):
-            print(i)
+            print(j+1)
+            par = temp
             break
-        merge(a[i],a[i]+n)
-        merge(a[i+1],a[i+1]+n)
-        print(par)
+        merge(a[i],a[i+1]+n)
+        merge(a[i+1],a[i]+n)
+ 
 
