@@ -59,7 +59,7 @@ while c < k:
                 # print(ans)
         record = record + temp_list
         record.sort()
-    # print(record)
+    print(record)
     # print(ans)
     c += 1
 # print(index)
