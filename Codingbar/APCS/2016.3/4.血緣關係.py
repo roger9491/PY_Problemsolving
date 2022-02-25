@@ -1,15 +1,52 @@
-def dfs(i,j):
-    if matrix[i][j] != -1
+"""
+8
+0 1
+0 2
+0 3
+7 0
+1 4
+1 5
+3 6
+
+"""
+import traceback
+
+def dfs(node):
+    if node not in dic:
+        return 
+
+    max1 = 0
+    max2 = 0
+    c = 0
+    for i in dic[node]:
+        dfs(i)
+        # print(i)
+        if height[i] > max1:
+            max2 = max1 
+            max1 = height[i]
+        elif height[i] > max2:
+            max2 = height[i]
+        c += 1
+
+    max1 += 1
+    if c >= 2:
+        max2 += 1
+    # print(max1,max2)
+    parent[node] = max1 + max2 
+    height[node] = max1
+
+    # print(node)
+    # print(height)
+    # print(parent)
 
 
 while True:
-    # try:
+    try:
         n = int(input())
         
         dic = {}
         root = [0] * n
-        matrix = [[-1]*n for i in range(n)]
-        leaves = []
+
         for i in range(n-1):
             a,b = map(int,input().split())
             if a in dic:
@@ -22,17 +59,11 @@ while True:
             if root[i] == 0:
                 root = i
                 break
-        for i in range(n):
-            if i not in dic:
-                leaves.append(i)
-        leaves.append(root)
-        print("pair")
-        ans = 0
-        for i in range(len(leaves)):
-            for j in range(i+1,len(leaves)):
-                dfs(leaves[i],leaves[j])
-                ans = max(ans, matrix[leaves[i]][leaves[j]])
-        print(ans)
 
-    # except:
-    #     break
+        height = [0]*n
+        parent = [0]*n
+        # print(root)
+        dfs(root)
+        print(max(parent))
+    except:
+        break

@@ -3,18 +3,34 @@
 (1) 有向圖
 (2) 無向圖
 
+樹的定義:
+(1)edge == n - 1
+(2)沒有環路
+(3)兩點之間必有唯一一條路徑
 
 圖的儲存方法
-1. 鄰接串列 Adjacency Matrix
-2. 鄰接矩陣 Adjacency List
+1. 鄰接矩陣 Adjacency List
+2. 鄰接串列 Adjacency Matrix
 
 1. 
+    0   1   2   3   4   5
+0   -1  1   1    
+1   1           1   1
+2   1                   1
+3       1
+4       1
+5           1
+
+matrix = [[0]*6 for i in range(6)]
 
 2.
-dic = {1:[2,3],2:[4,5],3:[6,7]}
+dic = {0:[1,2],1:[0,3,4],2:[0,5],3[1],4:[1],5:[2]}
 
 
 '''
+# matrix = [[-1]*6 for i in range(6)]
+# print(matrix[0][5])
+# print(matrix)
 
 
 '''
@@ -22,6 +38,39 @@ dfs
 有向圖
 
 '''
+# def dfs(node):  #2
+#     print(node)
+#     if node not in dic:
+#         return
+
+#     for i in dic[node]: #3,5
+#         dfs(i)
+
+# dic = {1:[2],2:[3,5],3:[4],5:[6,7],7:[8]}
+# dfs(1)
+
+
+
+# def dfs(node):
+#     print(node)
+
+#     if node not in dic: #O(1) 雜湊 HASH
+#         return
+
+#     for i in dic[node]:
+#         dfs(i)
+
+# dic = {0:[1,2],1:[3,4],2:[5]}
+
+# # if 1 in [1,2,3,4]: #O(n)
+
+# dfs(0)
+
+
+
+
+
+
 # def dfs(node):
 #     print(node)
 #     if node not in dic:
@@ -40,43 +89,74 @@ dfs
 無向圖
 
 怎麼辦?
+遇到無窮迴圈
+原因
+走過路沒有紀錄
 '''
+# def dfs(node):  #2
+#     print(node)
+#     input()
+#     if node not in dic:
+#         return
 
-
+#     for i in dic[node]: #3,5
+#         # if i not in record:     #判斷有沒有走過
+#             # record.append(i)
+#         if record[i] == 0:
+#             record[i] = 1
+#             dfs(i)
+# # record = [0] #記錄走過的地方
+# record = [0]*5  #初始直設 0 沒走過
+# dic = {0:[1,2],1:[0,3,4],2:[0],3:[1],4:[1]}
+# dfs(0)
 '''
 dfs 講義
 
 '''
+def dfs(node):
+    print(matrix[node[0]][node[1]])
+    for d in dire:
+        i_next = node[0] + d[0]
+        j_next = node[1] + d[1]
+        if 0 <= i_next < 3 and 0 <= j_next < 3:
+            if record[i_next][j_next] == 0:
+                record[i_next][j_next] = 1
+                dfs([i_next,j_next])
 
-
-
+matrix = [[1,2,3],
+          [4,5,6],
+          [7,8,9]]
+dire = [[1,0],[0,1],[-1,0],[0,-1]]
+record = [[0]*3 for i in range(3)]
+record[0][0] = 1
+dfs([0,0])
 '''
 1.dfs 搜索所有點
 
 
 '''
-from re import L
+# from re import L
 
 
-def dfs(i,j):
-    print(matrix[i][j])
-    for x in direction:
-        now_i = i + x[0]
-        now_j = j + x[1]
-        if 0 <= now_i < n and 0 <= now_j < n:
-            if path[now_i][now_j] != 1:  #最糟糕的時間複雜度:
-                path[now_i][now_j] = 1
-                dfs(now_i,now_j)
-                # del record[-1]
-                # path[now_i][now_j] = 0
-n = 3
-matrix = [[1,2,3],
-          [4,5,6],
-          [7,8,9],]
-record = [1]
-path = [[0]*3 for i in range(3)]
-direction = [[1,0],[0,1],[-1,0],[0,-1]]
-dfs(0,0)
+# def dfs(i,j):
+#     print(matrix[i][j])
+#     for x in direction:
+#         now_i = i + x[0]
+#         now_j = j + x[1]
+#         if 0 <= now_i < n and 0 <= now_j < n:
+#             if path[now_i][now_j] != 1:  #最糟糕的時間複雜度:
+#                 path[now_i][now_j] = 1
+#                 dfs(now_i,now_j)
+#                 # del record[-1]
+#                 # path[now_i][now_j] = 0
+# n = 3
+# matrix = [[1,2,3],
+#           [4,5,6],
+#           [7,8,9],]
+# record = [1]
+# path = [[0]*3 for i in range(3)]
+# direction = [[1,0],[0,1],[-1,0],[0,-1]]
+# dfs(0,0)
 
 
 
@@ -84,35 +164,35 @@ dfs(0,0)
 獨眼怪走迷宮 1
 '''
 
-def dfs_stack(i,j):
-    stack = [[0,0]]
-    stack2 = [0]
-    path = []
+# def dfs_stack(i,j):
+#     stack = [[0,0]]
+#     stack2 = [0]
+#     path = []
 
-    while stack:
-        node = stack.pop()
-        if matrix[node[0]][node[1]] in path:
-            break
-        path.append(matrix[node[0]][node[1]])
-        del stack2[-1]
-        for x in dire[::-1]:
-            i_next = node[0] + x[0]
-            j_next = node[1] + x[1]
-            if 0 <= i_next < 3 and 0 <= j_next < 3 and matrix[i_next][j_next] not in path:
-                stack.append([i_next,j_next])
-                stack2.append(matrix[i_next][j_next])
-                # path.append(matrix[i_next][j_next])
-        print(matrix[node[0]][node[1]])
-        print(path)
-        print(stack2)
+#     while stack:
+#         node = stack.pop()
+#         if matrix[node[0]][node[1]] in path:
+#             break
+#         path.append(matrix[node[0]][node[1]])
+#         del stack2[-1]
+#         for x in dire[::-1]:
+#             i_next = node[0] + x[0]
+#             j_next = node[1] + x[1]
+#             if 0 <= i_next < 3 and 0 <= j_next < 3 and matrix[i_next][j_next] not in path:
+#                 stack.append([i_next,j_next])
+#                 stack2.append(matrix[i_next][j_next])
+#                 # path.append(matrix[i_next][j_next])
+#         print(matrix[node[0]][node[1]])
+#         print(path)
+#         print(stack2)
                 
-dire = [[1,0],[0,1],[-1,0],[0,-1]]
+# dire = [[1,0],[0,1],[-1,0],[0,-1]]
 
-matrix = [[1,2,3],
-          [4,5,6],
-          [7,8,9]]
+# matrix = [[1,2,3],
+#           [4,5,6],
+#           [7,8,9]]
 
-dfs_stack(0,0)
+# dfs_stack(0,0)
 
 
 # def dfs_stack(i, j):
@@ -147,34 +227,33 @@ dfs_stack(0,0)
 
 
 '''
-# def dfs(i,j):
-#     print("索引值",i,j)
-#     print(matrix1[i][j])
-#     print(record)
-#     # input()
-
-#     for x in dir:
-#         now_i = i + x[0]
-#         now_j = j + x[1]
-#         if 0 <= now_i < 3 and 0 <= now_j < 3:
-#             if matrix1[now_i][now_j] not in record:
-#                 record.append(matrix1[now_i][now_j])    #紀錄
-#                 dfs(now_i,now_j)    #走這條路
-#                 del record[-1]
-
-# matrix1 = [[1,2,3],
-#            [4,5,6],
-#            [7,8,9],]
-# record = [1]    #用來記錄你走過路
-# #       下     右    上     左
-# dir = [[1,0],[0,1],[-1,0],[0,-1]]
-# dfs(0,0)
+def dfs(node):
+    print(temp)
+    for d in dire:
+        i_next = node[0] + d[0]
+        j_next = node[1] + d[1]
+        if 0 <= i_next < 3 and 0 <= j_next < 3:
+            if record[i_next][j_next] == 0:
+                record[i_next][j_next] = 1
+                temp.append(matrix[i_next][j_next])
+                dfs([i_next,j_next])    #dfs(5)
+                record[i_next][j_next] = 0
+                del temp[-1]
+matrix = [[1,2,3],
+          [4,5,6],
+          [7,8,9]]
+dire = [[1,0],[0,1],[-1,0],[0,-1]]
+record = [[0]*3 for i in range(3)]
+record[0][0] = 1
+temp = [1]  #紀錄目前走的路線
+dfs([0,0])
 '''
 dfs 搜索最短路徑 + 最短路徑距離
-matrix3 = [["s", 1 , 1 ,"x"],
-           [ 1 ,"x", 1 , 1 ],
-           [ 1 , 1 ,"x","x"],
-           [ 1 , 1 , 1 , "E"]]
+matrix3 = [["s", 1 , 2 ,"x"],
+           [ 3 ,"x", 4 , 5 ],
+           [ 6 , 7 , 8 ,"x"],
+           [ 9 ,"x", 10, 11]
+           [ 12, 13, 14,'e']]
 
 最短路徑距離
 6
