@@ -53,5 +53,6 @@ for i in a:
                 stack2[-1] = n3*3 - 2 * n2 + n1
             else:
                 break
+    print(stack2)
 
 print(stack2[-1])

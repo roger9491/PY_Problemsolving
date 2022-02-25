@@ -1,6 +1,185 @@
 '''
-使用遞迴 掃描一維矩陣，並印出來
+輸入一個文字 n 
+代表接下來有印出0  n 次
+
+
+
+ex
+5
+0
+0
+0
+0
+0
+
+
 '''
+# n = 4
+n = int(input())    #為什麼要加 int
+for i in range(n):
+    print(0)
+
+'''
+二為矩陣
+
+            0       1       2
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+a = [1,2,3,4]
+a[0]
+'''
+
+# matrix = [[1,2,3],
+#           [4,5,6],
+#           [7,8,9]]
+# matrix[0] = [1,2,3]
+# a = [1,2,3]
+# a[1] = 2
+# matrix[0][1] = 2
+# matrix[2][1]
+'''
+掃描二為矩陣
+
+'''
+# matrix = [[1,2,3],
+#           [4,5,6],
+#           [7,8,9]]
+# for i in range(3):
+#     for j in range(3):
+#         print(i,j)
+#         print(matrix[i][j])
+
+'''
+如何快速建立二維串列?
+
+先知道 大小 , 初始值 0 
+ex 3 * 4 
+'''
+# matrix = [[0]*4 for i in range(3)]
+# print(matrix)
+
+# a = [[0]*4]*3
+# a[1][0] = 1
+# print(a)
+# index = 0
+# matrix = [[0]*5 for i in range(5)]
+# for i in range(5):
+#     for j in range(5):
+#         matrix[i][j] = index
+#         index+= 1
+# for i in range(5):
+#     print(matrix[i])
+# [0,  1,  2,   3,  4]
+# [5,  6,  7,   8,  9]
+# [10, 11, 12, 13, 14]
+# [15, 16, 17, 18, 19]
+# [20, 21, 22, 23, 24]
+
+# matrix = [[0]*3 for i in range(3)]
+# dire = [[1,0],[0,1],[-1,0],[0,-1]]
+# for i in range(3):
+#     for j in range(3):
+#         for d in dire:
+#             i_next = i + d[0]
+#             j_next = j + d[1]
+#             if 0 <= i_next < 3 and 0 <= j_next < 3:
+#                 print(i,j,d)
+#                 print(matrix[i_next][j_next])
+
+'''
+dfs : 深度優先搜尋
+
+真的模仿我們走路情況
+
+
+解決的問題
+
+(1) 兩點之間有沒有路徑
+(2) 走完所有的點
+(3) 最短路徑 兩點之間最短的路程
+
+
+遞迴
+    函式 呼叫自己
+'''
+
+# def a(n):
+#     print(n)
+#     if n > 99:  #邊界值
+#         return
+#     a(n+1)
+# a(5)
+
+
+'''
+用遞迴
+1 + 2 + .. +  100
+
+
+(1) 邊界值 n == 1 return n
+(2) 遞迴關係式
+    原本的問題 和 比自己小的問題 之間的關係
+a(n): 1+..+ n
+a(2): 1+2
+a(3): 1 + 2 + 3
+a(4): 1 + 2 + 3 + 4
+a(4) = a(3) + 4
+a(5) = a(4) + 5
+a(n) = a(n-1) + n 遞迴關係式
+'''
+
+# def a(n):
+#     if n == 1:    #邊界值
+#         return n
+#     return a(n-1) + n
+# print(a(5))
+# def a(n):
+#     if n == 1:
+#         return n
+#     return a(n-1) + n
+# print(a(100))
+
+'''
+輸入一個數字 n
+用遞迴 1+ ..+n
+
+
+5
+a(5) = a(4) + 5
+a(4) = a(3) + 4
+a(3) = a(2) + 3
+a(2) = a(1) + 2
+        1
+a(1) = a(2) + 1
+a(2) = a(3) + 2
+'''
+# def a(n):
+#     if n == n1:
+#         return n
+#     return a(n+1) + n
+# n1 = int(input())
+# print(a(1))
+
+
+
+
+
+'''
+使用遞迴 掃描一維矩陣，並印出來
+使用遞迴 掃描二維矩陣，並印出來
+
+
+a = 1 4 6 1 5 3
+
+for i in range(len(a)):
+    print(a[i])
+
+'''
+
+
+
+
+
+
 # def rec(index):
 #     if index == len(a) or a[index] == "x":
 #         return
@@ -73,27 +252,27 @@ s
 
 
 '''
-def dfs(i,j):
-    print(matrix[i][j])
-    if matrix[i][j] == 9:
-        return
-    for x in direction:
-        now_i = i + x[0]
-        now_j = j + x[1]
-        if 0 <= now_i < n and 0 <= now_j < n:
-            # if path[now_i][now_j] != 1:  #最糟糕的時間複雜度:
-            #     path[now_i][now_j] = 1
-            dfs(now_i,now_j)
-                # del record[-1]
-                # path[now_i][now_j] = 0
-n = 3
-matrix = [[1,2,3],
-          [4,5,6],
-          [7,8,9],]
-record = [1]
-path = [[0]*3 for i in range(3)]
-direction = [[1,0],[0,1],[-1,0],[0,-1]]
-dfs(0,0)
+# def dfs(i,j):
+#     print(matrix[i][j])
+#     if matrix[i][j] == 9:
+#         return
+#     for x in direction:
+#         now_i = i + x[0]
+#         now_j = j + x[1]
+#         if 0 <= now_i < n and 0 <= now_j < n:
+#             # if path[now_i][now_j] != 1:  #最糟糕的時間複雜度:
+#             #     path[now_i][now_j] = 1
+#             dfs(now_i,now_j)
+#                 # del record[-1]
+#                 # path[now_i][now_j] = 0
+# n = 3
+# matrix = [[1,2,3],
+#           [4,5,6],
+#           [7,8,9],]
+# record = [1]
+# path = [[0]*3 for i in range(3)]
+# direction = [[1,0],[0,1],[-1,0],[0,-1]]
+# dfs(0,0)
 '''
 判斷一個值有沒有在串列 in 
 '''
