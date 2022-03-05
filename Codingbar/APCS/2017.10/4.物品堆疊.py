@@ -1,30 +1,6 @@
 '''
 https://zerojudge.tw/ShowProblem?problemid=c471
 
-<<<<<<< HEAD
-
-ex 1
-總: 3
-次: 7
-        底      頂
-1/3     6
-2/4     4
-
-ex 2
-總: 
-次: 7
-        底      頂
-3/1       
-4/2     
-5/3     
-
-
-
-
-
-
-'''
-=======
 from functools import cmp_to_key
 
 sorted(kids, key=cmp_to_key(cmp))
@@ -54,7 +30,7 @@ ex2
 from functools import cmp_to_key
 def cmp(x, y):
     if x[0]*y[1] > y[0]*x[1]:
-        return 1
+        return -1
     else:
         return 0
 
@@ -76,4 +52,3 @@ for i in range(n):
     ans += temp*t[i][1]
 
 print(ans)
->>>>>>> 876bcac0f58d98e43c99edcf7dc5699a36d43656

@@ -300,3 +300,5 @@ https://zerojudge.tw/ShowProblem?problemid=c463
 闖關路線 bfs
 d094: Q-7-5. 闖關路線
 '''
+
+from functools import cmp_to_key
