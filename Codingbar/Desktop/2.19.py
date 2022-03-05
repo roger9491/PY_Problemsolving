@@ -162,6 +162,7 @@ dfs([0,0])
 
 '''
 獨眼怪走迷宮 1
+
 '''
 
 # def dfs_stack(i,j):
@@ -268,44 +269,49 @@ global c
 #            [ 1 , 1 ,"x","x"],
 #            [ 1 , 1 , 1 , "E"]]
 
-# def dfs(i,j):
-#     # print("索引值",i,j)
-#     # print(matrix3[i][j])
-#     # print(record)
-#     O=matrix3[i][j] #original 
-#     for x in dir:
-#         now_i = i + x[0]
-#         now_j = j + x[1]
-#         if 0 <= now_i < len(matrix3) and 0 <= now_j < len(matrix3):
-#             if matrix3[now_i][now_j]=="E":
-#                 print("ANS")
-#                 ans_list.append([len(record),record.copy()])
-#                 print(ans_list)
-#                 return
-#             if matrix3[now_i][now_j]!="x":
-#                 if [now_i,now_j] not in record:
-#                     record.append([now_i,now_j])    #紀錄
-#                     dfs(now_i,now_j)    #走這條路
-#                     del record[-1]
-                    
+def dfs(i,j):
+    print("索引值",i,j)
+    if matrix1[i][j] == "e":
+        print(matrix1[i][j])
+        
+        print(len(temp),temp)
+    # input()
 
-# record = [[0,0]]    #用來記錄你走過路
-# #       下     右    上     左
-# dir = [[1,0],[0,1],[-1,0],[0,-1]]
-# ans_list = []
+    for x in dir:
+        now_i = i + x[0]
+        now_j = j + x[1]
+        # print(matrix1[now_i][now_j])
+        if 0 <= now_i < 5 and 0 <= now_j < 4:
+            # print(matrix1[now_i][now_j])
+            if matrix1[now_i][now_j] not in record and matrix1[now_i][now_j] != "x":
+                record.append(matrix1[now_i][now_j])    #紀錄
+                temp.append(matrix1[now_i][now_j])
+                dfs(now_i,now_j)    #走這條路
+                del record[-1]
+                del temp[-1]
 
-# dfs(0,0)
-# print("aa",ans_list)
-# ans_list.sort()
-# temp = 10**9
-# for x in ans_list:
-#     if x[0] <= temp:
-#         temp = x[0]
-#         print("temp",temp)
-#         print("list",x[1])
-#     else:
-#         break
-# print(temp)
+# matrix1 = [['s',   1, 'x', 'x',   2,   3,   4,   5,   6,   7],
+#           ['x',   8,   9,  10, 'x', 'x',  11, 'x', 'x',  12],
+#           ['x', 'x', 'x',  13,  14, 'x',  15, 'x',  16,  17],
+#           ['x', 'x', 'x', 'x',  18, 'x',  19, 'x',  20, 'x'],
+#           [ 21,  22,  23,  24,  25,  26,  27, 'x',  28,  29],
+#           ['x',  30, 'x', 'x', 'x', 'x', 'x', 'x',  31, 'x'],
+#           ['x',  32, 'x',  33, 'x', 'x',  34,  35,  36, 'x'],
+#           [ 37,  38,  39,  40,  41,  42,  43, 'x',  44, 'x'],
+#           ['x',  45, 'x', 'x', 'x', 'x', 'x', 'x',  46, 'x'],
+#           ['x',  47,  48,  49,  50,  51,  52,  53,  54, 'e']]
+
+matrix1 = [["s", 1 , 2 ,"x"],
+           [ 3 ,"x", 4 , 5 ],
+           [ 6 , 7 , 8 ,"x"],
+           [ 9 ,"x", 10, 11],
+           [ 12, 13, 14,'e']]
+record = ["s"]    #用來記錄你走過路
+#       下     右    上     左
+dir = [[1,0],[0,1],[-1,0],[0,-1]]
+temp = [matrix1[0][0]]
+dfs(0,0)
+
 
 '''
 4.bfs 搜索所有點
