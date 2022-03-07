@@ -61,7 +61,11 @@
 
 
 # '''
+'''
+[3, 200] [21, 38, 47] [45, 29, 43]
 
+
+'''
 
 n,l = map(int,input().split())
 c = list(map(int,input().split()))
@@ -79,7 +83,6 @@ end = c[1]
 ans = 0
 max_h = 0
 for i in range(1,n):
-    # print(i,start,ans,stack)
 
     if c[i] - h[i] >= start:
         ans += 1
@@ -91,6 +94,7 @@ for i in range(1,n):
         # print(i)
         start = c[i]
         stack.append(i)
+    # print(i,start,ans,stack)
     while stack:
         if c[stack[-1]] - h[stack[-1]] >= start:
             ans += 1
@@ -107,9 +111,34 @@ for i in range(1,n):
 if c[n] - h[n] >= start:
     ans += 1
     max_h = max(max_h,h[n])
+    while stack:
+        if c[stack[-1]] - h[stack[-1]] >= start:
+            ans += 1
+            max_h = max(max_h,h[stack[-1]])
+            del stack[-1]
+        elif c[stack[-1]] + h[stack[-1]] <= c[i+1]:
+            ans += 1
+            max_h = max(max_h,h[stack[-1]])
+            start = c[stack[-1]-1]
+            del stack[-1]
+        else:
+            break
 elif c[n] + h[n] <= l:
     ans += 1
     max_h = max(max_h,h[n])
+    print(stack)
+    while stack:
+        if c[stack[-1]] - h[stack[-1]] >= start:
+            ans += 1
+            max_h = max(max_h,h[stack[-1]])
+            del stack[-1]
+        elif c[stack[-1]] + h[stack[-1]] <= c[i+1]:
+            ans += 1
+            max_h = max(max_h,h[stack[-1]])
+            start = c[stack[-1]-1]
+            del stack[-1]
+        else:
+            break
 
 
 
