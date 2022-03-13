@@ -129,7 +129,7 @@ matrix = [[1,2,3],
 dire = [[1,0],[0,1],[-1,0],[0,-1]]
 record = [[0]*3 for i in range(3)]
 record[0][0] = 1
-dfs([0,0])
+dfs([0,0])  #node = [0,0]
 '''
 1.dfs 搜索所有點
 
@@ -228,26 +228,26 @@ dfs([0,0])
 
 
 '''
-def dfs(node):
-    print(temp)
-    for d in dire:
-        i_next = node[0] + d[0]
-        j_next = node[1] + d[1]
-        if 0 <= i_next < 3 and 0 <= j_next < 3:
-            if record[i_next][j_next] == 0:
-                record[i_next][j_next] = 1
-                temp.append(matrix[i_next][j_next])
-                dfs([i_next,j_next])    #dfs(5)
-                record[i_next][j_next] = 0
-                del temp[-1]
-matrix = [[1,2,3],
-          [4,5,6],
-          [7,8,9]]
-dire = [[1,0],[0,1],[-1,0],[0,-1]]
-record = [[0]*3 for i in range(3)]
-record[0][0] = 1
-temp = [1]  #紀錄目前走的路線
-dfs([0,0])
+# def dfs(node):
+#     print(temp)
+#     for d in dire:
+#         i_next = node[0] + d[0]
+#         j_next = node[1] + d[1]
+#         if 0 <= i_next < 3 and 0 <= j_next < 3:
+#             if record[i_next][j_next] == 0:
+#                 record[i_next][j_next] = 1
+#                 temp.append(matrix[i_next][j_next])
+#                 dfs([i_next,j_next])    #dfs(5)
+#                 record[i_next][j_next] = 0
+#                 del temp[-1]
+# matrix = [[1,2,3],
+#           [4,5,6],
+#           [7,8,9]]
+# dire = [[1,0],[0,1],[-1,0],[0,-1]]
+# record = [[0]*3 for i in range(3)]
+# record[0][0] = 1
+# temp = [1]  #紀錄目前走的路線
+# dfs([0,0])
 '''
 dfs 搜索最短路徑 + 最短路徑距離
 matrix3 = [["s", 1 , 2 ,"x"],
@@ -269,26 +269,26 @@ global c
 #            [ 1 , 1 ,"x","x"],
 #            [ 1 , 1 , 1 , "E"]]
 
-def dfs(i,j):
-    print("索引值",i,j)
-    if matrix1[i][j] == "e":
-        print(matrix1[i][j])
+# def dfs(i,j):
+#     print("索引值",i,j)
+#     if matrix1[i][j] == "e":
+#         print(matrix1[i][j])
         
-        print(len(temp),temp)
-    # input()
+#         print(len(temp),temp)
+#     # input()
 
-    for x in dir:
-        now_i = i + x[0]
-        now_j = j + x[1]
-        # print(matrix1[now_i][now_j])
-        if 0 <= now_i < 5 and 0 <= now_j < 4:
-            # print(matrix1[now_i][now_j])
-            if matrix1[now_i][now_j] not in record and matrix1[now_i][now_j] != "x":
-                record.append(matrix1[now_i][now_j])    #紀錄
-                temp.append(matrix1[now_i][now_j])
-                dfs(now_i,now_j)    #走這條路
-                del record[-1]
-                del temp[-1]
+#     for x in dir:
+#         now_i = i + x[0]
+#         now_j = j + x[1]
+#         # print(matrix1[now_i][now_j])
+#         if 0 <= now_i < 5 and 0 <= now_j < 4:
+#             # print(matrix1[now_i][now_j])
+#             if matrix1[now_i][now_j] not in record and matrix1[now_i][now_j] != "x":
+#                 record.append(matrix1[now_i][now_j])    #紀錄
+#                 temp.append(matrix1[now_i][now_j])
+#                 dfs(now_i,now_j)    #走這條路
+#                 del record[-1]
+#                 del temp[-1]
 
 # matrix1 = [['s',   1, 'x', 'x',   2,   3,   4,   5,   6,   7],
 #           ['x',   8,   9,  10, 'x', 'x',  11, 'x', 'x',  12],
@@ -301,16 +301,16 @@ def dfs(i,j):
 #           ['x',  45, 'x', 'x', 'x', 'x', 'x', 'x',  46, 'x'],
 #           ['x',  47,  48,  49,  50,  51,  52,  53,  54, 'e']]
 
-matrix1 = [["s", 1 , 2 ,"x"],
-           [ 3 ,"x", 4 , 5 ],
-           [ 6 , 7 , 8 ,"x"],
-           [ 9 ,"x", 10, 11],
-           [ 12, 13, 14,'e']]
-record = ["s"]    #用來記錄你走過路
-#       下     右    上     左
-dir = [[1,0],[0,1],[-1,0],[0,-1]]
-temp = [matrix1[0][0]]
-dfs(0,0)
+# matrix1 = [["s", 1 , 2 ,"x"],
+#            [ 3 ,"x", 4 , 5 ],
+#            [ 6 , 7 , 8 ,"x"],
+#            [ 9 ,"x", 10, 11],
+#            [ 12, 13, 14,'e']]
+# record = ["s"]    #用來記錄你走過路
+# #       下     右    上     左
+# dir = [[1,0],[0,1],[-1,0],[0,-1]]
+# temp = [matrix1[0][0]]
+# dfs(0,0)
 
 
 '''

@@ -183,8 +183,68 @@ print(h)
 
 投票統計
 
-'''
 
+
+未用dict 時間複雜度
+dict    時間複雜度
+
+
+dict = {鍵值:value}
+dict[鍵值] = value
+
+
+if a in b
+
+for i in dict: 迭代鍵值
+
+
+n
+O(n)
+'''
+# a = []
+# dic = {}
+# ans = []
+# while True: # n
+#     b = input()
+#     if b == "no":
+#         break
+#     else:
+#         b = int(b)
+#         a.append(b)
+
+# for i in range(len(a)): #n
+#     dic[a[i]] = 0   #O(1)
+
+# for i in range(len(a)): #n
+#     dic[a[i]]+=1
+
+# for i in dic:   # < n 
+#     if dic[i]>len(a)/2: #
+#         ans.append(i)
+
+# for i in range(len(ans)):
+#     print(ans[i])
+
+# number_list = []
+# count_list = []
+# while True:
+#     number = input()
+#     if number=="no":
+#         break
+#     else:
+#         number = int(number)
+#         number_list.append(number)
+
+# set_number = set(number_list)
+
+# for i in (set_number) : #(n * n) = > O(n**2)
+#     count = number_list.count(i)    #n
+#     count_list.append(count)
+
+# for j in range (len(count_list)):
+#     if count_list[j] >= int(len(number_list)/2+1):
+#         print(list(set_number)[j])
+#         break
 
 '''
 兩個數組的交集 (1)
@@ -193,6 +253,18 @@ https://leetcode-cn.com/problems/intersection-of-two-arrays/
 输入：nums1 = [1,2,2,1], nums2 = [2,2]
 输出：[2]
 '''
+# nums1 = [1,2,2,1]
+# nums2 = [2,2]
+# dic = {}
+# ans = {}
+# for i in range(len(nums1)):
+#     dic[nums1[i]] = 0
+# for i in range(len(nums2)):
+#     if nums2[i] in dic:
+#         ans[nums2[i]] =0
+# for i in ans:
+#     print(i)
+
 # return list(set(nums1) &　set(nums2))
 # nums1 = [1,2,2,1]
 # nums2 = [2,2]
@@ -280,27 +352,27 @@ c/c++ 陣列
 
 '''
 
-a=input()
-b=[]
-c=[]
-for i in a:
-    if i in '()/{/}[]':
-        b.append(i)
-print(b)
-for j in range(len(b)):
-    if b==[]:
-        break
-    for i in range(len(b)):
-        if i==len(b)-1:
-            break
-        if b[i]+b[i+1] =="()"or b[i]+b[i+1] =="{}"or b[i]+b[i+1] =="[]":
-            del b[i]
-            del b[i+1]
-            break
-    print(j,b)
-if b==[]:
-    print('True')
-else:
-    print("False")
+# a=input()
+# b=[]
+# c=[]
+# for i in a:
+#     if i in '()/{/}[]':
+#         b.append(i)
+# print(b)
+# for j in range(len(b)):
+#     if b==[]:
+#         break
+#     for i in range(len(b)):
+#         if i==len(b)-1:
+#             break
+#         if b[i]+b[i+1] =="()"or b[i]+b[i+1] =="{}"or b[i]+b[i+1] =="[]":
+#             del b[i]
+#             del b[i+1]
+#             break
+#     print(j,b)
+# if b==[]:
+#     print('True')
+# else:
+#     print("False")
 
 
