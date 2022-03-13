@@ -83,7 +83,6 @@ end = c[1]
 ans = 0
 max_h = 0
 for i in range(1,n):
-
     if c[i] - h[i] >= start:
         ans += 1
         max_h = max(max_h,h[i])
@@ -112,11 +111,7 @@ if c[n] - h[n] >= start:
     ans += 1
     max_h = max(max_h,h[n])
     while stack:
-        if c[stack[-1]] - h[stack[-1]] >= start:
-            ans += 1
-            max_h = max(max_h,h[stack[-1]])
-            del stack[-1]
-        elif c[stack[-1]] + h[stack[-1]] <= c[i+1]:
+        if c[stack[-1]] + h[stack[-1]] <= l:
             ans += 1
             max_h = max(max_h,h[stack[-1]])
             start = c[stack[-1]-1]
@@ -126,13 +121,9 @@ if c[n] - h[n] >= start:
 elif c[n] + h[n] <= l:
     ans += 1
     max_h = max(max_h,h[n])
-    print(stack)
+    # print(stack)
     while stack:
-        if c[stack[-1]] - h[stack[-1]] >= start:
-            ans += 1
-            max_h = max(max_h,h[stack[-1]])
-            del stack[-1]
-        elif c[stack[-1]] + h[stack[-1]] <= c[i+1]:
+        if c[stack[-1]] + h[stack[-1]] <= l:
             ans += 1
             max_h = max(max_h,h[stack[-1]])
             start = c[stack[-1]-1]
