@@ -35,44 +35,15 @@ dp[i][j] = dp[i][j-1] + (9-i) + 1
 
 '''
 
+from re import L
+
+
 n = input()
 
 length = len(n)
 
-dp = [[0]*10 for i in range(length)]
-dp[0][-1] = 1
-ans = 0
+dp = [0]*length
+
 for i in range(length):
     for j in range(1,10):
-        if i == 0:
-            dp[i][j] = dp[i][j-1] + 1
-        elif j == 1:
-            dp[i][j] = dp[i-1][-1] + 1
-        else:
-            dp[i][j] = dp[i][j-1] + (9-j+1) + 1
         
-        if i == (length - 1):
-            if int((i+1)*str(j)) > int(n):
-                if j == 1:
-                    i -= 1
-                    j = 9
-                else:
-                    j -= 1
-                ans += dp[i][j]
-                number = int((i+1)*str(j))
-                break
- 
-    print(dp[i])
-
-# for i in range(length):
-#     for j in range(9,0,-1)
-
-
-111
-112 ~　150
-150
-222
-
-22 ~ 25
-
-print(ans)

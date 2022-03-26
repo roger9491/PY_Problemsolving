@@ -2,7 +2,39 @@
 前綴和 複習
 
 點石成金 優化?
+
 '''
+# output = list(map(int,input().split()))
+# success = list(map(bool,map(int,input().split())))
+# l = int(input())
+
+# maxadd = float('-inf')
+
+# for i in range(len(output)-l+1):
+#     temp,tempbool = output[i:i+l],success[i:i+l]
+#     add = 0
+#     for j in range(len(temp)):
+#         if not tempbool[j]:
+#             add += temp[j]
+#     maxadd = max(add,maxadd)
+
+# total = 0
+
+# for i in range(len(output)):
+#     if success[i]:
+#         total += output[i]
+
+# print(maxadd+total)
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -28,6 +60,21 @@ O(n)
 
 https://zerojudge.tw/ShowProblem?problemid=f638
 '''
+# def f(n):
+#     if n == 0:
+#         return 0
+#     elif n == 1:
+#         return 1
+#     return f(n-1) + f(n-2)
+
+# n = int(input())
+# print(f(n))
+
+
+
+
+
+
 
 
 '''
@@ -39,6 +86,7 @@ f(0) = 0
 f(1) = 1
 f(n) = f(n-1) + f(n-2)
 '''
+
 # def f(n):
 #     if n == 0:
 #         return 0
@@ -53,6 +101,50 @@ f(n) = f(n-1) + f(n-2)
 '''
 費氏數列    記憶化搜索
 '''
+
+# def f(n):
+#     if n == 0:
+#         return 0
+#     elif n == 1:
+#         return 1
+#     elif mem[n] != 0:
+#         return mem[n]
+#     '''
+#     totoal = 0
+#     判斷 mem[n-1] != 0
+#         totoal += mem[n-1]
+#     else:
+#         f(n-1)
+#     判斷 mem[n-2] != 0
+#         totoal += mem[n-2]
+#     return total
+#     '''
+#     mem[n] = f(n-1) + f(n-2)
+#     return mem[n]
+
+# n = int(input())
+# mem = [0]*(n+1)
+# print(f(n))
+
+# dic = {}
+# def f(n):
+#     if n < 2:
+#         return n
+#     if n in dic:
+#         return dic[n]
+#     else:
+#         dic[n] = f(n-1) + f(n-2)
+#         return dic[n]
+    
+# print(f(50)) #8
+
+
+
+
+
+
+
+
 # def f(n):
 #     if n == 0:
 #         return 0
@@ -74,9 +166,74 @@ f(n) = f(n-1) + f(n-2)
 
 走樓梯 如用暴力法解決?
 
+核心思想 真的走過一遍
+
+輸入
+第幾層
+
+輸出
+走法數量
+
+
 '''
 
-#第一種方法
+
+#第一種
+#實際走過一遍
+# def f(count):
+#     global ans 
+#     if count == n:
+#         ans += 1
+#     for d in [1,2]:
+#         if count + d <= n:
+#             f(count + d)
+# n = int(input())
+# count = 0
+# ans = 0
+# f(0)
+# print(ans)
+
+#第二種
+
+# def f(count):
+#     global ans 
+#     if count == 0:
+#         ans += 1
+#     for d in [1,2]:
+#         if count - d >= 0:
+#             f(count - d)
+# n = int(input())
+# count = 0
+# ans = 0
+# f(n)
+# print(ans)
+
+
+# def f(count):
+#     global ans 
+#     if count == 0:
+#         return 1
+#     elif mem[count] != 0:
+#         return mem[count]
+
+#     total = 0
+#     for d in [1,2]:
+#         if count - d >= 0:
+#             total += f(count - d)
+#     mem[count] = total
+#     return mem[count]
+
+# n = int(input())
+# count = 0
+# mem = [0]*(n+1)
+
+# f(n)
+# print(mem[-1])
+
+
+
+
+# #第一種方法
 # def f(n):
 #     global ans
 #     if n == target:
@@ -169,6 +326,10 @@ DP Dynamic programming 動態規劃
 
 https://leetcode.com/problems/climbing-stairs/submissions/
 https://leetcode-cn.com/problems/climbing-stairs/submissions/
+'''
+'''
+嘗試用遞推的方式解決
+     迴圈
 '''
 
 
