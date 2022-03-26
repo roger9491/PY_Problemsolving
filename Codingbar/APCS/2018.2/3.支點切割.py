@@ -22,7 +22,7 @@ while c < k:
     if c == 0:
         for i in range(1,n-1):
             temp = pre2[-1] - (i+1) * pre1[-1]
-            print(temp,i)
+            # print(temp,i)
             if temp < 0:
                 temp = temp*-1
             if temp < min_v:
@@ -59,7 +59,7 @@ while c < k:
                 # print(ans)
         record = record + temp_list
         record.sort()
-    print(record)
+    # print(record)
     # print(ans)
     c += 1
 # print(index)
