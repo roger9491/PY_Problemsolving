@@ -9,22 +9,43 @@ https://drive.google.com/drive/u/0/folders/10hZCMHH0YgsfguVZCHU7EYiG8qJE5f-m
 
 '''
 def dfs(node):
+    # print("當前",node)
     if node not in dic:
         for i in range(m):
             if data[node][i] == "@":
-                    dp[node][i][trans(data[data[i][0]][1][i])] = 0
+                dp[node][i] = [0,0,0,0]
             else:
-                dp[node][i][trans(data[node][i])] = 0
+                dp[node][i][string[data[node][i]]] = 0
+
+        # for i in range(1, n+1):
+        #     print(i,dp[i])
+
+        return
+
 
     for i in dic[node]:
         dfs(i)
     
     for i in range(m):
         if data[node][i] == "@":
-                dp[node][i][trans(data[data[i][0]][1][i])] = 0
+            dp[node][i] = [0,0,0,0]
+            temp_j = 0
+            minv = 0
+            for j in range(4):
+                for x in dic[node]:
+                    
         else:
-            dp[node][i][trans(data[node][i])] = 0
-
+            for x in dic[node]:
+                minv = 10**9
+                for j in range(4):
+                    if j != trans(data[node][1][i]):
+                        minv = min(minv, dp[x][i][j] + 1)
+                    else:
+                        minv = min(minv, dp[x][i][j])
+            dp[node][i][trans(data[node][1][i])] = minv
+    # print("當前",node)
+    # for i in range(1, n+1):
+    #     print(i,dp[i])
 
 def trans(s):
     if s == "A":
@@ -39,23 +60,31 @@ def trans(s):
 n, m = map(int,input().split())
 
 dic = {}
+string = {"A":0,"U":1,"C":2,"G":3}
 data = [[] for i in range(n+1)]
 
 for i in range(n):
     a = input().split()
     a[0] = int(a[0])
     a[1] = int(a[1])
-    data[a[0]].append(a[1::])
+    data[a[0]] = a[-1]
     if a[0] == a[1]:
         root = a[0]
-    if a[1] in dic:
-        dic[a[1]].append(a[0])
     else:
-        dic[a[1]] = [a[0]]
+        if a[1] in dic:
+            dic[a[1]].append(a[0])
+        else:
+            dic[a[1]] = [a[0]]
 
 dp = [[[10**9]*4 for i in range(m)] for i in range(n+1)]
-print(dp)
+# print("1",dic)
 dfs(root)
+# for i in range(1, n+1):
+#     print(i,dp[i])
+ans = 10**9
+for i in range(m):
+    ans = min(ans, min(dp[root][i]))
+print(ans)
 '''a                a           c
 [[[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
  [[0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0]], 

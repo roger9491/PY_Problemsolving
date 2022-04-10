@@ -49,29 +49,37 @@ https://www.luogu.com.cn/problem/P6771
 #     print(0)
 
 
-n = int(input())
+# n = int(input())
 
-heigh = 0
-data = []
-for i in range(n):
-    a, b, c = map(int,input().split())
-    data.append([a,b,c])
+# heigh = 0
+# data = []
+# for i in range(n):
+#     a, b, c = map(int,input().split())
+#     data.append([a,b,c])
 
-data.sort(key=lambda a:a[1])
+# data.sort(key=lambda a:a[1])
 
-# print(data)
-dp = [-10**9]*(data[-1][1]+1)
-dp[0] = 0
-ans = -10**9
-for i in range(n):
-    for x in range(1,data[i][2]+1):
-        if data[i][0] <= data[i][1]:
-            for j in range(data[i][1],data[i][0]-1,-1):
-                dp[j] = max(dp[j], dp[j - data[i][0]] + data[i][0])
+# # print(data)
+# dp = [-10**9]*(data[-1][1]+1)
+# dp[0] = 0
+# ans = -10**9
+# for i in range(n):
+#     for x in range(1,data[i][2]+1):
+#         if data[i][0]*x <= data[i][1]:
+#             for j in range(data[i][1],data[i][0]*x-1,-1):
+#                 dp[j] = max(dp[j], dp[j - data[i][0]] + data[i][0])
+#         else:
+#             break
 
-for i in range(data[-1][1],-1,-1):
-    if dp[i] > 0:
-        print(dp[i])
-        break
-else:
-    print(0)
+# for i in range(data[-1][1],-1,-1):
+#     if dp[i] > 0:
+#         print(dp[i])
+#         break
+# else:
+#     print(0)
+
+
+
+'''
+數量優化版
+'''
