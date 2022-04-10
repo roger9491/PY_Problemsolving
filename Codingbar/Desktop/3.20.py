@@ -467,3 +467,231 @@ https://codeforces.com/problemset/problem/294/B
 #     if i >= total_w - dp[-1][i]:
 #         print(i)
 #         break
+
+
+'''
+
+L1          =>  L2          => L3
+(APCS第一題)    (APCS第二題)    (Leetcode => APCS => 落谷 /Codeforces)
+
+
+'''
+
+'''
+來進階一點的題目
+
+走樓梯 如用暴力法解決?
+
+核心思想 真的走過一遍
+
+輸入
+第幾層
+
+輸出
+走法數量
+
+
+複習上週講到的走樓梯
+
+'''
+
+#第一種
+#實際走過一遍
+# def f(count):
+#     global ans 
+#     if count == n:
+#         ans += 1
+#     for d in [1,2]:
+#         if count + d <= n:
+#             f(count + d)
+# n = int(input())
+# count = 0
+# ans = 0
+# f(0)
+# print(ans)
+
+#第二種
+
+# def f(count):
+#     global ans 
+#     if count == 0:
+#         ans += 1
+#     for d in [1,2]:
+#         if count - d >= 0:
+#             f(count - d)
+# n = int(input())
+# count = 0
+# ans = 0
+# f(n)
+# print(ans)
+
+'''
+分析寫法
+
+優化
+'''
+# def f(count):
+
+#     if count == 0:
+#         return 1
+#     if mem[count]:
+#         return mem[count] 
+
+#     total = 0
+#     for d in [1,2]:
+#         if count - d >= 0:
+#             total += f(count - d)
+#     mem[count] = total
+#     return mem[count]
+# n = int(input())
+# mem = [0]*(n + 1)
+# count = 0
+# ans = 0
+# f(n)
+# print(mem[-1])
+
+
+
+# def f(count):   #count : 當前走到第幾層
+#     if count == 0:  #走到底部 算一條路
+#         return 1
+
+#     if mem[count] != -1:
+#         return mem[count]
+#     total = 0
+#     for d in [1,2]: #
+#         if count - d >= 0:
+#             total += f(count - d)
+#     mem[count] = total
+#     return mem[count] 
+# n = int(input())
+# count = 0
+# ans = 0
+# mem = [-1]*(n+1)
+# f(n)
+# print(mem[-1])
+
+# def f(count):
+#     global ans 
+#     if count == 0:
+#         return 1
+#     elif mem[count] != 0:
+#         return mem[count]
+
+#     total = 0
+#     for d in [1,2]:
+#         if count - d >= 0:
+#             total += f(count - d)
+#     mem[count] = total
+#     return mem[count]
+
+# n = int(input())
+# count = 0
+# mem = [0]*(n+1)
+
+# f(n)
+# print(mem[-1])
+
+'''
+遞推
+
+'''
+n = int(input())
+count = 0
+mem = [0]*(n+1)
+for i in range(n+1):    #0~n
+    if i == 0 or i == 1:
+        mem[i] = 1
+    else:
+        mem[i] = mem[i-1] + mem[i-2]
+    
+
+print(mem[-1])
+
+
+'''
+DP Dynamic programming 動態規劃
+他是一種算法思想 常見的算法思想 : 分治 貪心 窮舉
+核心思想: 通過把原問題分解為相對簡單的子問題的方式求解複雜問題的方法。
+
+我們先來看 能用動態規劃解決問題的條件
+最佳子結構
+    每個階段的最優解是由之前的某個或某些狀態而來的
+重疊子問題
+    不同階段的最優解含有重複的之前狀態的最優解
+無後效性
+    當前的狀態是由之前的狀態的最優解得來，而不管從何而來。
+    最短路步數是無後效性的，但是最短路徑就有後效性
+    
+# 所以我們會發現用動態規劃解決的題目通常會用串列來記錄
+
+實作方式:
+    遞推
+    記憶化搜索
+
+回頭來看看之前寫的記憶化搜索，想想看如何轉成遞推?
+費式數列 遞推
+
+那回到小朋友走樓梯
+    如何用動態規劃的方式思考? 如何用動態規劃解決?
+    (1) 定義問題    這裡定義的問題 要確保保有最優子結構
+        dp[n]: 走到第n層有幾種走法
+    (2) 狀態轉移    定義好問題就是快樂的找狀態轉移
+        dp[5] = dp[4] + dp[3]
+        dp[n] = dp[n-1] + dp[n-2]
+https://leetcode.com/problems/climbing-stairs/submissions/
+https://leetcode-cn.com/problems/climbing-stairs/submissions/
+'''
+'''
+嘗試用遞推的方式解決
+     迴圈
+'''
+
+ 
+
+
+
+''' 
+零錢問題
+    (1) 定義問題    這裡定義的問題 要確保保有最優子結構
+        dp[n]:  n零錢的最少硬幣數量
+    (2) 狀態轉移    定義好問題就是快樂的找狀態轉移
+        if n == 0:  #思考邊界
+            dp[n] = 0
+        else
+            dp[n] = min(dp[n-c1],dp[n-c2]..dp[n-cn]) + 1
+'''
+coins = list(map(int,input().split(',')))
+money = int(input())
+dp = [10**9]*(money+1)
+
+for i in range(money + 1):
+    if i == 0:
+        dp[0] = 0
+    else:   #i : 5
+        for j in coins: #1 2 3
+            if i >= j:
+                dp[i] = min(dp[i], dp[i-j]+1)
+    print(i,dp)
+print(dp[-1])
+
+
+'''
+題目練習
+https://judge.tcirc.tw/ShowProblem?problemid=d066
+
+    (1) 定義問題    這裡定義的問題 要確保保有最優子結構
+        dp[n]:  到達n的最小分數
+    (2) 狀態轉移    定義好問題就是快樂的找狀態轉移
+        dp[n] = dp[n-1] + dp[n-2] 變化?
+
+   index
+    0 0
+    1 0
+    2 1
+    3 2
+
+
+https://judge.tcirc.tw/ShowProblem?problemid=d069
+
+'''

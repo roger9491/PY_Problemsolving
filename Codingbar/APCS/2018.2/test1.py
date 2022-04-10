@@ -101,7 +101,7 @@ def f2(n,k,l):
 while True:
 
     n = 4
-    m = random.randint(1,6)
+    m = 1
     t = []
     while len(t) < n:
         a = random.randint(1,100)
@@ -115,3 +115,12 @@ while True:
     print(t1,t2)
     if t1 != t2:
         break
+
+'''
+
+1
+14*-1 + 8*1 + 94*2
+2
+14*-2 + 1*-1 + 94*1
+
+'''
