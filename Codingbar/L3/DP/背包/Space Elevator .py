@@ -83,3 +83,33 @@ https://www.luogu.com.cn/problem/P6771
 '''
 數量優化版
 '''
+n = int(input())
+
+heigh = 0
+data = []
+for i in range(n):
+    a, b, c = map(int,input().split())
+    data.append([a,b,c])
+
+data.sort(key=lambda a:a[1])
+data = [0] + data
+# print(data)
+dp = [[-10**9]*(data[-1][1]+1) for i in range(n+1)]
+dp[0][0] = 1
+ans = 0
+for i in range(1,n+1):
+    dp[i][0] = 1
+    for j in range(data[i][0],data[i][1]+1):
+        # print(j,dp[i][j-data[i][0]] < data[i][2])
+        if dp[i-1][j] > 0:
+            dp[i][j] = 1
+        elif dp[i][j-data[i][0]] > 0 and dp[i][j-data[i][0]] <= data[i][2]:
+            dp[i][j] = dp[i][j-data[i][0]] + 1
+            ans = max(ans, j)
+    # print(dp[i])
+print(ans)
+
+
+
+
+

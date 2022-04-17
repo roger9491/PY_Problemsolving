@@ -1,4 +1,9 @@
+from operator import le
+from turtle import right
+
+
 def dac(i,j):
+    # print(i,j)
     global ans
     if i >= j:
         return
@@ -6,34 +11,28 @@ def dac(i,j):
         mid = (i + j) // 2
         temp1 = sorted(a[i:mid+1])
         temp2 = sorted(a[mid+1:j+1])
-        right = 0
         left = 0
-        count = 0
-        flag = False
-        print(i,j,count)
-        print(temp1,temp2)
-        print(left,right,ans,count)
-        while left <= (mid-i):
+        right = 0
+        c = 0
+        # print(temp1,temp2)
+        while left < len(temp1) or right < len(temp2):
             
-            if temp1[left] <= temp2[right]:
-                left += 1
-                if flag:
-                    ans += count
-                    flag = False
+            if temp1[left] > temp2[right]:
+                c += 1
+                right += 1
+                if right == len(temp2):
+                    c += right*(len(temp1) - left - 1)
+                    break
             else:
-                flag = True
-                count += 1
-                if right < j - (mid+1):
-                    right += 1
-                else:
-                    if flag:
-                        ans += count
-                        flag = False
-                    left += 1
-            print(left,right,ans,count)
-        if flag:
-            ans += count
-        print
+                left += 1
+                if left == len(temp1):
+                    break
+                c += (right)
+        #     print(left, right,"c",c)
+        # print(c)
+        ans += c 
+
+
         dac(i,mid)
         dac(mid+1,j)
         return            
@@ -45,12 +44,12 @@ print(ans)
 
 
 
-ans_2 = 0
-for i in range(n):
-    for j in range(i+1,n):
-        if a[i] > a[j]:
-            ans_2 += 1
-print(ans_2)
+# ans_2 = 0
+# for i in range(n):
+#     for j in range(i+1,n):
+#         if a[i] > a[j]:
+#             ans_2 += 1
+# print(ans_2)
 
 
-# 435 345 3354 | 12 32 123 934 
+#345 435 3354 | 12 32 123 934 
