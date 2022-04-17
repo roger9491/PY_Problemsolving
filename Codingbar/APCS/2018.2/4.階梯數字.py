@@ -31,19 +31,21 @@ dp[i][j] = dp[i][j-1] + (9-i) + 1
 
 
 
-
+1 2 3 4 5 6 7 8 9
 
 '''
-
-from re import L
 
 
 n = input()
 
 length = len(n)
 
-dp = [0]*length
+c = [0]*(length - 1)
 
-for i in range(length):
-    for j in range(1,10):
+c[0] = 9
+for i in range(length-1):
+    if i == 0:
+        c[i] = 9
+    else:
+        c[i] = c[i-1]
         
