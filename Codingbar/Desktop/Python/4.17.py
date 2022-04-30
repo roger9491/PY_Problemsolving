@@ -270,39 +270,39 @@ Longest Increasing Subsequence
 apcs 樹狀圖分析
 https://zerojudge.tw/ShowProblem?problemid=c463
 '''
-def dfs(node):
+# def dfs(node):
  
-    if node not in parent:
-        return 0
+#     if node not in parent:
+#         return 0
 
-    temp = 0
-    for i in parent[node]:
-        temp =max(temp,dfs(i))  
-    dp[node] = temp + 1
-    # print(node,dp)
-    return dp[node]
+#     temp = 0
+#     for i in parent[node]:
+#         temp =max(temp,dfs(i))  
+#     dp[node] = temp + 1
+#     # print(node,dp)
+#     return dp[node]
 
-n = int(input())
+# n = int(input())
 
-parent = {}
-node = [0]*(n+1)
-for i in range(n):
-    a = list(map(int,input().split()))
-    if a[0] != 0:
-        parent[i+1] = a[1:]
-        for j in range(a[0]):
-            node[a[j+1]] = 1
+# parent = {}
+# node = [0]*(n+1)
+# for i in range(n):
+#     a = list(map(int,input().split()))
+#     if a[0] != 0:
+#         parent[i+1] = a[1:]
+#         for j in range(a[0]):
+#             node[a[j+1]] = 1
 
-#find root
-for i in range(1,n+1):
-    if node[i] != 1:
-        root = i
-        break
+# #find root
+# for i in range(1,n+1):
+#     if node[i] != 1:
+#         root = i
+#         break
 
-dp = [0]*(n+1)
-print(root)
-dfs(root)
-print(sum(dp))
+# dp = [0]*(n+1)
+# print(root)
+# dfs(root)
+# print(sum(dp))
 
 '''
 https://www.luogu.com.cn/problem/P1352
@@ -446,4 +446,33 @@ divide-and-conquer
 '''
 合併排序法
 
+3 
+3 4 5 
+1 2 3 
+
+2 
+20 10 
+1 1 
 '''
+
+
+
+n = int(input())
+w = list(map(int,input().split()))
+f = list(map(int,input().split()))
+data = []
+
+for i in range(n):
+    if f[i] == 0:
+        data.append([10**9,i,w[i],f[i]])
+    else:
+        data.append([w[i]/f[i],i,w[i],f[i]])
+data.sort(reverse=True)
+# print(data)
+temp = sum(w)
+ans = 0
+for i in range(n):
+    temp -= data[i][2]
+    ans += temp*data[i][3]
+
+print(ans)

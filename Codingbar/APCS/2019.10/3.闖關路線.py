@@ -43,19 +43,62 @@ https://judge.tcirc.tw/ShowProblem?problemid=d094
 #                         record[next_node] = 1
 #         ans += 1
 
-def dfs(node):
+# def dfs(node):
 
 
-n, p, l, r = map(int,input().split())
+# n, p, l, r = map(int,input().split())
 
-a = list(map(int,input().split()))
+# a = list(map(int,input().split()))
 
-record = [0]*n
-way = [-l, r]
-flag = False
-ans = 0
-bfs(0)
-if flag:
-    print(ans)
+# record = [0]*n
+# way = [-l, r]
+# flag = False
+# ans = 0
+# bfs(0)
+# if flag:
+#     print(ans)
+# else:
+#     print(-1)
+
+def dfs():
+    global steps,L,R,n,P
+    queue=[0,"t"]
+    record={}
+    while queue:
+        now=queue.pop(0)
+        if now=="t":
+            steps+=1
+            queue.append("t")
+        else:
+            record[now]=1
+            now=S[now]
+            if now==P:
+                return True
+            else:
+                if now>(n-1):
+                    continue
+                else:
+                    for i in (-L,R):
+                        if now+i>0 and now+i<n and now+i not in record:#導致同層不同count
+                            queue.append(now+i)
+                    #看這要放哪queue.append("t")
+
+
+
+            
+
+
+        
+
+
+x=list(map(int,input().split()))
+n=x[0]
+P=x[1]
+L=x[2]
+R=x[3]
+steps=0
+S=list(map(int,input().split()))
+if dfs()==True:
+    print(steps)
 else:
     print(-1)

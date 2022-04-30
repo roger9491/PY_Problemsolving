@@ -44,7 +44,7 @@ for i in range(n):
     t.append([a[i],b[i]])
 
 t = sorted(t, key=cmp_to_key(cmp))
-
+print(t)
 temp = sum(a)
 ans = 0
 for i in range(n):
