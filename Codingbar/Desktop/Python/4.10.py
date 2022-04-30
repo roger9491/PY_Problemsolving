@@ -1,4 +1,43 @@
 '''
+
+重/價   0   1   2   3   4   5   6   7   8   9   10  11  12  
+3/4     0   0   0   4   4   4   4   4   4   4   4   4   4      
+10/15   0   0   0   4   4   4   4   4   4   4   15  15  15
+7/10    0   0   0   4   4   4   4   10  10  10  15  15  15
+5/7     0   0   0   4   4   7   7   7   11  11  15
+4 15 10 7
+    15  
+
+表格初始值 = 0
+dp[i][j] = dp[i-1]
+dp = [[0]*13 for i in range(4)]
+
+'''
+# Limit = int(input())
+# Weight = list(map(int,input().split())) #重量
+# Scores = list(map(int,input().split())) #分數
+# dp = [[0]*(Limit+1) for i in range(len(Weight))]    #表格
+
+# for i in range(len(Weight)):
+#     for j in range(1,Limit+1):                      
+#         if j >= Weight[i]:  #15         7     +  dp[i][10 - 5]  7
+#             dp[i][j] = max(dp[i-1][j], Scores[i]+dp[i-1][j-Weight[i]])
+#         else:
+#             dp[i][j] = dp[i-1][j]
+# print(dp[-1][-1])
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 01背包問題:
 有一個耐重為V的背包，n個物品，每個物品有Wi重量，價值Ci
 W:物品list 重量
@@ -38,7 +77,6 @@ C:物品list 價值
 練習題
 https://judge.tcirc.tw/ShowProblem?problemid=d075
 '''
-
 
 
 '''
