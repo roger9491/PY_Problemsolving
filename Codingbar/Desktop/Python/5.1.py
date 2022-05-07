@@ -5,11 +5,9 @@
 29
 
 
-
 暴力法
-'''
-# import re
 
+'''
 
 # def f(m):
 #     global temp
@@ -38,8 +36,6 @@
 '''
 
 # def f(m):
-#     global temp
-#     global ans
 #     if m == 0:
 #         return 0
 #     elif mem[m] != -1:
@@ -56,22 +52,27 @@
 # a = list(map(int,input().split(",")))
 # mon = int(input())
 # mem = [-1]*(mon+1)
-# ans = 10**9
-# temp = 0
 # f(mon)
 # # print(mem)
 # print(mem[-1])
+'''
+零錢
+迭代
+(1)定義問題
 
+    dp[i]: 在i金額下最小的硬幣數量
 
+(2)狀態轉移
+    a[0~n]
+    dp[i] = min(dp[i-a[0]]....dp[i-a[n]]) + 1
 
-            
-
+'''
+        
 # a = list(map(int,input().split(",")))
 # mon = int(input())
 # dp = [10**9]*(mon+1)
 # dp[0] = 0
-# ans = 10**9
-# temp = 0
+
 # for i in range(1,mon+1):
 #     for j in a:
 #         dp[i] = min(dp[i], dp[i-j] + 1)
@@ -216,6 +217,34 @@ Longest Common Subsequence
 # s1 = input()
 # s2 = input()
 '''
+TATGCA
+ATCAGAT
+
+T
+AT
+
+4
+(1)問題: 最常共同子序列
+
+
+(2) 
+狀態轉移
+    if s1[i] == s[j]:
+        dp[i-1][j-1] + 1
+    T   A   T   G   C   A
+A   0   1   1   1   1   1
+T   1   1   2   2   2   2
+C   1   1   2   2   3   3
+A   1   2   2   2   3   4
+G   1   2   2   3   3   4
+A   1   2   
+T
+
+
+
+
+
+
     b   s   b   i   n   i   n   m
 j   0   0   0   0   0   0   0   0
 m   0   0   0   0   0   0   0   1
@@ -260,7 +289,7 @@ Longest Increasing Subsequence
 2   1   0   0   0   0   0   0 
 1   1   1   0   0   0   0   0
 4   1   1   2   0   0   0   0
-3   1   1   2   2   0   0   0
+3   1   1   2   2   0   0    0
 6   1   1   2   2   3   0   0
 7   1   1   2   2   3   4   0
 5   1   1   2   2   3   4
@@ -407,3 +436,23 @@ https://www.luogu.com.cn/problem/P1352
 #         root = i
 # dfs(root)
 # print(max(dp[root]))
+
+# b = list(map(int,input().split()))
+# c = list(map(int,input().split()))
+# dp = [0]*(101)
+# for i in range(1,50):
+#         if i>=min(b):
+#                 for j in range(len(b)):
+
+#                         dp[i] = max(dp[i],dp[i-b[j]]+c[j])
+#         else:
+#                 dp[i] = 0
+#         print(i)
+#         print(i,dp)
+# print(dp[-1])
+
+'''
+樹狀dp，分治法，差分，位元運算
+
+
+'''
