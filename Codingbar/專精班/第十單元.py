@@ -1,14 +1,46 @@
 '''
 重複輸入
+輸入no停止
 輸入存到串列
-直到輸入no停止
 
-重複輸入n
-輸出n 在串列的個數
-直到輸入no停止
+
+
+輸入一個數字n，輸出n在串列的個數
+
+# 重複輸入數字n
+# 輸出n 在串列的個數
+# 直到輸入no停止
 
 印出串列的長度
+ex
+1
+1
+2
+2
+no
+1
+2
+2
+2
+no
+4
+
+
 '''
+c = []
+while True:
+    a = input("")
+    if a == "no":
+        break
+    else:
+        c.append(int(a))
+b = int(input())
+t = 0
+for i in range(len(c)):
+    if b == c[i]:
+        t += 1
+print(t)
+
 
 
 
@@ -62,18 +94,18 @@ s9 d9
 ['h3', 'c4']
 '''
 
-t = []
-while True:
-    n = input()
+# t = []
+# while True:
+#     n = input()
     
-    if n == "no":
-        break
+#     if n == "no":
+#         break
     
-    for i in range(len(t)):
-        if t[i][1] == n[1]:
-            print(t[i],n)
-            del t[i]
-            break
-    else:
-        t.append(n)
-print(t)
+#     for i in range(len(t)):
+#         if t[i][1] == n[1]:
+#             print(t[i],n)
+#             del t[i]
+#             break
+#     else:
+#         t.append(n)
+# print(t)
