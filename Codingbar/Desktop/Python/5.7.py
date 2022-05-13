@@ -1,4 +1,15 @@
 '''
+https://yuihuang.com/apcs/
+https://www.bilibili.com/
+
+
+https://codeforces.com/problemset?order=BY_RATING_ASC&tags=dp
+https://www.luogu.com.cn/
+https://leetcode-cn.com/problemset/all/?topicSlugs=dynamic-programming&page=1&sorting=W3sic29ydE9yZGVyIjoiQVNDRU5ESU5HIiwib3JkZXJCeSI6IkRJRkZJQ1VMVFkifV0%3D
+
+'''
+
+'''
 LCS
 Longest Common Subsequence
 
@@ -135,6 +146,47 @@ https://zerojudge.tw/ShowProblem?problemid=c463
 # dfs(root)
 # print(sum(dp))
 
+
+# n=int(input())
+# dic={}
+# b=[]
+# c=[]
+# d={}
+# ans=0
+# for i in range(n):
+#     c.append(i+1)
+
+# for i in range(n):
+#     a=list(map(int,input().split()))
+#     dic[i]=[]
+#     for j in range(1,a[0]+1):
+#         dic[i].append(a[j])
+# for i in dic:
+#     c=set(c)-set(dic[i])
+# def f(n):
+#     print(n)
+#     if dic[n]==[]:
+#         return 0
+#     else:
+#         for i in dic[n]:
+#             if i not in d:
+#                 d[i]=f(i)+1
+#             else:
+#                 if f(i)+1>d[i]:
+#                     d[i]=f(i)+1
+#     print(d)
+#     return d[n]
+        
+# for i in c:
+#     print(i)
+# f(list(c)[0])
+# for i in d:
+#     ans=ans+d[i]
+# print(ans)
+
+
+
+
 '''
 https://www.luogu.com.cn/problem/P1352
 
@@ -215,8 +267,32 @@ divide-and-conquer
 如何排序數列?
 小到大
 
-快速排序法
-核心: 小 | 大
+
+
+快速排序法 在分的時候就解決問題
+核心: 小 |     大   n
+    小      |       大
+  小 | 大        小 | 大 
+       d e f
+a b c 
+小 | 大
+a  c  b
+
+
+p
+5 3 7 8 2 9
+p i       j
+5 3 7 8 2 9
+
+p   i   j    
+5 3 7 8 2 9
+p     ij     
+5 3 2 8  7 9
+p         
+2 3 5 8  7 9
+小  |   大
+
+
 '''
 
 # def quicksort(i, j):
@@ -280,8 +356,9 @@ divide-and-conquer
 
 
 '''
+快速排序法
 合併排序法
-
+典型 合併的時候解決問題
 3 
 3 4 5 
 1 2 3 
@@ -291,40 +368,40 @@ divide-and-conquer
 1 1 
 '''
 
-def mergesort(i, j):
-    if i == j:
-        return i
-    else:
-        mid = (i + j) // 2
-        mergesort(i, mid)
-        mergesort(mid+1,j)
-    # print(i,j)
-    temp = []
-    mid = (i + j) // 2
-    s = i
-    e = j
-    j = mid + 1
-    while i <= mid or j <= e:
-        # print(i,j)
-        if (j > e or nums[i] <= nums[j]) and i <= mid:
-            temp.append(nums[i])
-            i += 1
-        else:
-            temp.append(nums[j])
-            j += 1
+# def mergesort(i, j):
+#     if i == j:
+#         return i
+#     else:
+#         mid = (i + j) // 2
+#         mergesort(i, mid)
+#         mergesort(mid+1,j)
+#     # print(i,j)
+#     temp = []
+#     mid = (i + j) // 2
+#     s = i
+#     e = j
+#     j = mid + 1
+#     while i <= mid or j <= e:
+#         # print(i,j)
+#         if (j > e or nums[i] <= nums[j]) and i <= mid:
+#             temp.append(nums[i])
+#             i += 1
+#         else:
+#             temp.append(nums[j])
+#             j += 1
 
-    # print(temp)
-    # print(nums)
-    # print(i,j)
-    nums[s:e+1] = temp
-    # print(nums)
-    return nums
+#     # print(temp)
+#     # print(nums)
+#     # print(i,j)
+#     nums[s:e+1] = temp
+#     # print(nums)
+#     return nums
 
-nums = [1,454,234,12,6,234,321456,65412,342]
-print(mergesort(0, len(nums)-1))
+# nums = [1,454,234,12,6,234,321456,65412,342]
+# print(mergesort(0, len(nums)-1))
 
 '''
-補充
+補充 未教
     差分
     需求 頻繁修改區間的值
 
