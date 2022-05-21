@@ -27,19 +27,19 @@ no
 
 
 '''
-c = []
-while True:
-    a = input("")
-    if a == "no":
-        break
-    else:
-        c.append(int(a))
-b = int(input())
-t = 0
-for i in range(len(c)):
-    if b == c[i]:
-        t += 1
-print(t)
+# c = []
+# while True:
+#     a = input("")
+#     if a == "no":
+#         break
+#     else:
+#         c.append(int(a))
+# b = int(input())
+# t = 0
+# for i in range(len(c)):
+#     if b == c[i]:
+#         t += 1
+# print(t)
 
 
 
@@ -68,16 +68,91 @@ print(t)
 輸入 1 + n 列，
 第一列輸入 n 
 接下來輸入n個數
+加到串列裡
 
 印出串列
-'''
+
+ex
+5
+1
+2
+3
+4
+5
+
+[1,2,3,4,5]
+
 
 '''
-重複輸入長度為2字串 英文配數字
-輸入no結束
+# n=int(input())
+# m=[]
+# for i in range(n+1):
+#     i=int(input())
+#     m.append(i)
+# print(m)
+
+
+
+'''
+重複輸入長度為2字串 英文配數字  a2 a6 a7
 若是字串的數字能被2整除就印出來
+輸入no結束
+
+
+ex.
+
+a2
+a6
+c7
+no
+
+a2
+a6
+
 
 '''
+
+# while True:
+#     n=input()
+#     if n == "no":
+#         break
+#     elif int(n[1])%2==0:
+#         print(n)
+# while True:
+#     g = input()
+#     if g == 'no':
+#         break
+#     if int(g[1]) % 2 == 0:
+#         print(g)
+
+'''
+a = ["a4","b3",c6]
+輸入一行字串 長度為2字串 英文配數字
+印出 數字一樣的字串
+
+ex
+x3
+
+x3 b3
+
+if a in b:
+        串列
+
+c5
+
+
+'''
+a = ["a4","b3",'c6']
+a[0][1]
+a[0] = "a4"
+a[1]
+b = "a4"
+b[1]
+n = input()
+for i in range(len(a)):
+    if int(n[2]) == int(a[2])
+    print(n,a)
+
 
 '''
 成雙成對
