@@ -168,3 +168,72 @@ False
 #     print(False)
 
 
+'''
+布林表 練習
+50
+2
+7
+9
+9
+40
+2
+30
+50
+no
+
+
+2 2
+7 1
+9 2
+30 1
+40 1
+50 2
+'''
+# matrix = [0]*10000
+# while True:
+#     n = input()
+
+#     if n == "no":
+#         break
+    
+#     matrix[int(n)] += 1
+
+
+# for i in range(10000):
+#     if matrix[i] > 0:
+#         print(i, matrix[i])
+
+
+'''
+速解
+ascii
+ord()   轉ascii
+chr()   轉文字
+
+英文拼字表
+
+
+1 xor 0 = 1
+0 xor 1 = 1
+1 xor 1 = 0
+0 xor 0 = 0
+
+
+1 ~ 26
+
+5
+abcde
+
+'''
+# string = input()
+# boolean_table = [False for i in range(26)]
+
+# for i in string:
+#     if boolean_table[ord(i) - 97] == False:
+#         boolean_table[ord(i) - 97] = True
+#     elif boolean_table[ord(i) - 97] == True:
+#         print(True)
+#         break
+# else:
+#     print(False)
+
