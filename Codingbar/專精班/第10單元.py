@@ -142,16 +142,16 @@ c5
 
 
 '''
-a = ["a4","b3",'c6']
-a[0][1]
-a[0] = "a4"
-a[1]
-b = "a4"
-b[1]
-n = input()
-for i in range(len(a)):
-    if int(n[2]) == int(a[2])
-    print(n,a)
+# a = ["a4","b3",'c6']
+# a[0][1]
+# a[0] = "a4"
+# a[1]
+# b = "a4"
+# b[1]
+# n = input()
+# for i in range(len(a)):
+#     if int(n[2]) == int(a[2])
+#     print(n,a)
 
 
 '''
@@ -184,3 +184,42 @@ s9 d9
 #     else:
 #         t.append(n)
 # print(t)
+
+
+# word="apple"
+# i=0
+# while i<len(word):
+#     print(word[i])
+
+
+'''
+
+輸入一個字串
+判斷有幾個母音
+aeiou
+輸出 幾個母音
+
+
+ex
+a p p p p a i o i a s d l e 
+
+2
+if a in b:
+'''
+
+# s = input()
+# c = 0
+
+# for i in s:
+#     if i in "aeiou":
+#         c += 1
+    # if i == "a" or "e" == i or "o" 
+
+# for i in range(len(s)): s[i]
+
+# n=input()   #1234
+#             #0123
+# # print(n[0])
+# for i in range(len(n)): #n[i]
+#     if n[i] == '4':
+#         print(4)
