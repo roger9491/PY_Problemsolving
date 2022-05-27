@@ -13,8 +13,7 @@ for i in range(k):
 移動 -> 放置炸彈 -> 檢查消失
 '''
 while flag.count(1) != 0:
-    temp1 = []   #炸彈消失暫存
-    temp2 = []  #放入炸彈
+
     for i in range(k):
         if flag[i]:
             x,y = matrix1[i][0],matrix1[i][1]

@@ -53,3 +53,46 @@ print(ans)
 
 
 #345 435 3354 | 12 32 123 934 
+
+def sortr(l,r):
+    global count
+    left=len(l)-1
+    right=len(r)-1
+    TheList=[]
+    while right>=0 and left>=0:
+        if l[left]>r[right]:
+            TheList=[l[left]]+TheList
+            left-=1
+            count+=(right+1)
+            #print(count," ",l," ",r," ",left," ",right+1)
+        elif l[left]<r[right]:
+            TheList=[r[right]]+TheList
+            right-=1
+        else:
+            TheList=[r[right]]+TheList
+            right-=1
+    #print(TheList)
+    if right==-1:
+        TheList=l[:left+1]+TheList
+    elif left==-1:
+        TheList=r[:right+1]+TheList
+    #print(TheList)
+    return TheList
+def mergesort(lis):
+    if len(lis)==1:
+        return lis
+    else:
+        left=lis[:len(lis)//2]
+        right=lis[len(lis)//2:]
+        left=mergesort(left)
+        right=mergesort(right)
+        final=sortr(left,right)
+        return final
+    
+#stack
+x=input()
+count=0
+inf=list(map(int,input().split()))
+
+mergesort(inf)
+print(count)
