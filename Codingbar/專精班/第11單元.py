@@ -131,6 +131,7 @@ False
 #                 print(False)
 #             else:
 #                 print(True)
+
 '''
 密碼強度檢驗
 
@@ -179,6 +180,14 @@ False
 #         print(False)
 # else:
 #     print(False)
+'''
+密碼須皆由 數字 或 字母 或 特殊符號 組成
+
+輸入字串
+'''
+
+
+
 
 
 '''
