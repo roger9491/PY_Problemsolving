@@ -259,3 +259,30 @@ abcde
 # else:
 #     print(False)
 
+
+
+# a = [1,2,3,4,12,5,23,12,3123,124]
+# t = 0
+# for i in range(len(a)):
+#     t += a[i]
+# print(t)
+
+
+# a = [1,2,3,4,12,5,23,12,3123,124]
+# #不要用max()
+# maxv = -10**9
+# for i in range(len(a)):
+#     if a[i] > maxv:
+#         maxv = a[i]
+
+
+# print(maxv)
+
+# a.sort()    #小~大
+# print(a)
+
+
+'''
+輸入兩行數字 
+輸出最大公因數
+'''
