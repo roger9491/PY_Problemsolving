@@ -1,9 +1,139 @@
+a = [1,2,3,4,5]
+
+print(a[0:4:2])
+print(a[4:0:1])
+'''
+間隔 > 0
+起點 < 末項
+
+a = [1,2,3,4,5,6,7,8,9]
+     0 1 2 3 4 5 6 7 8
+輸入 一行
+起點 末項 間隔
+
+實作 a[首項:末項:間隔] 功能
+a[1:5:1]
+不能用 a[首項:末項:間隔]
+輸出
+串列
+
+
+ex
+(1)
+1 5 1
+
+[23,-1,2,15]
+print(b[1:5:1])
+(2)
+1 7 2
+
+[23,2,]
+int()
+函式一定是接小括號()
+'''
+# b = [1,23,-1,2,15,23,45,32]
+
+# a = input()
+# a = a.split()
+# a = list(map(int,a))
+# print(a)
+# for i in a:
+#     d.append(int(i))
+# a = d
+# e = []
+# for i in range(a[0],a[1],a[2]):
+#     e.append(b[i])
+# print(e)
+    
 '''
 https://leetcode-cn.com/problems/reshape-the-matrix/
 複習 二維矩陣
 '''
 
 
+
+'''
+
+獲得 在串列裡這個值得索引值
+
+
+a = [23,1,2,3,6,1,56,8]
+
+輸入一個數字
+
+輸出 數字在a裡的索引值
+    如果不在a裡印出-1
+
+ex
+1.
+23
+
+0
+
+2.
+1
+
+1
+
+3.
+56
+
+6
+
+
+時間複雜度 ?
+n**2    n!
+
+2 3
+n**2  >  n!
+
+n >= 4
+n**2  <  n!
+
+
+不理會 常數次數
+只在意 變數次數
+
+為什麼要學會判斷時間複雜度?
+(1) 時間越短越好，能知道如何改善程式碼
+
+(2) 由時間複雜來判斷，寫出的程式碼有沒有符合出題人的規定
+    由時間複雜來判斷，出題人要考的演算法 和 資料結構
+
+EX. len(a) == 1000 => 1000*1000 => 10**6
+len(a) == 10000 => 10000*10000 => 10**8
+今天 oj 有時間上的規定， 原則上 c c++ : 1s， py : 3s
+c/c++/py : 10**6~7  基準判斷
+10**5 
+
+10**8
+情況壞
+(1) 你要找的資料剛好在最後一個
+(2) 你要找的資料不再串列
+why? 
+    因為你都要把串列裡的每個值都跑一遍
+所以你的時間就是根據你[串列的長度]所決定的
+                        n
+時間複雜度O(n)
+
+'''
+# a = [23,1,2,3,6,1,56,8] #O(1)
+# b = int(input())    #O(1)
+# for i in range( len(a) ):   #O(n) + O(n)
+#     if a[i] == b:   #O(1)
+#         print(i)    #O(1)
+#         break   #O(1)
+# else:
+#     print(-1)   #O(1)
+'''
+O(1) +　O(1)　＋　O(n) + O(n)*(O(1))
+O(n+n+2) = O(2n+2) ==> O(n)
+
+
+'''
+
+# a = [23,1,2,3,6,1,56,8]
+# print(a.index(1))
 '''
 實作 max() 變化版 
 
@@ -27,17 +157,16 @@ ex
 
 '''
 
-# a = list(map(int,input().split()))
-# count = 0
-# b = 0
-# for i in range(len(a)):
-#     if a[i]>count:
-#         count = a[i]
-#         b = i
-# print(count,b)
+a = list(map(int,input().split()))
+yee = -10000
+for i in range(len(a)):
+    if yee < a[i]:
+        yee = a[i]
+print(yee)
 
 
-
+a = [1,9,8,67,32 ]
+print(max(a))
 
 
 '''
@@ -123,18 +252,18 @@ for i in range(5):
 
 print(a)
 '''
-import random
-a = []
-for i in range(5):
-    a.append(random.randint(1,30))
-print(sorted(a))    #用sorted()來排序 跟 下面寫的程式碼 做比對
-for k in range(len(a)-1): #len(a) * (len(a) - 1)  O(n*(n-1)) => O(n**2)
-    for j in range(len(a)-1-k):
-        if a[j]>a[j+1]:
-            temp = a[j]
-            a[j] = a[j+1]
-            a[j+1]=temp
-print(a)
+# import random
+# a = []
+# for i in range(5):
+#     a.append(random.randint(1,30))
+# print(sorted(a))    #用sorted()來排序 跟 下面寫的程式碼 做比對
+# for k in range(len(a)-1): #len(a) * (len(a) - 1)  O(n*(n-1)) => O(n**2)
+#     for j in range(len(a)-1-k):
+#         if a[j]>a[j+1]:
+#             temp = a[j]
+#             a[j] = a[j+1]
+#             a[j+1]=temp
+# print(a)
 
 
 '''
@@ -208,9 +337,9 @@ YES
 #     elif c==a:
 #         print("YES")
 
-a = [2,3,4,5]
-a = a.sort()
-print(a)
+# a = [2,3,4,5]
+# a = a.sort()
+# print(a)
 
 
 
@@ -285,6 +414,67 @@ n*logn  < n*n
 
 '''
 
+<<<<<<< HEAD
+# a = list(map(int,input().split()))
+# b = []
+# e = []
+# ii =0
+# jj =0
+# g = False
+# f = 0
+# count = 10**9
+# dire = [[-1,0],[1,0],[0,-1],[0,1]]
+# for i in range(a[0]):
+#     c = list(map(int,input().split()))
+#     b.append(c)
+# d = [[0]*a[1] for i in range(a[0])]
+# for i in range(a[0]):
+#     for j in range(a[1]):
+#         if b[i][j]<count:
+#             count = b[i][j]
+#             x = i
+#             y = j
+# d[x][y]=1
+# while True:
+#     count = 10**9
+#     for k in range(len(dire)):
+#         now_i=x+dire[k][0]
+#         now_j=y+dire[k][1]
+#         if 0<=now_i<a[0] and 0<=now_j<a[1]:
+#             if b[now_i][now_j]<count and d[now_i][now_j]!=1:
+#                 g = True
+#                 count = b[now_i][now_j]
+#                 ii = now_i
+#                 jj = now_j
+
+#     if g==False:
+#         break 
+
+#     x = ii
+#     y = jj   
+#     d[x][y]=1
+#     g = False
+# for i in range(a[0]):
+#     for j in range(a[1]):
+#         if d[i][j]==1:
+#             f+=b[i][j]
+# print(f)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> 1df8540940941433d8272d553797fba1d9976652
 '''
 回家作業
 字母變大寫 字串.upper()
