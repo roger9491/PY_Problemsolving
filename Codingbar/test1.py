@@ -1,36 +1,94 @@
-mem = []
-for i in range(9):
-    mem.append(input().split()[1:])
+a = ["confidence intervals"
+     ,"statistical inference"
+     ,"inferential statistics"
+     ,"hypothesis"
+     ,"collecting data"
+     ,"the Central Limit Theorem"
+     ,"critical thinking"
+     ,"communication"
+     ,"computer package"
+     ,"a random variable"
+     ,"discrete random variable"
+     ,"continuous random variable"
+     ,"a chance event"
+     ,"make decisions"
+     ,"frequency"
+     ,"relative frequency"
+     ,"likelihood"
+     ,"estimate"
+     ,"predict"
+     ,"priori probability"
+     ,"historical data"
+     ,"probability distribution"
+     ,"Binomial distribution"
+     ,"Poisson distribution"
+     ,"Uniform distribution"
+     ,"Normal distribution"
+     ,"expected value"
+     ,"standard deviation"
+     ,"outcome"
+     ,"bell shaped"
+     ,"symmetry"
+     ,"the peak value"
+     ,"Single peak"
+     ,"the median"
+     ,"Bayes theorem"
+     ,"conditional probability"
+     ,"information"
+     ,"intersection"
+     ,"probability of defective"
+     ,"failure rate"
+     ,"the tendency"
+     ,"false positive"
+     ,"false negative"
+     ,"Nominal variable"
+     ,"Ordinal variable"
+     ,"Interval variable"
+     ,"Ratio variable"
+     ,"Observation"
+     ,"Percentage"
+     ,"unbiased sample"
+     ,"sampling error"
+     ,"simple random sampling"
+     ,"convenience sampling"
+     ,"systematic sampling"
+     ,"cluster sampling"
+     ,"stratified sampling"
+     ,"approximation"
+     ,"variation"
+     ,"extreme values"
+     ,"Pictograph"
+     ,"Bar chart"
+     ,"categorical data"
+     ,"numerical data"
+     ,"proportion"
+     ,"Dot plot"
+     ,"Stem-and-leaf plot"
+     ,"Scatter plot"
+     ,"Histogram"
+     ,"Line graph"
+     ,"Column"
+     ,"Row"
+     ,"Linear Regression"
+     ,"horizontal axis"
+     ,"vertical axis"
+     ,"independent variable"
+     ,"dependent variable"
+     ,"slope of the line"
+     ,"intercept"
+     ,"the coefficient of determination"
+     ,"population"
+     ,"population parameter"
+     ,"the best estimate"
+     ,"null hypothesis"
+     ,"alternative hypothesis"
+     ,"significance level"
+     ,"Statistical Significance preference"
+     ,"chi-square test"
+     ,"paired samples"]
 
-base = [0,0,0,0,0]
-
-point = 0
-def run(n):
-    global point
-    for i in range(n):
-        base[1],base[2],base[3],base[4] = base[0],base[1],base[2],base[3]
-        base[0] = 0
-        if base[4]:
-            point += 1;base[4] = 0
-
-def main():
-    out = int(input())
-    outcount = 0
-    for j in range(5):
-        for i in range(9):
-            s = mem[i][j]
-            base[0] = 1
-            if s[1] == 'O':
-                outcount += 1
-                if outcount == out: return print(point)
-                if outcount % 3 == 0:
-                    # base = [0,0,0,0,0]
-                    
-            elif s[1] == 'B':
-                run(int(s[0]))
-            else:
-                run(4)
-
-main()
-
-
+for i in range(len(a)):
+    a[i] = a[i].lower()
+a.sort()
+for i in a:
+    print(i)
