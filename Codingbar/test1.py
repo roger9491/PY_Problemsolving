@@ -1,94 +1,25 @@
-a = ["confidence intervals"
-     ,"statistical inference"
-     ,"inferential statistics"
-     ,"hypothesis"
-     ,"collecting data"
-     ,"the Central Limit Theorem"
-     ,"critical thinking"
-     ,"communication"
-     ,"computer package"
-     ,"a random variable"
-     ,"discrete random variable"
-     ,"continuous random variable"
-     ,"a chance event"
-     ,"make decisions"
-     ,"frequency"
-     ,"relative frequency"
-     ,"likelihood"
-     ,"estimate"
-     ,"predict"
-     ,"priori probability"
-     ,"historical data"
-     ,"probability distribution"
-     ,"Binomial distribution"
-     ,"Poisson distribution"
-     ,"Uniform distribution"
-     ,"Normal distribution"
-     ,"expected value"
-     ,"standard deviation"
-     ,"outcome"
-     ,"bell shaped"
-     ,"symmetry"
-     ,"the peak value"
-     ,"Single peak"
-     ,"the median"
-     ,"Bayes theorem"
-     ,"conditional probability"
-     ,"information"
-     ,"intersection"
-     ,"probability of defective"
-     ,"failure rate"
-     ,"the tendency"
-     ,"false positive"
-     ,"false negative"
-     ,"Nominal variable"
-     ,"Ordinal variable"
-     ,"Interval variable"
-     ,"Ratio variable"
-     ,"Observation"
-     ,"Percentage"
-     ,"unbiased sample"
-     ,"sampling error"
-     ,"simple random sampling"
-     ,"convenience sampling"
-     ,"systematic sampling"
-     ,"cluster sampling"
-     ,"stratified sampling"
-     ,"approximation"
-     ,"variation"
-     ,"extreme values"
-     ,"Pictograph"
-     ,"Bar chart"
-     ,"categorical data"
-     ,"numerical data"
-     ,"proportion"
-     ,"Dot plot"
-     ,"Stem-and-leaf plot"
-     ,"Scatter plot"
-     ,"Histogram"
-     ,"Line graph"
-     ,"Column"
-     ,"Row"
-     ,"Linear Regression"
-     ,"horizontal axis"
-     ,"vertical axis"
-     ,"independent variable"
-     ,"dependent variable"
-     ,"slope of the line"
-     ,"intercept"
-     ,"the coefficient of determination"
-     ,"population"
-     ,"population parameter"
-     ,"the best estimate"
-     ,"null hypothesis"
-     ,"alternative hypothesis"
-     ,"significance level"
-     ,"Statistical Significance preference"
-     ,"chi-square test"
-     ,"paired samples"]
 
-for i in range(len(a)):
-    a[i] = a[i].lower()
-a.sort()
+=======
+a = '''print()
+ex.
+		print(1)
+		print(“hello”)
+		
+		a = 5
+		print(a)
+		
+	需要印出多個值可以用 , 分開， 會占用一個空格
+	ex.
+		a = 5
+		b = 3
+		print(a,b)'''
+ans = ""
 for i in a:
-    print(i)
+    if i == "\t":
+        ans += "\\t"
+    elif i == "\n":
+        ans += "\\n"
+    else:
+        ans += i
+print(ans)
+>>>>>>> 018deae5ad581007c8aac0e2e92f5076fd89fe9c
