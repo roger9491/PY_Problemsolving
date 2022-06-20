@@ -92,3 +92,4 @@ https://zerojudge.tw/ShowProblem?problemid=f581
 #         now = j + 1
 #     now = ((now-1)%n+1)
 # print(now-1)
+
