@@ -1,4 +1,90 @@
 '''
+差分作業
+
+https://leetcode.cn/problems/car-pooling/submissions/
+
+'''
+# All = list(map(int,input().split()))
+# All_cool = [All[0]]
+# for i in range(len(All) - 1):
+#     All_cool.append(All[i+1]-All[i])
+
+
+# n = int(input())
+# for i in range(n):
+#     a = list(map(int,input().split()))
+#     c = a[0]
+#     s = a[1]
+#     e = a[2]
+#     All_cool[s] = All_cool[s] + c
+#     All_cool[e+1] = All_cool[e+1] - c
+# All_after = []
+# f = 0
+# for i in range(len(All_cool)):
+#     f = f + All_cool[i]
+#     All_after.append(f)
+# print(All_after)
+
+
+'''
+如何求 字元的ascii
+ord()
+'''
+# if ord('A') <= c <= ord('Z'):
+#     print("大寫")
+# k = int(input())
+# All = input()
+# All_num = []
+# for i in range(len(All)):
+#     if All[i] in "QWERTYUIOPASDFGHJKLZXCVBNM":
+#         All_num.append(1)
+#     else:
+#         All_num.append(0)
+
+
+
+
+# a = 0
+# good_All = []
+# small_All = []
+# for i in range(a,len(All)): #0 ~ lne(all)
+#     count = k
+#     print(a)
+#     for j in range(i,len(All)-1):
+#         if count == 0 and All_num[j] != All_num[j+1]:
+#             count = k
+#             small_All.append(All[j+1])
+#             a = a + 1
+#         elif 0<count<=k and All_num[j] == All_num[j+1]:
+#             count = count - 1
+#             small_All.append(All[j+1])
+#             a = a + 1
+#         elif count == 0 and All_num[j] == All_num[j+1]:
+#             a = a + 1
+#             good_All.append(small_All)
+#             small_All = []
+#             break
+#         elif 0<count<=k and All_num[j] != All_num[j+1]:
+#             a = a + 1
+#             good_All.append(small_All)
+#             small_All = []
+#             break
+# print(good_All)
+
+'''
+0   1   0   1   0   2   1
+                        5
+
+0   1   -1  1   -1  2   -1  
+                        3
+0   1   0   1   0   2   5   
+
+
+4 6 6
+'''
+
+
+'''
 set() : 集合 不會有重複資料
 
 建立 
@@ -10,6 +96,9 @@ s.add()
 刪除
 s.remove()
 
+迭代集合
+for i in set():
+
 交集
 a = set()
 b = set()
@@ -20,7 +109,22 @@ a = set()
 b = set()
 c = a | b
 
+
+作業: 決鬥吧遊戲Boy
 '''
+
+# l = {1,2,2,3}
+# l = set()
+
+# l.add(1)
+# l.remove(1)
+
+# a = [1,2,2,3]
+# a = set(a)
+# a = list(a)
+# print(a)
+
+# print(l)
 # l = [1,"2","1","1",2,3]
 
 # l2 = [1,2,3]
@@ -31,22 +135,8 @@ c = a | b
 # s = {}
 # print(type(s))
 
-'''
-
-字典
 
 
-dic = {鍵值:值}
-
-如何取值?
-    跟串列幾乎一樣
-    鍵值取值
-    <鍵值必須唯一>
-    時間複雜度 O(1)
-    為什麼?
-
-
-'''
 
 '''
 
@@ -61,7 +151,10 @@ dic = {鍵值:值}
     <鍵值必須唯一>
     時間複雜度 O(1)
     為什麼?
-    
+
+取值
+    dic["黨靖騰"]   O(1)
+
 新增資料
     ex  "黨靖騰":175
     dic["黨靖騰"] = 175     (鍵值不存在)
@@ -78,8 +171,28 @@ dic = {鍵值:值}
     資料 in 串列    #O(n)
 
 如何迭代字典?
-    for i in dic:
+    for i in dic:   #迭代出來的是鍵值
 '''
+
+
+# a = input()
+
+# dic[a] = 1
+
+# dic[a] += 1
+# dic = {"林政叡":190}
+# # dic["林政叡"] = 200
+# dic["黨靖騰"] = 175
+# if "林政叡" in dic:
+#     print("存在")
+
+# for i in dic:
+#     print(i)
+
+# print(dic)
+
+
+
 # dic = {"謝詠宸":153, "莊心睿":175 ,"李博凱":180,"謝詠宸":165 }
 # dic["黨靖騰"] = 175
 # dic["黨靖騰"] = 180
@@ -207,6 +320,20 @@ for i in dict: 迭代鍵值
 n
 O(n)
 '''
+
+# num = []
+# while True:
+#     a = input()
+#     if a == "no":
+#         break
+#     num.append(a)
+
+# # num: 長度為n  
+# for i in num:   #O(n)
+#     if num.count(i)  > len(num)/2:
+#         print(i)
+#         break
+
 # a = []
 # dic = {}
 # ans = []
@@ -296,6 +423,18 @@ https://leetcode-cn.com/problems/intersection-of-two-arrays/
 #         ans.append(i)
 # print(ans)
 
+# nums1 = [1,2,2,1]
+# nums2 = [2,2]
+# dic = {}
+# for i in nums1:
+#     dic[i] = 1
+
+# ans = []
+# for i in nums2:
+#     if i in dic:
+#         ans.append(i)
+
+# print(ans)
 
 
 
@@ -381,121 +520,3 @@ P1102 A-B 数对
 # print(ans)
 
 
-'''
-堆疊 
-
-串列
-push
-    a.append()
-
-pop
-    del a[-1]
-    a.pop() 刪除 + 取值
-
-
-c/c++ 陣列 
-先宣告陣列大小
-
-(([])([]))
-
-(([)
-
-配對的時候發生?
-
-'''
-
-# a=input()
-# b=[]
-# c=[]
-# for i in a:
-#     if i in '()/{/}[]':
-#         b.append(i)
-# print(b)
-# for j in range(len(b)):
-#     if b==[]:
-#         break
-#     for i in range(len(b)):
-#         if i==len(b)-1:
-#             break
-#         if b[i]+b[i+1] =="()"or b[i]+b[i+1] =="{}"or b[i]+b[i+1] =="[]":
-#             del b[i]
-#             del b[i+1]
-#             break
-#     print(j,b)
-# if b==[]:
-#     print('True')
-# else:
-#     print("False")
-
-'''
-監聽
-
-'''
-# queue = []
-
-# while True:
-#     n = input()
-#     if n == "no":
-#         break
-
-#     n = int(n)
-#     queue.append(n)
-
-#     while queue[0] < queue[-1] - 86400:
-#         del queue[0]
-
-#     print(len(queue))
-
-
-def suml(a):
-    total = 0
-    for i in a:
-        total += i
-    return total
-a = [[1,2,3],[2,3,4],[4,5,6,4,5,1],[1,2]]
-a.sort(key=suml)
-print(a)
-
-'''
-from functools import cmp_to_key
-
-'''
-
-#  from functools import cmp_to_key
-# def f(a,b):
-#     if int(a+b) < int(b+a):
-#         return -1   #交換 a 和 b
-#     else:
-#         return 1
-
-# n = int(input())
-
-# t = []
-# for i in range(n):
-#     num = input()
-#     t.append(num)
-
-# # for i in range(n):
-# #     for j in range(n-1-i):
-# #         if int(t[j]+t[j+1]) < int(t[j+1] + t[j]):
-# #             temp = t[j]
-# #             t[j] = t[j+1]
-# #             t[j+1] = temp
-# t.sort(reverse=True,key=cmp_to_key(f))
-
-# # 5 5111
-# # 5111 521
-# # 5215111
-# print("".join(t))
-
-'''
-
-作業練習
-
-函數運算式求值
-https://zerojudge.tw/ShowProblem?problemid=f640
-
-砍樹
-https://judge.tcirc.tw/ShowProblem?problemid=d030
-
-'''
