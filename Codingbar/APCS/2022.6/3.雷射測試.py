@@ -1,74 +1,77 @@
-def bs(f, target):
+
+def bs(target, a):
     global n
-    if f == 1 or f == 2:
-        a = matrix_x.copy()
-    else:
-        a = matrix_y.copy()
-    print(a)
     i = 0
-    j = n-1
+    j = len(a) - 1
+    index = -1
     while i <= j:
         mid = (i + j) // 2
+        # print("mid",mid)
         if a[mid][0] == target:
-            break
+            return mid
         elif a[mid][0] > target:
             j = mid - 1
         else:
             i = mid + 1
-
     return -1
+
 
 n = int(input())
 
-matrix_x = []
-matrix_y = []
+matrix_x = {0:[[0,0]]}
+matrix_y = {0:[[0,0]]}
 for i in range(n):
     x, y, t = map(int,input().split())
-    matrix_x.append([y,x,t])
-    matrix_y.append([x,y,t])
-matrix_x.append([0,0])
-matrix_y.append([0,0])
-matrix_x.sort()
-matrix_y.sort()
-t = [matrix_x, matrix_y]
-flag = 1    #1右 2左 3上 4下
-xy = 0
-cur = [0,0] 
+    if y in matrix_x:
+        matrix_x[y].append([x,t])
+    else:
+        matrix_x[y] = [[x,t]]
+    if x in matrix_y:
+        matrix_y[x].append([y,t])
+    else:
+        matrix_y[x] = [[y,t]]
+for i in matrix_x:
+    # print(matrix_x[i])
+    matrix_x[i].sort()
+for i in matrix_y: matrix_y[i].sort()
+
+flag = 0    #0右 1左 2上 3下
+x = 0
+y = 0
 ans = 0
-flag_matrix = [[3,4,1,2],[4,3,2,1]]
+flag_matrix = [[2,3,0,1],[3,2,1,0]]
 '''
-    1   2   3   4
-0   3   4   1   2
-1   4   3   2   1
+    0   1   2   3
+0   2   3   0   1   /
+1   3   2   1   0   \\
 
 '''
 while True:
-    if flag == 1:
-        offset = 1
-        target = cur[0]
-        xy = 0
-    elif flag  == 2:
-        offset = -1
-        target = cur[0]
-        xy = 0
+    # print("cur flag",x,y,flag)
+    if flag == 0:
+        index = bs(x, matrix_x[y])  
+        if index + 1 == len(matrix_x[y]) or index == -1: break
+        tmp = matrix_x[y][index+1]
+        x = tmp[0]
+        flag = flag_matrix[tmp[1]][flag]
+    elif flag == 1:
+        index = bs(x, matrix_x[y])  
+        if index - 1 < 0 or index == -1: break
+        tmp = matrix_x[y][index-1]
+        x = tmp[0]
+        flag = flag_matrix[tmp[1]][flag]
+    elif flag == 2:
+        index = bs(y, matrix_y[x])  
+        if index + 1 == len(matrix_y[x]) or index == -1: break
+        tmp = matrix_y[x][index+1]
+        y = tmp[0]
+        flag = flag_matrix[tmp[1]][flag]
     elif flag == 3:
-        offset = -1
-        target = cur[1]
-        xy = 1
-    else:
-        offset = 1
-        target = cur[1]
-        xy = 1
-    print(flag, target, cur)
-    c = bs(flag, target)
-    print(c)
-    if c == -1:
-        break
-    else:
-        if target == t[xy][c+offset][0]:
-            ans += 1
-            cur = t[xy][c+offset][:]
-            flag = flag_matrix[t[xy][c+offset][2]][flag]
-        else:
-            break
+        index = bs(y, matrix_y[x])
+ 
+        if index - 1 < 0 or index == -1: break
+        tmp = matrix_y[x][index-1]
+        y = tmp[0]
+        flag = flag_matrix[tmp[1]][flag]
+    ans += 1
 print(ans)
