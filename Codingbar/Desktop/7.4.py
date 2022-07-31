@@ -1,3 +1,4 @@
+
 '''
 堆疊 
 
@@ -17,6 +18,9 @@ c/c++ 陣列
 
 (([)
 
+
+()()()
+(([)()])
 配對的時候發生?
 
 '''
@@ -64,14 +68,25 @@ c/c++ 陣列
 #     print(len(queue))
 
 
-def suml(a):
-    total = 0
-    for i in a:
-        total += i
-    return total
-a = [[1,2,3],[2,3,4],[4,5,6,4,5,1],[1,2]]
-a.sort(key=suml)
-print(a)
+# def suml(a):
+#     total = 0
+#     for i in a:
+#         total += i
+#     return total
+# a = [[1,2,3],[2,3,4],[4,5,6,4,5,1],[1,2]]
+# a.sort(key=suml)
+# print(a)
+
+'''
+貪心演算法 動態規劃 分治法
+
+
+
+
+
+'''
+
+
 
 '''
 from functools import cmp_to_key
@@ -107,12 +122,34 @@ from functools import cmp_to_key
 
 '''
 
+
 作業練習
 
+堆疊
 函數運算式求值
 https://zerojudge.tw/ShowProblem?problemid=f640
 
-砍樹
+貪心
+砍樹 (堆疊)
 https://judge.tcirc.tw/ShowProblem?problemid=d030
 
+https://codeforces.com/problemset/problem/492/C
+
+物品堆疊
+https://zerojudge.tw/ShowProblem?problemid=c471
+
+
+基地台 二分搜尋
+系統裡面 考試與模擬練習
+
+B. WeirdSort
+泡沫排序思維實戰
+https://codeforces.com/problemset/problem/1311/B
+
+題目翻譯
+https://www.luogu.com.cn/problem/CF1311B
+
+
 '''
+
+
