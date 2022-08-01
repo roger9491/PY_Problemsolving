@@ -1,0 +1,928 @@
+[33mcommit 60d2974828930f48d804a1a9165750ffab2479cd[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mmaster/master[m[33m)[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Jul 23 17:41:36 2022 +0800
+
+            modified:   Codingbar/Desktop/7.1.py
+            new file:   Codingbar/Desktop/7.11.py
+            new file:   Codingbar/Desktop/7.16.py
+            new file:   Codingbar/Desktop/7.18.py
+            new file:   Codingbar/Desktop/7.23.py
+            modified:   Codingbar/Desktop/7.4.py
+            new file:   Codingbar/Desktop/7.9.py
+
+[33mcommit 7d128937c1713b1fcc4bb867c8282ef3d0871bce[m
+Merge: a4862f0 c37680e
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Jul 2 13:22:02 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit a4862f04208c8c50722b8611e3cc7f2f39e19095[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Jul 2 13:21:56 2022 +0800
+
+    master
+
+[33mcommit c37680e50edb45e47bf6e25b3485862407b8e8ce[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Jul 2 13:18:57 2022 +0800
+
+    master
+
+[33mcommit a11dd80018ff26600c422fb3d1d378e3ea94c7ee[m
+Merge: 97a69ee c79cf07
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Jun 27 21:05:17 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 97a69ee942c6e6c670754b2b30f6b1776d53ac19[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Jun 27 21:05:14 2022 +0800
+
+    master
+
+[33mcommit c79cf07573ca18a5b3495fb10f59aa11bde73049[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon Jun 27 17:39:47 2022 +0800
+
+    master
+
+[33mcommit c7aadec4abce7fa501c12500f003d340d2064382[m
+Merge: 88b0af3 3ba4c10
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Jun 27 17:06:48 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 88b0af3c51c4d0d74dc2d2a43786e38dde357186[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Jun 27 17:06:42 2022 +0800
+
+    master
+
+[33mcommit 3ba4c10fc6d9be90cbe63dab383760b5eaa0b3ff[m
+Merge: 6a813af 549f841
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon Jun 27 17:05:54 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 6a813af053cb711c7f69b9c95cf3ecbbce415d98[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon Jun 27 17:05:51 2022 +0800
+
+    master
+
+[33mcommit 549f84102fc2cb4ec02c33daa6c03a7097629a05[m
+Merge: 1ff352c 528c9be
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Jun 20 19:08:00 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 1ff352c55f8632bedc83462967ee41a724ec18c5[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Jun 20 19:07:39 2022 +0800
+
+    master
+
+[33mcommit 528c9be315fc0b6768d6795b416e956457f6f6f1[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon Jun 20 14:28:10 2022 +0800
+
+    master
+
+[33mcommit 0a9f07406f7b0480c478a3dfb07eff05faa50961[m
+Merge: 125540f 018deae
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Jun 18 13:28:14 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 125540f6babefc0f0aadfaafa8dd1b963cba92c8[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Jun 18 13:27:39 2022 +0800
+
+    master
+
+[33mcommit 018deae5ad581007c8aac0e2e92f5076fd89fe9c[m
+Merge: d20b7af fe976bd
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Jun 18 13:24:34 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit d20b7afcf8a9a1ab7e63e19ce088866799fe531a[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Jun 18 13:24:29 2022 +0800
+
+    master
+
+[33mcommit fe976bdee903fb64e53920ebc7c09c5e7a19e028[m
+Merge: dfe66eb 1df8540
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Jun 13 19:14:43 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit dfe66ebd66bc76b0f67d1b98878b74744a594530[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Jun 13 19:14:27 2022 +0800
+
+    master
+
+[33mcommit 1df8540940941433d8272d553797fba1d9976652[m
+Merge: 39935ba d33efac
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon Jun 13 17:12:14 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 39935ba5e9d4e9932e2d37cbdd00baf572c5de1a[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon Jun 13 17:12:11 2022 +0800
+
+    master
+
+[33mcommit d33efac6a29b8d650b32b3e52e906c88dd7a1992[m
+Merge: 5e2dd5c 9f1b758
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Jun 6 18:41:54 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 5e2dd5c2ea4e0556ed91675faf7d5f8873bcf219[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Jun 6 18:41:49 2022 +0800
+
+    master
+
+[33mcommit 9f1b758e5d9130212f974170da7f0ceb78f65271[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon Jun 6 18:40:49 2022 +0800
+
+    master
+
+[33mcommit 3981cbffcb321807064e28d10169eee040817fe8[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat May 28 12:58:46 2022 +0800
+
+    master
+
+[33mcommit 9c82733f96b4cbe079ec0a8b43a38a4171275d28[m
+Merge: 5370d6d 17c9844
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Fri May 27 22:30:23 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 5370d6d23d0e7962f7e400bd1be19354f96027b6[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Fri May 27 22:30:19 2022 +0800
+
+    master
+
+[33mcommit 17c9844871ca151e40ed0469cb2fdff9a22ee14a[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Fri May 27 22:30:04 2022 +0800
+
+    master
+
+[33mcommit 8f6d62c3e40ea75f3da91038f3039212d4e00d51[m
+Merge: a877dd5 7c80f6e
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat May 21 13:42:00 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit a877dd5fea31eb5c282d441f6b91c0172e324aca[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat May 21 13:41:56 2022 +0800
+
+    master
+
+[33mcommit 7c80f6e3903bc3c5df42894cbc920d5bfc0dfe72[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat May 21 13:27:03 2022 +0800
+
+    master
+
+[33mcommit 11ca10906e39d12dd0a35b1ff82ba3b8ec68161a[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat May 14 13:27:27 2022 +0800
+
+    master
+
+[33mcommit 9901bcfd1e3c44b9a58c0b18c1b417f420c001e9[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Fri May 13 20:09:41 2022 +0800
+
+    master
+
+[33mcommit d0d8647cb5eb9f40b21ebb7b0792b0d96d7910b2[m
+Merge: 929a43a 578a181
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun May 8 18:28:43 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 929a43a2759894a59d469625d3ba78cc43e2aa05[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun May 8 18:28:37 2022 +0800
+
+    master
+
+[33mcommit 578a18121caa5705f854488b58913503a0b28460[m
+Merge: c6683a6 286d53d
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat May 7 21:09:31 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit c6683a6d2db700d9bb6bdb46caf8722a7f976edd[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat May 7 21:09:27 2022 +0800
+
+    master
+
+[33mcommit 286d53dbb54b4b4dd389d6ea6ca4fc5dbe34f3ec[m
+Merge: 30cb44c 3a292b6
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat May 7 13:16:49 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 30cb44c41e0572196b48ac30827ede298b528635[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat May 7 13:16:39 2022 +0800
+
+    master
+
+[33mcommit 3a292b66a86330ce06fe1269254e8fcb3e26fcb3[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat May 7 13:13:33 2022 +0800
+
+    master
+
+[33mcommit accff523395f8dd6a502e06fb56a74fe6048507d[m
+Merge: f1d8541 587dea9
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon May 2 14:34:06 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit f1d8541fd1fdda32cd635230ef6f3da217d9b2f1[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon May 2 14:34:02 2022 +0800
+
+    master
+
+[33mcommit 587dea9254c1f74e8f58bf1f7a246ee3a2e37a42[m
+Merge: 0bdc560 5cd5d1a
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun May 1 18:02:08 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 0bdc560c18440951d6edb7efa36b5a81a225b62a[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun May 1 18:02:05 2022 +0800
+
+    master
+
+[33mcommit 5cd5d1a39278b5ea3a1520487cde5291e345e7ab[m
+Merge: ab483ad 73807d1
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun May 1 17:56:36 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit ab483add54a66891fa78df6cc0df63aa4f3c74d2[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun May 1 17:56:32 2022 +0800
+
+    master
+
+[33mcommit 73807d1adcd6708aeb3ff2899bb1ec9342a22041[m
+Merge: bbf08f6 53ad3bf
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Apr 30 13:40:31 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit bbf08f60c3fe0c30e5c7ebdfe78616ec7d01260e[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Apr 30 13:40:27 2022 +0800
+
+    master
+
+[33mcommit 53ad3bf04b7db5142b98bec649de470a05003e5d[m
+Merge: 7280d50 57fc174
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Apr 30 13:40:03 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 7280d50a7c512f3bed0c4d2f01a174ab9b3b7bf5[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Apr 30 13:39:59 2022 +0800
+
+    master
+
+[33mcommit 57fc174c90dabe972f13328bc5bf083f8199ecd9[m
+Merge: e6eaeca 79a2467
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Apr 17 08:31:50 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit e6eaeca2178bd0f26609d38ccd8177a564ee28fa[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Apr 17 08:31:46 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 79a2467879415da7c428d711e591ff1eb6741838[m
+Merge: e5b86ad 972b24e
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Apr 17 08:26:20 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit e5b86ad70381fe13c7b90c67ba61ff41f138d8af[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Apr 17 08:26:16 2022 +0800
+
+    master
+
+[33mcommit 972b24e1d4a28b85cdb6a04077abee644fce1939[m
+Merge: 3706924 5f05086
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Apr 10 09:08:56 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 3706924fdb7262415cdf5632bce75489f7322a30[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Apr 10 09:08:30 2022 +0800
+
+    master
+
+[33mcommit 5f05086167b279c76e43b023628e5ca2634d69cd[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Apr 10 08:28:22 2022 +0800
+
+    master
+
+[33mcommit 41ce86bb40caa4b85bc0d4642615d486b159d2a5[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Mar 27 01:03:19 2022 +0800
+
+    master
+
+[33mcommit cf8dd7b8279b24efce509b6cd04b902346c04508[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Mar 26 22:39:49 2022 +0800
+
+    master
+
+[33mcommit 554b7c900956bd57e3887cede11f1af7379a7d19[m
+Merge: 81206d3 e52fb01
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Mar 26 15:29:59 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 81206d3ae428cd4fddc459e19f2cd8f5ac26d3c6[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Mar 26 15:28:49 2022 +0800
+
+    master
+
+[33mcommit e52fb01cdf1d5075869517b77bc08be4ba20c290[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Mar 26 15:28:28 2022 +0800
+
+    master
+
+[33mcommit 8c6d6ffa6816eccd84ebd2f40cdc6699f94d6c00[m
+Merge: 492aea5 71b41c0
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Mar 20 08:24:26 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 492aea5d38643131b8bac3787caf36fd3e8e43e9[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Mar 20 08:24:22 2022 +0800
+
+    master
+
+[33mcommit 71b41c01bb40a259eb0318258292a47214efc80a[m
+Merge: 3c838e4 a8fbf00
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Mar 19 22:57:51 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 3c838e4a5fd1cd5d39106a9b245f82a1c8ed0ed8[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Mar 19 22:57:47 2022 +0800
+
+    master
+
+[33mcommit a8fbf008db33663ab291b3372c3bc48e6f0c67bb[m
+Merge: 95ab542 9af0938
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Mar 13 08:26:52 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 95ab542064562c1d3b1f43b378256f5724eae7dd[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Mar 13 08:26:49 2022 +0800
+
+    master
+
+[33mcommit 9af0938b694428f1ae94cfcd2ca09022aece51cf[m
+Merge: dd30267 7664614
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Mar 13 08:17:16 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit dd30267d0a1e929a6e47618444fa8a75b1592ae5[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Mar 13 08:17:10 2022 +0800
+
+    master
+
+[33mcommit 76646141d5315537b80957c58f0208ca72037033[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Mar 7 21:11:40 2022 +0800
+
+    master
+
+[33mcommit 3f6974672dcde784ceba431d97614e367fc2f43f[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Mar 7 21:10:26 2022 +0800
+
+    master
+
+[33mcommit 932205d077ddb6fda90759075969f85049df2fd4[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Mar 6 01:45:30 2022 +0800
+
+    master
+
+[33mcommit 883a62b87ae9e6ef96bf88d59c0800727a1181ba[m
+Merge: 0273b78 876bcac
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Mar 5 23:00:37 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 0273b789f081361a008a33c62479899e9ef6d3b0[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Mar 5 23:00:13 2022 +0800
+
+    master
+
+[33mcommit 876bcac0f58d98e43c99edcf7dc5699a36d43656[m
+Merge: f157b3d e5fb086
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Mar 5 22:59:52 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit f157b3d20e1a463f69c96447930a93c19a40508b[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Mar 5 22:59:48 2022 +0800
+
+    master
+
+[33mcommit e5fb086f7ee310d20d8125102336714aa2b52065[m
+Merge: 3c36374 5198bc0
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Fri Feb 25 21:02:32 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 3c36374c0f1b79aeb544e74c64ce3e2981a748eb[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Fri Feb 25 21:00:33 2022 +0800
+
+    master
+
+[33mcommit 5198bc0ba35a8acc1f224f35177f931d0b0bf00e[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Fri Feb 25 20:59:59 2022 +0800
+
+    master
+
+[33mcommit e2ba1c7f8ce6cd8ef702a8a75c0403d5a2ce8988[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Feb 20 08:59:53 2022 +0800
+
+    master
+
+[33mcommit f4c22a1d1b1a66179687967b9220055bd6e93fc8[m
+Merge: b736fdb ba3f033
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Feb 20 08:31:43 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit b736fdb50b2c59c9a40a7d1b421e3644eff04340[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Feb 20 08:31:38 2022 +0800
+
+    master
+
+[33mcommit ba3f033c5f90015e20070a5aaccfb51b43d5d10f[m
+Merge: 37c31a2 c265e54
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Feb 20 03:30:02 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 37c31a2998c70c07d95bc3432dbb55d517bf8858[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Feb 20 03:29:54 2022 +0800
+
+    master
+
+[33mcommit c265e54db221ee012778071e019a3f2441b71026[m
+Merge: f34bb49 a1188be
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Feb 13 08:29:42 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit f34bb49529fa3860c186be8505e8b82606c7e44b[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Feb 13 08:29:33 2022 +0800
+
+    master
+
+[33mcommit a1188be7b54efbe1d4434fcf0e41e6a4820e612e[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Feb 13 08:23:11 2022 +0800
+
+    master
+
+[33mcommit 3dbd1356a2544ad262bb6767d9d8da65de08bd61[m
+Merge: 1e63454 264ee2f
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Jan 30 17:37:04 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 1e634544e3c108ed01895b26aeda6350a8bf2a0f[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Jan 30 17:37:00 2022 +0800
+
+    master
+
+[33mcommit 264ee2fb39255b00aa82ca1f25961316bd50104a[m
+Merge: a703657 5975f12
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Jan 30 17:17:45 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit a70365776c86c7392068bcefd02e5f77e79dc250[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Jan 30 17:17:42 2022 +0800
+
+    master
+
+[33mcommit 5975f12452f79903e03b2231696c366f3d47477e[m
+Merge: e7a3fe5 c648ede
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Jan 23 08:50:58 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit e7a3fe58aa82d411adb7f3ebf3867089161d4e62[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Jan 23 08:50:54 2022 +0800
+
+    master
+
+[33mcommit c648edecf5cea39a778f929c1a4f92f1ddedf391[m
+Merge: b8b0f43 a163a56
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Jan 23 08:27:13 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit b8b0f43cc98a32f146e30327d211a1fb93c0da9b[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sun Jan 23 08:27:07 2022 +0800
+
+    master
+
+[33mcommit a163a56979963e3cd9a10bb1f678ec95bdb51afb[m
+Merge: 2ab0b70 672eb79
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Jan 16 08:34:13 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 2ab0b70e17fea8f0c28730c59b11df603a069ba7[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Jan 16 08:34:09 2022 +0800
+
+    master
+
+[33mcommit 672eb79342b372db1dd37812dcdc3c02f6a712b3[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Jan 15 23:25:16 2022 +0800
+
+    master
+
+[33mcommit 1b47cfe43e28586004cdeafe141b62240b9be4b9[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Jan 9 22:09:37 2022 +0800
+
+    master
+
+[33mcommit 00e202c88d93664d63840bfb6ccae9158df833d2[m
+Merge: 3a79ed9 f4fecdc
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Jan 9 18:01:49 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 3a79ed9749608e2646f7ae3e53c055d28e5886c1[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Jan 9 18:01:46 2022 +0800
+
+    master
+
+[33mcommit f4fecdc718b2c899599f5c4b86649bcd3a5b77d5[m
+Merge: 731578c 6e1f6ca
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Jan 8 18:00:08 2022 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 731578cf3550f18a5a8ebebd64564e3789d5a393[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Jan 8 18:00:05 2022 +0800
+
+    master
+
+[33mcommit 6e1f6caa5d23c8bf2d47c26812738762e1062b34[m
+Merge: 0e103e9 38e2225
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Dec 25 19:02:12 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 0e103e9b196e7968f2958c23452b725d8a1391af[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Dec 25 09:03:23 2021 +0800
+
+    master
+
+[33mcommit 38e2225651b5958bef88e46e542d362afa146ca6[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Fri Dec 24 23:22:32 2021 +0800
+
+    master
+
+[33mcommit c4cb8a0b58c1d3096290a3f63335368e6baa2b28[m
+Merge: b75d919 cffb152
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon Dec 20 16:05:12 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit b75d91936274f2822ec27e1cb916b13caf56e25b[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Mon Dec 20 16:05:08 2021 +0800
+
+    master
+
+[33mcommit cffb152af650b09a8ae808c0a55fb944aa7d5ee2[m
+Merge: 18ce1df 126dc68
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Dec 18 08:55:47 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 18ce1dff284d4b261d3f20d0ecf99b8b50f13926[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Dec 18 08:55:42 2021 +0800
+
+    master
+
+[33mcommit 126dc68bd1b6d53dfee9573a5133c64ed3be55d5[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Dec 18 01:44:20 2021 +0800
+
+    MASTER
+
+[33mcommit f3c88bc5f42761cf12752a41d3edc494cf70ce5b[m
+Merge: 1f33a3b 93811ac
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Dec 12 08:32:46 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 1f33a3b27c4d420692baf2428ca5608cf9616a97[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Dec 12 08:32:42 2021 +0800
+
+    master
+
+[33mcommit 93811ac3fdc41df5421b8ac965c974636ae1408f[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Dec 11 21:30:48 2021 +0800
+
+    master
+
+[33mcommit c366c34acbc7d7ed63e1e1ffd4735dfde0d1f9e4[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Dec 11 08:58:56 2021 +0800
+
+    master
+
+[33mcommit 38714b2cde665001fa2d75258813ec2ab50bcbac[m
+Merge: 04b7a2f 745ef56
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Dec 11 08:58:06 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 04b7a2fe44a45f952b2c397ee9dc21a385ea7f21[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Dec 11 08:57:08 2021 +0800
+
+    master
+
+[33mcommit 745ef562f9940d03b1d34f728e3cdd73cfc55ec7[m
+Merge: 0c2ead1 3563522
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Fri Dec 10 22:14:29 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 0c2ead10879c7fe18ed317a2e4878c03e150e2ca[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Fri Dec 10 22:14:25 2021 +0800
+
+    master
+
+[33mcommit 35635227615d5f669e0665ee6010b25c3c3fc4a9[m
+Merge: 3e6a682 0084bee
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Nov 28 08:33:49 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 3e6a68260f0caa5560ab1a940f91c0db5d67d444[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sun Nov 28 08:32:15 2021 +0800
+
+    master
+
+[33mcommit 0084bee00ea3d01677b3a33935a3b88d4ba41eb8[m
+Merge: 8788a40 18b4dfc
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Nov 27 22:42:58 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 8788a40b5ec824bbfd1c987d3ba45fbfee50b309[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Nov 27 22:42:54 2021 +0800
+
+    master
+
+[33mcommit e2bc94e2ce570f2f8102d34f8b5e86bf00cafe71[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Nov 15 13:56:25 2021 +0800
+
+    master
+
+[33mcommit 18b4dfc0bf5cbff7cb1ea9d2cfe47873e8b06d99[m
+Merge: f011633 3c5f906
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Nov 15 11:10:31 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit f011633bb8089fac78f6766aa6153e93d1a6393e[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Nov 15 11:10:27 2021 +0800
+
+    master
+
+[33mcommit 3c5f906080469f8e57ff3b19f25879cf80802272[m
+Merge: 52891f8 57da888
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Fri Nov 12 18:59:39 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 52891f8b40aff15ba7b07518c6bd536afe65a5af[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Fri Nov 12 18:54:31 2021 +0800
+
+    master
+
+[33mcommit 57da888e146ff4ee00f024f61a01026ab9c8a1c3[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Fri Nov 12 18:52:59 2021 +0800
+
+    master
+
+[33mcommit 0bc64a3c150b0c993297b1fd327cfe65aa333b67[m
+Merge: 7c636d2 132fb64
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Nov 8 11:09:50 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit 7c636d2ccef1ef3a350c6b09c19e3a77b79c7a8f[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Nov 8 11:05:10 2021 +0800
+
+    master
+
+[33mcommit fb82cc6cccdb52e433643e42454a0a8aba671280[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Mon Nov 8 11:01:56 2021 +0800
+
+    master
+
+[33mcommit 132fb6439cd01b12dc7e6f40939abf7fa3a29a85[m
+Merge: d84093d 27f3763
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Fri Nov 5 15:57:16 2021 +0800
+
+    Merge branch 'master' of https://github.com/roger9491/PY_Problemsolving
+
+[33mcommit d84093ddf8e278ce6f04df4fbe4475d3e24066d5[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Oct 30 18:26:48 2021 +0800
+
+    master
+
+[33mcommit 27f3763ff4a37a02765a30f231db060aac477d9a[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Oct 30 14:21:30 2021 +0800
+
+    master
+
+[33mcommit b81543e50a6b849011ddfc6527bded504208727c[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Thu Oct 28 15:46:16 2021 +0800
+
+    master
+
+[33mcommit 2cde1fba8778a105432fd77d1aae7c77b5bea129[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Wed Oct 27 01:09:05 2021 +0800
+
+    master
+
+[33mcommit c49ce5a1960943656ed898ec33206b20566f2271[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Sat Oct 16 08:40:05 2021 +0800
+
+    master
+
+[33mcommit 317e6b0c977cfd708da310fe72a12c435f1b3eec[m
+Author: roger9491 <aw52052001@gmail.com>
+Date:   Wed Sep 22 10:54:25 2021 +0800
+
+    master
+
+[33mcommit 874c2713a814fb99cd63607daf08290a4542056a[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Thu Sep 2 14:16:42 2021 +0800
+
+    master
+
+[33mcommit 6ea51339aefa15e3b15a2eee915eebbf806cdd08[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Tue Aug 24 22:06:47 2021 +0800
+
+    master
+
+[33mcommit 48ecd20dfa744728787a6797d65e9456f3e65fe3[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Aug 14 20:05:59 2021 +0800
+
+    master
+
+[33mcommit 3e5176c1ecb94db4534fb2f4a956e93012d60505[m[33m ([m[1;31mmaster/test[m[33m)[m
+Author: aw52052001 <aw52052001@gmail.com>
+Date:   Sat Jul 17 23:53:24 2021 +0800
+
+    mater
