@@ -1,4 +1,8 @@
 """
+血緣關係
+https://zerojudge.tw/ShowProblem?problemid=b967
+
+
 8
 0 1
 0 2

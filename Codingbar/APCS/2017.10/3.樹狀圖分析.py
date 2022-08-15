@@ -1,4 +1,7 @@
 '''
+樹狀圖分析
+https://zerojudge.tw/ShowProblem?problemid=c463
+
 9 
 1 6 
 3 5 3 8 
