@@ -1,7 +1,66 @@
-'''
-1.dfs 搜索所有點
+# dict = {0:[2,3],2:[0,10],3:[4,5],5:[3,6],10:[2],4:[3],6:[5]}
+# yee=[]
+# def a(n):   #a(0)   a(3)
+#     print(n)
+#     yee.append(n)
+#     if n not in dict:
+#         return
+#     else:
+#         for i in dict[n]:
+#             if i not in yee:
+#                 a(i)   
+
+# a(0)
 
 '''
+Breadth-First Search bfs
+廣度     優先  搜索
+附近
+
+Depth-First Search  dfs
+深度   優先  搜索
+核心: 人類走路
+1.dfs 搜索所有點
+
+
+
+
+'''
+# def dfs(i, j):
+#     print(matrix1[i][j])
+
+#     for d in dir:
+#         i_next = i + d[0]
+#         j_next = j + d[1]
+#         if 0 <= i_next < 3 and 0 <= j_next < 3:
+#             if record[i_next][j_next] == 0:
+#                 record[i_next][j_next] = 1
+#                 dfs(i_next, j_next)
+
+# matrix1 = [[1,2,3],
+#            [4,5,6],
+#            [7,8,9],]
+# # record = [1]    #用來記錄你走過路
+# record = [[0]*len(matrix1) for i in range(len(matrix1[0]))]
+# #       下     右    上     左
+# dir = [[1,0],[0,1],[-1,0],[0,-1]]
+# record[0][0] = 1
+# dfs(0,0)
+
+'''
+#如何建立二維矩陣
+r = [[0]*5 for i in range(3)]
+    [[0,0,0,0,0],
+     [0,0,0,0,0],
+     [0,0,0,0,0]]
+r = []
+for i in range(3):
+    t = []
+    for j in range(5):
+        t.append(0)
+    r.append(t)
+'''
+
 # def dfs(i,j):
 #     print("索引值",i,j)
 #     print(matrix1[i][j])
@@ -27,10 +86,11 @@
 """ 
 練習題
 
-血緣關係
+
+血緣關係    40%
 https://zerojudge.tw/ShowProblem?problemid=b967
 
-樹狀圖分析
+樹狀圖分析  90%
 https://zerojudge.tw/ShowProblem?problemid=c463
 """
 
@@ -45,6 +105,23 @@ https://zerojudge.tw/ShowProblem?problemid=c463
 
 n個數字 m種可能
 """
+
+# st = ""
+# def dfs(l,n):
+#     global st
+#     if l == 0:
+#         print(st)
+#         return
+#     l = l - 1
+#     for i in range(n+1):
+#         st += str(i)
+#         dfs(l,n)
+#         st = st[:-1]
+
+# a = input().split()
+# lenth = int(a[0])
+# num = int(a[1])
+# dfs(lenth,num)
 
 # n, m = map(int,input().split())
 
@@ -390,13 +467,13 @@ https://leetcode-cn.com/problems/climbing-stairs/submissions/
 嘗試用遞推的方式解決
      迴圈
 '''
-n = int(input())
-dp = [0]*(n+1)
-dp[0] = 1
-dp[1] = 1
-for i in range(2,n+1):
-    dp[i] = dp[i-1] + dp[i-2]
-print(dp[n])
+# n = int(input())
+# dp = [0]*(n+1)
+# dp[0] = 1
+# dp[1] = 1
+# for i in range(2,n+1):
+#     dp[i] = dp[i-1] + dp[i-2]
+# print(dp[n])
 
 
 '''

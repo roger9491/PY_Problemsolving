@@ -1,31 +1,100 @@
+a=input().split()
+column=int(a[0])#直
+row=int(a[1])#橫
+straight=0
+flat=0
+b=[]
+d=[]
+e=[]
+
+if column>row:
+    straight=1
+else:
+    row=1
+
+for i in range(column):
+    a=input().split()
+    b.append(a)
+
+c=input().split()
+for j in range(len(c)):
+    c[j]=int(c[j])
+
+for k in range(len(c)-1,-1,-1):
+    if straight==1:
+        if c[k]==0:#旋
+            straight=0
+            flat=1
+            for m in range(len(b)):
+                b[m].reverse()
+        if c[k]==1:#翻
+            b.reverse()
+    if flat==1:
+        if c[k]==0:#旋
+            straight=1
+            flat=0
+            b.reverse()
+        if c[k]==1:#翻
+            b.reverse()
+
+if straight==1:
+    print(column, row)
+    for o in range(len(b)):
+        print(" ".join(b[o]))
+
+if flat==1:
+    print(row, column)
+    for r in range(len(b)):
+        d.append(b[r][1])
+    for s in range(len(b)):
+        e.append(b[s][2])
+    print(" ".join(d))
+    print(" ".join(e))
+
+
+
 '''
+
+
 L2-1-符號不動冥王01
 
 '''
-
-
 '''
-第一單元 
-符號不動冥王
+一條長長的道路，有個 N 個商品依序排成一排，給你這個 N 個商品的價格 A_1~A_N，
+
+小明想知道由左至右，以每個商品為開頭，往後連續 K 個商品的總價格是多少。
+
+也就是說對於每個商品 i (1≤i≤N-K+1) ，你要求出 ∑_i^(j+k-1)▒A_j   。
+
+
+#INPUT
+
+第一行輸入兩個正整數 N,K (1≤K≤N≤〖10〗^5)。
+
+第二行輸入 N 個正整數 A_1~A_N (1≤A_i≤〖10〗^9)。
+
+#OUTPUT
+
+輸出 N-K+1 個數字。
+n m
+5 3
+3 5 4 6 1   O((n-m+1)*m)
+            O(n/2*n/2) => O(n**2/4) => O(n**2)
+12 15 11 
+                        a = 4    b = 6
+    t = 3   5   4   6   1   7   8   
+        3   5   4
+        a       b
+            a       b
+            5   4   6
+                4   6   1
+        (1) 從當前區間 -> 下一個區間
+            1. 刪掉第一個數字   a   -t[a]
+            2. 加入最後一個數   b   +t[b]
+            3. 維護總和        total
+        時間複雜度 O(n)
 '''
-# letter = "abcdefghijklmnopqrstuvwxyz"
 
-
-# string = list(input())
-# i = 0
-# j = len(string) - 1
-# while i < j:
-#     if string[i] in letter and string[j] in letter:
-#         string[i],string[j] = string[j],string[i]
-#         i += 1
-#         j -= 1
-#     else:
-#         if string[i] not in letter:
-#             i += 1
-#         if string[j] not in letter:
-#             j -= 1
-
-# print("".join(string))
 
 
 '''
