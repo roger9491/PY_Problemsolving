@@ -1,105 +1,65 @@
-a=input().split()
-column=int(a[0])#直
-row=int(a[1])#橫
-straight=0
-flat=0
-b=[]
-d=[]
-e=[]
+'''
+02. L2-3-2 吃餅乾
 
-if column>row:
-    straight=1
-else:
-    row=1
+4 5
+3 1 2 1
 
-for i in range(column):
-    a=input().split()
-    b.append(a)
-
-c=input().split()
-for j in range(len(c)):
-    c[j]=int(c[j])
-
-for k in range(len(c)-1,-1,-1):
-    if straight==1:
-        if c[k]==0:#旋
-            straight=0
-            flat=1
-            for m in range(len(b)):
-                b[m].reverse()
-        if c[k]==1:#翻
-            b.reverse()
-    if flat==1:
-        if c[k]==0:#旋
-            straight=1
-            flat=0
-            b.reverse()
-        if c[k]==1:#翻
-            b.reverse()
-
-if straight==1:
-    print(column, row)
-    for o in range(len(b)):
-        print(" ".join(b[o]))
-
-if flat==1:
-    print(row, column)
-    for r in range(len(b)):
-        d.append(b[r][1])
-    for s in range(len(b)):
-        e.append(b[s][2])
-    print(" ".join(d))
-    print(" ".join(e))
-
-
-
+3
 '''
 
+# n, t = map(int,input().split())
+# a = list(map(int,input().split()))
 
-L2-1-符號不動冥王01
+# ans = 0
+# tmp = 0
+# c = 0
+# s = 0
+# for i in range(len(a)):
+#     c += 1
+#     tmp += a[i]
+#     while tmp > t:
+#         tmp -= a[s]
+#         s += 1
+#         c -= 1
+#     ans = max(ans, c)
+# print(ans)
 
 '''
-'''
-一條長長的道路，有個 N 個商品依序排成一排，給你這個 N 個商品的價格 A_1~A_N，
+03. L2-3-3 最萌身高差
 
-小明想知道由左至右，以每個商品為開頭，往後連續 K 個商品的總價格是多少。
-
-也就是說對於每個商品 i (1≤i≤N-K+1) ，你要求出 ∑_i^(j+k-1)▒A_j   。
-
-
-#INPUT
-
-第一行輸入兩個正整數 N,K (1≤K≤N≤〖10〗^5)。
-
-第二行輸入 N 個正整數 A_1~A_N (1≤A_i≤〖10〗^9)。
-
-#OUTPUT
-
-輸出 N-K+1 個數字。
-n m
 5 3
-3 5 4 6 1   O((n-m+1)*m)
-            O(n/2*n/2) => O(n**2/4) => O(n**2)
-12 15 11 
-                        a = 4    b = 6
-    t = 3   5   4   6   1   7   8   
-        3   5   4
-        a       b
-            a       b
-            5   4   6
-                4   6   1
-        (1) 從當前區間 -> 下一個區間
-            1. 刪掉第一個數字   a   -t[a]
-            2. 加入最後一個數   b   +t[b]
-            3. 維護總和        total
-        時間複雜度 O(n)
+1 8 3 9 10
+4
+1
+7
+
+
+NO
+YES
+YES
 '''
+n, q = map(int,input().split())
+a = list(map(int,input().split()))
+a.sort()
+# print(a)
+for i in range(q):
+    k = int(input())
+    tmp = 0
+    s = 0
+    for j in range(1, len(a)):
+        # print(s, j, a[j] - a[s])
+        while a[j] - a[s] > k:
+            s += 1
+        if a[j] - a[s] == k:
+            print("YES")
+            break
+    else:
+        print("NO")
 
 
-'''
 
 
-'''
+
 '''
 
 最大消波塊
@@ -200,9 +160,7 @@ O(n+m)
 
 
 
-'''
-合併兩個 已排序數組
-'''
+
 
 '''
 https://leetcode.cn/problems/shortest-distance-to-a-character/submissions/
@@ -385,13 +343,105 @@ ex2
 
 
 
+
+
 '''
 前綴和 進階練習
 支點切割
 https://zerojudge.tw/ShowProblem?problemid=f638
 '''
 
+'''
+差分
 
+差分 和 前綴和 區別
+前綴和: 查詢區間和 O(1)
+
+差分:   區間修改  O(1)
+        查詢修改後的串列 O(n)
+
+
+情境:
+輸入一個數列
+輸入n
+接下來有n行
+每一行輸入 c s e
+代表 +c s起點 e終點
+輸出修改完的數列
+
+
+ex1
+0 1 0 1 0 2 1
+3
+1 1 3
+4 6 6
+2 3 5
+
+[0, 2, 1, 4, 2, 4, 5]
+
+
+原: 0 1 0 1 0 2 1
+2 3 5
+    0 1 0 3 2 4 1
+
+    0 1 -1 1 -1 2 -1
+    0 1 -1 3 -1 2 -3    
+    0 1  0 3  2 4  1
+
+結論:
+    (1) 先建立差分數列  (下一項-前一項)
+        ex.
+            原: 0 1 0 1 0 2 1
+            差: 1 -1 1 -1 2 -1
+        
+    (2) c s e   c:+c    s:起點  e:終點
+        差: 在s的值+c
+            在e+1的值-c
+    (3)全部修改完，在還原 累加
+
+O(N*M)
+10**4
+'''
+
+# a = list(map(int,input().split()))
+# n = int(input())
+# for i in range(n):
+#     s = list(map(int,input().split()))
+#     plus = s[0]
+#     go = s[1]
+#     end = s[2]
+#     for j in range(go,end+1):
+#         a[j] = a[j] + plus
+# print(a)
+
+
+
+'''
+差分
+https://leetcode.cn/problems/car-pooling/submissions/
+
+'''
+# class Solution:
+#     def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
+#         dif = [0]*1001
+#         for i in trips:
+#             dif[i[1]] += i[0]
+#             dif[i[2]] -= i[0]
+#         pre = []
+#         total = 0
+#         for i in dif:
+#             total += i
+#             pre.append(total)
+#         for i in pre:
+#             if i > capacity:
+#                 return False
+#                 break
+#         else:
+#             return True 
+'''
+差分進階練習
+https://zerojudge.tw/ShowProblem?problemid=g597
+'''
 
 
 
@@ -532,117 +582,6 @@ https://zerojudge.tw/ShowProblem?problemid=f581
 
 
 
-'''
-right = [6,2,1,5]
-forward = [4,1,3,6]
-
-向前 - 1
-right[0] = forward[0]
-right[2] = forward[2]
-temp = forward[0]
-forward[0] = forward[1]
-forward[1] = forward[2]
-forward[2] = forward[3]
-forward[3] = temp
-right = [4,2,3,5]
-forward = [1,3,6,4]
-
-
-'''
-# a = list(map(int,input().split()))
-# b = []
-# right = [6,2,1,5]
-# forward = [4,1,3,6]
-# for i in range(a[0]):
-#     b.append(1)
-# for i in range(a[1]):
-#     c = list(map(int,input().split()))
-#     if c[1]==-1:
-#         for j in range(len(forward)):
-#             if b[c[0]-1]==forward[j]:
-#                 if j==3:
-#                     b[c[0]-1]=forward[0]
-#                 else:
-#                     b[c[0]-1]=forward[j+1]
-#                 break
-#             elif b[c[0]-1]==5 or b[c[0]-1]==2:
-#                 b[c[0]-1]=3
-#                 break
-#     elif c[1]==-2:
-#         for j in range(len(right)):
-#             if b[c[0]-1]==right[j]:
-#                 if j==3:
-#                     b[c[0]-1]=right[0]
-#                 else:
-#                     b[c[0]-1]=right[j+1]
-#                 break
-#             elif b[c[0]-1]==3 or b[c[0]-1]==4:
-#                 b[c[0]-1]=5
-#                 break
-#     elif c[0]>0 and c[1]>0:
-#         temp = b[c[0]-1]
-#         b[c[0]-1]=b[c[1]-1]
-#         b[c[1]-1]=temp
-# b = list(map(str,b))
-# print(" ".join(b))
-
-'''
-135
-13256
-35001
-1001
-
-
-list():只能對可迭代的物件進行使用
-
-'''
-# while True:
-#     # try:
-#         n=int(input())
-#         a = n
-#         n = str(n)
-#         n = list(n)
-#         temp = []
-#         temp = n.copy()
-#         flag = False
-#         for i in range(len(n)):
-#             if int(n[i])%2==0:
-#                 flag = True
-#         if flag == False:
-#             print(0)
-#         elif flag == True:
-#             flag = False
-#             for i in range(len(n)):
-#                 if flag == False:
-#                     if int(n[i])%2==0:
-#                         n[i]=int(n[i])+1
-#                         flag = True
-#                 elif flag == True:
-#                     n[i]=1
-#             flag = False
-#             print(temp)
-#             for i in range(len(temp)):
-#                 if flag == False:
-#                     if int(temp[i])%2==0:
-#                         if temp[i]==0:
-#                             temp[i]=9
-#                         else:
-#                             temp[i]=int(temp[i])-1
-#                         flag = True
-#                 elif flag == True:
-#                     temp[i]=9
-
-#                 print(i,temp)
-
-
-#             n = list(map(str,n))
-#             temp = list(map(str,temp))
-#             n = "".join(n)
-#             temp = "".join(temp)
-#             if (int(n)-a)>(a-int(temp)):
-#                 print(a-int(temp))
-#             else:
-#                 print(int(n)-a)
 
 
 '''
