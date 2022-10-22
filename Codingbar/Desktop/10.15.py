@@ -1,4 +1,81 @@
 '''
+5 3
+1 8 3 9 10
+4
+1
+7
+
+
+no
+yes
+yes
+'''
+n,q=map(int,input().split())
+tall=list(map(int,input().split()))
+ans=[]
+for i in range(q):
+    k=int(input())
+    tall.sort()
+    a=0
+    b=1
+    while True:
+        if a==b or b==n:
+            break
+        print(b, a)
+        if tall[b]-tall[a]<k:
+            if b==len(tall):
+                print("NO")
+                break
+            b+=1
+        elif tall[b]-tall[a] > k:
+            if a==len(tall):
+                print("NO")
+                break
+            a+=1
+        else:
+            print("YES")
+            break
+
+
+'''
+3   m
+3 5 4 6 1 7 8   n
+0 1 2 3 4 5 6
+0 1 2 == tmp
+s   e
+  1 2 3
+  s   e
+tmp -= a[s]
+s += 1
+e += 1
+tmp += a[e]
+迭代起始點  i
+    迭代3個索引值 總合
+    for j in range(3)
+        tmp += a[i+J]   => O(n-m+1)*(m)
+12  
+15
+11
+14
+16
+
+
+5 3
+1 8 3 9 10
+
+12 11
+1 3 8 9 10
+s
+
+
+
+4
+1
+7
+
+'''
+
+'''
 02. L2-3-2 吃餅乾
 
 4 5
@@ -38,23 +115,23 @@ NO
 YES
 YES
 '''
-n, q = map(int,input().split())
-a = list(map(int,input().split()))
-a.sort()
-# print(a)
-for i in range(q):
-    k = int(input())
-    tmp = 0
-    s = 0
-    for j in range(1, len(a)):
-        # print(s, j, a[j] - a[s])
-        while a[j] - a[s] > k:
-            s += 1
-        if a[j] - a[s] == k:
-            print("YES")
-            break
-    else:
-        print("NO")
+# n, q = map(int,input().split())
+# a = list(map(int,input().split()))
+# a.sort()
+# # print(a)
+# for i in range(q):
+#     k = int(input())
+#     tmp = 0
+#     s = 0
+#     for j in range(1, len(a)):
+#         # print(s, j, a[j] - a[s])
+#         while a[j] - a[s] > k:
+#             s += 1
+#         if a[j] - a[s] == k:
+#             print("YES")
+#             break
+#     else:
+#         print("NO")
 
 
 
@@ -166,8 +243,7 @@ O(n+m)
 https://leetcode.cn/problems/shortest-distance-to-a-character/submissions/
 
  字符的最短距离
-
- https://leetcode.com/problems/shortest-distance-to-a-character/
+https://leetcode.com/problems/shortest-distance-to-a-character/
 '''
 
 '''
@@ -346,6 +422,9 @@ ex2
 
 
 '''
+1991. 找到数组的中间位置
+https://leetcode.cn/problems/find-the-middle-index-in-array/
+
 前綴和 進階練習
 支點切割
 https://zerojudge.tw/ShowProblem?problemid=f638
@@ -380,10 +459,20 @@ ex1
 [0, 2, 1, 4, 2, 4, 5]
 
 
-原: 0 1 0 1 0 2 1
-2 3 5
-    0 1 0 3 2 4 1
+原: 0   1   0   1   0   2   1
 
+差: 0   1  -1   1  -1   2  -1
+驗: 0   1   0   1   0   2   1
+原理:
+    a[0] a[1]-a[0] a[2] - a[1] ...
+
+1 1 3
+差: 0   2  -1   1  -2   2  -1
+    a[s] + c
+    a[e+1] - c
+驗: 0   2   1   2   0   2   1
+    ...
+    
     0 1 -1 1 -1 2 -1
     0 1 -1 3 -1 2 -3    
     0 1  0 3  2 4  1
@@ -392,7 +481,7 @@ ex1
     (1) 先建立差分數列  (下一項-前一項)
         ex.
             原: 0 1 0 1 0 2 1
-            差: 1 -1 1 -1 2 -1
+            差: 0 1-1 1-1 2-1
         
     (2) c s e   c:+c    s:起點  e:終點
         差: 在s的值+c

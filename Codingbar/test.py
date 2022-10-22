@@ -1,9 +1,10 @@
-from subprocess import call
-from unittest import case
+# import sys	#必須先匯入sys
+# for i in sys.stdin:
+#     print(i.rstrip())
 
 
-production S
-    switch()
-        case peek() {a,b}
-        call    A()
-        call    C()
+import sys
+for j in sys.stdin:
+    for i in range(int(j)):
+        a = sys.stdin.readline().strip()
+  
