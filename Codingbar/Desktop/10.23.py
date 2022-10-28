@@ -464,6 +464,59 @@ https://judge.tcirc.tw/ShowProblem?problemid=d069
 17
 '''
 
+# 暴力
+# w = int(input())
+# a = list(map(int,input().split()))
+# b = list(map(int,input().split()))
+
+
+# def dfs(i, j):
+#     if i == -1 or j == 0:
+#         return 0
+    
+#     maxv = dfs(i - 1, j)
+
+#     if j >= a[i]:
+#         maxv = max(maxv, dfs(i - 1, j - a[i]) + b[i])
+#     return maxv
+
+
+# print(dfs(len(a) - 1, w))
+
+# 記憶優化
+
+w = int(input())
+a = list(map(int,input().split()))
+b = list(map(int,input().split()))
+dp = [[0]*(w+1) for i in range(len(a))]
+
+def dfs(i, j):
+    if i == -1 or j == 0:
+        return 0
+        
+    print(i, j)
+    if dp[i][j] != 0 :
+        return dp[i][j]
+
+
+    
+    maxv = dfs(i - 1, j)
+
+    if j >= a[i]:
+        maxv = max(maxv, dfs(i - 1, j - a[i]) + b[i])
+    dp[i][j] = maxv
+    '''
+    ans = max(dfs(i - 1, j), dfs(i - 1, j - a[i]) + b[i])
+    
+    '''
+    for i in range(len(a)):
+        print(dp[i])
+
+    return maxv
+
+
+print(dfs(len(a) - 1, w))
+
 
 '''
 
