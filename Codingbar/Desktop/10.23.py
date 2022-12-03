@@ -533,18 +533,18 @@ dp[i][j] = dp[i-1]
 dp = [[0]*13 for i in range(4)]
 
 '''
-# Limit = int(input())
-# Weight = list(map(int,input().split())) #重量
-# Scores = list(map(int,input().split())) #分數
-# dp = [[0]*(Limit+1) for i in range(len(Weight))]    #表格
+Limit = int(input())
+Weight = list(map(int,input().split())) #重量
+Scores = list(map(int,input().split())) #分數
+dp = [[0]*(Limit+1) for i in range(len(Weight))]    #表格
 
-# for i in range(len(Weight)):
-#     for j in range(1,Limit+1):                      
-#         if j >= Weight[i]:  #15         7     +  dp[i][10 - 5]  7
-#             dp[i][j] = max(dp[i-1][j], Scores[i]+dp[i-1][j-Weight[i]])
-#         else:
-#             dp[i][j] = dp[i-1][j]
-# print(dp[-1][-1])
+for i in range(len(Weight)):
+    for j in range(1,Limit+1):                      
+        if j >= Weight[i]:  #15         7     +  dp[i][10 - 5]  7
+            dp[i][j] = max(dp[i-1][j], Scores[i]+dp[i-1][j-Weight[i]])
+        else:
+            dp[i][j] = dp[i-1][j]
+print(dp[-1][-1])
 
 '''
     (1) 定義問題    這裡定義的問題 要確保保有最優子結構

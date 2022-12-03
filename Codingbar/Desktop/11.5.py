@@ -1,120 +1,142 @@
+'''
+排序二維
+枚舉 指針
+前綴和 差分 二分
+字典
+
+差分
+
+差分 和 前綴和 區別
+
+前綴和: 查詢區間和 O(1)
+預處理: O(n)
+    0 1 2 3 4
+    1 2 3 4 5 6
+    1 3 6 10 15 21
+    0 1 2 3  4
+    4 - 1
 
 
+
+差分:   區間修改  O(1)
+        查詢修改後的串列 O(n)
+
+情境:
+輸入一個數列
+輸入n
+接下來有n行
+每一行輸入 c s e
+代表 +c s起點 e終點
+輸出修改完的數列
+
+
+ex1
+0 1 0 1 0 2 1
+3
+1 1 3
+4 6 6
+2 3 5
+
+過程:
+    0 1 2 3 4 5 6
+    0 1 0 1 0 2 1
+    0 2 1 2 0 2 1
+    0 2 1 2 0 2 5
+    0 2 1 4 2 4 5
+
+[0, 2, 1, 4, 2, 4, 5]
+
+
+原: 0 1 0 1 0 2 1
+2 3 5
+    0 1 0 3 2 4 1
+
+    0 1 -1 1 -1 2 -1
+    0 1 -1 3 -1 2 -3    
+    0 1  0 3  2 4  1
+
+結論:
+    (1) 先建立差分數列  (下一項-前一項)
+        ex.
+            原: 0 1 0 1 0 2 1
+            差: 1 -1 1 -1 2 -1
+        
+    (2) c s e   c:+c    s:起點  e:終點
+        差: 在s的值+c
+            在e+1的值-c
+    (3)全部修改完，在還原 累加
+
+O(N*M)
+10**4
 '''
 
-點石成金
+a=list(map(int,input().split()))
+d=[]
+d.append(a[0])
+sumd=[]
 
-'''
+for i in range(1,len(a)):
+    temd=a[i]-a[i-1]
+    d.append(temd) #差分
+print(d) 
+n=int(input()) #幾次
+for i in range(n):
+    b=list(map(int,input().split()))
+    x=b[0]
+    y=b[1]
+    z=b[2]
+    d[y]=d[y]+x
+    if z+1<=len(d)-1:
+        d[z+1]=d[z+1]-x
+print(d)
+sum=0
+for i in range(len(d)):
+    sum=sum+d[i]
+    sumd.append(sum)
+print(sumd)
 
 # a = list(map(int,input().split()))
-
-# b = list(map(int,input().split()))
-
 # n = int(input())
-
-# total = 0
-
-# for i in range(len(a)): #n
-#     if b[i]:
-#         total += a[i]
-# # print(total)
-# maxv = 0
-# for i in range(len(a)-n+1): #n /2
-#     temp = 0
-#     for j in range(i,i+n):  #n/2
-#         if b[j] == 0:
-#             temp += a[j]
-#     maxv = max(maxv,temp)
-# print(total + maxv)
-
-
-
-
-
-'''
-前綴和
-
-求出最小連續子數組之和
-
-8 4
-17 16 28 14 30 8 -18 18
-
-
-4
-
-
-
-17  16  28  14  30  8       -18     18
-17  33  61  75  105 113     95      113
-
-
-
-
-
-'''
-n,k=list(map(int,input().split()))      
-a=list(map(int,input().split()))
-tatal=0
-c=0
-s=[]
-min_s=[]
-for i in range (n):
-    tatal=tatal+a[i]
-    s.append(tatal)
-    print(s)
-for i in range(n-1,n-k-1,-1):
-    c=s[i]-s[i-k]
-    min_s.append(c)
-    print(min_s)
-min_s=min(min_s)
-print(min_s)
-# a=list(map(int,input().split()))
-# b=list(map(int,input().split()))
-# maxv=int(a[1])
-# c=[]
-# d=[]
-
-# c.append(b[0])
-# for i in range(1,len(b)):
-#     c.append(b[i]+c[i-1])
-
-
-# for h in range(maxv-1,len(b)):
-#     if h==maxv-1:
-#         d.append(c[h])
-#     else:
-#         d.append(c[h]-c[h-int(a[1])])
-# print(min(d))
-
-
-# import random
-
-# a = []
-# for i in range(8):
-#     a.append(random.randint(-20,30))
-# print(*a)
-
-
-# n,m = map(int,input().split())
-
-# k = list(map(int,input().split()))
-
-# pre = []
-# pre.append(0)
-# c = 0
 # for i in range(n):
-#     c += k[i]
-#     pre.append(c)
+#     s = list(map(int,input().split()))
+#     plus = s[0]
+#     go = s[1]
+#     end = s[2]
+#     for j in range(go,end+1):
+#         a[j] = a[j] + plus
+# print(a)
 
-# minv = 10**9
-# ans = 0
-# for i in range(n-m+1):
-#     # print(i,i+m)
-#     temp = pre[i+m] - pre[i]
-#     if temp < minv:
-#         minv = temp
-#         ans = i
-# print(ans+1)
+
+
+'''
+差分
+https://leetcode.cn/problems/car-pooling/submissions/
+
+'''
+# class Solution:
+#     def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
+#         dif = [0]*1001
+#         for i in trips:
+#             dif[i[1]] += i[0]
+#             dif[i[2]] -= i[0]
+#         pre = []
+#         total = 0
+#         for i in dif:
+#             total += i
+#             pre.append(total)
+#         for i in pre:
+#             if i > capacity:
+#                 return False
+#                 break
+#         else:
+#             return True 
+'''
+差分進階練習
+https://zerojudge.tw/ShowProblem?problemid=g597
+'''
+
+
+
 
 '''
 前綴和簡單應用
@@ -145,7 +167,6 @@ print(min_s)
 #     if temp > maxv:
 #         maxv = temp
 # print(ans+maxv)
-
 
 '''
 前綴和簡單應用
@@ -213,98 +234,107 @@ ex2
 https://zerojudge.tw/ShowProblem?problemid=f638
 '''
 
-'''
-差分
-
-差分 和 前綴和 區別
-前綴和: 查詢區間和 O(1)
-
-差分:   區間修改  O(1)
-        查詢修改後的串列 O(n)
 
 
-情境:
-輸入一個數列
-輸入n
-接下來有n行
-每一行輸入 c s e
-代表 +c s起點 e終點
-輸出修改完的數列
 
 
-ex1
-0 1 0 1 0 2 1
-3
-1 1 3
-4 6 6
-2 3 5
-
-[0, 2, 1, 4, 2, 4, 5]
 
 
-原: 0 1 0 1 0 2 1
-2 3 5
-    0 1 0 3 2 4 1
-
-    0 1 -1 1 -1 2 -1
-    0 1 -1 3 -1 2 -3    
-    0 1  0 3  2 4  1
-
-結論:
-    (1) 先建立差分數列  (下一項-前一項)
-        ex.
-            原: 0 1 0 1 0 2 1
-            差: 1 -1 1 -1 2 -1
-        
-    (2) c s e   c:+c    s:起點  e:終點
-        差: 在s的值+c
-            在e+1的值-c
-    (3)全部修改完，在還原 累加
-
-O(N*M)
-10**4
-'''
-
-# a = list(map(int,input().split()))
-# n = int(input())
-# for i in range(n):
-#     s = list(map(int,input().split()))
-#     plus = s[0]
-#     go = s[1]
-#     end = s[2]
-#     for j in range(go,end+1):
-#         a[j] = a[j] + plus
-# print(a)
 
 
 
 '''
-差分
-https://leetcode.cn/problems/car-pooling/submissions/
+兩個數組的交集 (1)
+https://leetcode-cn.com/problems/intersection-of-two-arrays/
+
+输入：nums1 = [1,2,2,1], nums2 = [2,2]
+输出：[2]
+'''
+# nums1 = [1,2,2,1]
+# nums2 = [2,2]
+# dic = {}
+# ans = {}
+# for i in range(len(nums1)):
+#     dic[nums1[i]] = 0
+# for i in range(len(nums2)):
+#     if nums2[i] in dic:
+#         ans[nums2[i]] =0
+# for i in ans:
+#     print(i)
+
+# return list(set(nums1) &　set(nums2))
+# nums1 = [1,2,2,1]
+# nums2 = [2,2]
+# ans = []
+# for i in nums1:
+#     if i in nums2 and i not in ans:
+#         ans.append(i)
+# print(ans)
+#O(n**2)
+
+# nums1 = [1,2,2,1]
+# nums2 = [2,2]
+# n1 = {}
+# n2 = {}
+# ans = []
+# for i in nums1:
+#     n1[i] = 1
+# for i in nums2:
+#     n2[i] = 1
+
+# for i in n1:
+#     if i in n2:
+#         ans.append(i)
+# print(ans)
+
+
+
+
 
 '''
-# class Solution:
-#     def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
-#         dif = [0]*1001
-#         for i in trips:
-#             dif[i[1]] += i[0]
-#             dif[i[2]] -= i[0]
-#         pre = []
-#         total = 0
-#         for i in dif:
-#             total += i
-#             pre.append(total)
-#         for i in pre:
-#             if i > capacity:
-#                 return False
-#                 break
-#         else:
-#             return True 
+兩個數組的交集 (2)
+https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/submissions/
+
 '''
-差分進階練習
-https://zerojudge.tw/ShowProblem?problemid=g597
+# nums1 = [1,2,2,1]
+# nums2 = [2,2]
+# n1={}
+# n2={}
+# ans=[]
+# a=0
+# for i in nums1:
+#     if i not in n1:
+#         n1[i]=1
+#     else:
+#         n1[i]+=1
+# for i in nums2:
+#     if i not in n2:
+#         n2[i]=1
+#     else:
+#         n2[i]+=1
+# # print(n1)
+# # print(n2)
+
+# for i in n1:
+#     if i in n2:
+#         for j in range(min(n2[i],n1[i])):
+#             ans.append(i)
+
+
+# print(ans)
+'''
+https://www.luogu.com.cn/problem/P1102
+P1102 A-B 数对
+
 '''
 
+
+'''
+等 dict
+美麗的彩帶
+https://zerojudge.tw/ShowProblem?problemid=e289
+
+'''
 
 
 
@@ -473,70 +503,3 @@ https://zerojudge.tw/ShowProblem?problemid=f581
 #         now = j + 1
 #     now = ((now-1)%n+1)
 # print(now-1)
-
-
-
-
-
-'''
-等 dict
-美麗的彩帶
-https://zerojudge.tw/ShowProblem?problemid=e289
-
-'''
-
-
-
-'''
-猜數字
-0 ~ 100
-50 小
-51 ~ 100
-75 大
-50 ~ 74
-60 小
-61 ~ 74
-70 大
-61 ~ 69
-65 大
-61 ~ 64
-62 大
-61 ~ 61
-61
-
-二分搜尋法
-條件: 必須是排序過的
-
-
-0 1 2 3   4  5
-1 2 7 10 21 30
-
-0 ~ 5
-2
-
-
-10
-'''
-
-a = list(map(int,input().split()))
-a.sort()
-target = int(input())
-
-
-l = 0
-r = len(a) - 1
-while l <= r:
-    print(l, r)
-    
-    mid = (l + r) // 2
-    print(mid)
-    if a[mid] == target:
-        print(mid)
-        break
-    elif a[mid] < target:
-        l = mid + 1
-    else:
-        r = mid - 1
-
-
-

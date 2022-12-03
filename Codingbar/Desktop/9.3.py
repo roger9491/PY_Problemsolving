@@ -145,16 +145,16 @@ a = [[1,3,4,5,],[2,3,5,],[2,65]]
 # a.append(23)
 
 
-#讀
+# 讀
 # a = [[12,3,4], [4,5,6,7], [4,6,1], [7,8,9]]
 # print(a[2])
 # print(a[2][2])
 
-#改
+# 改
 # a[1][2] = 99
 # print(a)
 
-#加入
+# 加入
 # a.append([2,3])
 # print(a)
 
@@ -169,7 +169,7 @@ n = 3
 matrix = [[1,1,1],[1,1,1],[1,1,1],[1,1,1]]
 
 '''
-# 原始做法
+# # 原始做法
 # m, n = map(int,input().split())
 # matrix = []
 # for i in range(m):
@@ -308,7 +308,7 @@ print(matrix)
 for i in range(m):
     print(' '.join(matrix[i]))
 
-#建立
+# 建立
 # m,n = map(int, input().split(" "))
 # L = [["0"]*n for i in range(m)]
 

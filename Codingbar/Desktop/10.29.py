@@ -111,15 +111,14 @@ b = set()
 c = a | b
 
 '''
-# l = [1,"2","1","1",2,3]
+l = [1,2,3]
+r = [2,3,4]
 
-# l2 = [1,2,3]
-# l3 = l & l2
+l = set(l)
+r = set(r)
 
-# print(l3)
-
-# s = {}
-# print(type(s))
+c = l & r
+print(c)
 
 '''
 
@@ -152,22 +151,49 @@ dic = {鍵值:值}
 
 如何迭代字典?
     for i in dic:
+
+字典長度
+len(dic)    
 '''
-# dic = {"謝詠宸":153, "莊心睿":175 ,"李博凱":180,"謝詠宸":165 }
-# dic["黨靖騰"] = 175
-# dic["黨靖騰"] = 180
-# # print(dic)
-# # if "黨" in dic:
-# #     del dic["黨"]
-# # else:
-# #     print("鍵值不存在")
-# for i in dic:
-#     print(dic[i])
-# print(dic)
-# key = []
-# value = []
+# dict = {}
+
+# dict["老師"] = 175
+# dict["礽臤"] = 171
+
+# if "老師" in dict:
+#     print("存在")
+# print(dict)
+
+# 如果key不存在
+# a = input()
+# if a in dict:
+#     print(dict[a])
+# else:
+#     print("key不存在")
 
 
+# for key in dict:
+#     print(key, dict[key])
+
+#   0  1 2 3 4
+
+
+# a = [1,2,3,4,5]
+# for i in a:
+#     print(i)
+
+
+# for i in range(len(a)):
+#     print(i)
+
+# dic = {"2":1, "3":2, "4":5}
+
+#       1          2         0
+# a = [["2", 1], ["3",2 ], ["4", 5]]
+
+
+# lst = [5 , 1, 2]
+# print(lst[1])   #O(1)
 '''
 實作 dict
 
