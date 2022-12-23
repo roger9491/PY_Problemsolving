@@ -13,6 +13,46 @@
 15
 15
 '''
+
+# def a(n):
+#     n = n + 1
+#     print(n)
+#     if n == 5:
+#         return
+#     a(n)
+# a(0)
+
+# def s(n):
+#     if n==0:
+#         return 0
+#     else:
+#         x = s(n-1)+n
+#         print(x)
+#         return x
+# s(5)
+# 函式 (1) 有回傳值 (2) 沒有回傳值
+# def a(n):
+#     print(n)
+
+# def a(n):
+#     return n
+
+# c = a(5)
+# # return 一個值
+# n=int(input())
+# print(s(n))
+
+
+
+
+
+
+
+
+
+
+
+
 # def a(n):
 #     if n==1:
 
@@ -45,7 +85,31 @@ dfs 深度優先搜索
 
 dict={0:[2,3],2:[10],3:[4,5],5:[6]}
 遍歷所有的點
+
+
+
 '''
+# def dfs(n): # n 代表當前節點
+#     print(n)
+
+#     if n not in dict:
+#         return
+
+#     for i in dict[n]:   #i 附近節點
+#         dfs(i)
+
+
+# dict={0:[2,3],2:[10],3:[4,5],5:[6]}
+
+# dfs(0)
+
+
+
+
+
+
+
+
 
 # dict={0:[2,3],2:[10],3:[4,5],5:[6]}
 # def a(n):   #a(0)   a(3)
@@ -66,7 +130,28 @@ dfs 深度優先搜索
 
 dict={0:[2,3],2:[10],3:[4,5],5:[6]}
 承上題 印出 0 到 葉節點的路徑
+
+
+回去的意思: 回到call你的地方
 '''
+
+# def dfs(n):
+#     if n not in dict:
+#         print(a)
+#         return
+#     for i in dict[n]:
+#         a.append(i)
+#         dfs(i)
+#         del a[-1]
+# a=[0]
+# dict={0:[2,3],2:[10],3:[4,5],5:[6]}
+# dfs(0)
+
+
+
+
+
+
 # dic = {0:[2,3],2:[10],3:[4,5],5:[6]}
 
 # def f(n):
@@ -88,8 +173,29 @@ dict={0:[2,3],2:[10],3:[4,5],5:[6]}
 改無向圖
 遍歷
 
-dict={0:[2,3],2:[10],3:[4,5],5:[6],2:[10,0]}
+dic = {0:[2,3],2:[0,10],3:[0,4,5],5:[3,6],10:[2],4:[3],6:[5]}
+
+
+
+
+
 '''
+
+# def dfs(n):
+#     print(a)
+#     if n not in dict:
+#         return
+#     for i in dict[n]:
+#         if i not in a:
+#             a.append(i)
+#         if i not in b:
+#             b.append(i)
+#             dfs(i)
+            
+# a=[]
+# b=[]
+# dic = {0:[2,3],2:[0,10],3:[0,4,5],5:[3,6],10:[2],4:[3],6:[5]}
+# dfs(0)
 
 # dic = {0:[2,3],2:[0,10],3:[4,5],5:[3,6],10:[2],4:[3],6:[5]}
 
@@ -134,6 +240,47 @@ output
 4
 5
 '''
+# def dfs(d):
+#     global count
+#     if len(dic[d])==1:
+#         ans.append(count)
+   
+#     for k in dic[d]:
+#         if k not in e:
+#             e.append(k)
+#             count=count+1
+#             dfs(k)
+#             count=count-1
+
+
+
+# dic={}
+# g=list(map(int,input().split()))
+# n=g[0]
+# q=g[1]
+# for i in range(n-1):
+#     c=list(map(int,input().split()))
+#     a=c[0]
+#     b=c[1]
+#     if a not in dic:
+#         dic[a]=[b]
+#     else:
+#         dic[a].append(b)
+#     if b not in dic:
+#         dic[b]=[a]
+#     else:
+#         dic[b].append(a)
+
+
+# for j in range(q):
+#     d=int(input())
+#     ans=[]
+#     e = [d]
+#     count=0
+#     dfs(d)
+
+#     print(max(ans))
+
 
 # def dfs(n):
 #     global ans
