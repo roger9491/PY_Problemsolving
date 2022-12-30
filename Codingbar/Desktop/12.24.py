@@ -150,23 +150,53 @@ n個數字 m種可能
 11
 
 """
+# def dfs(c, m):
+#     global s
+#     if c == n :
+#         print(s)
+#         return
 
-def f(n,m):
-    global ans
-    if n==0:
-        return
-    for i in range(m+1):
-        ans += str(i)
-        if len(ans)==x:
-            print(ans)
-            ans = ans[:-1]
-            continue
-        f(n-1,m)
-        ans = ans[:-1]
-ans= ""
-n,m=map(int,input().split()) 
-x=n
-f(n,m)
+#     for i in range(m+1):
+#         s += str(i)
+#         dfs(c+1, m)
+#         s = s[:-1]
+
+
+# s = ""
+
+# n, m = map(int,input().split())
+
+# dfs(0, m)
+
+
+
+
+
+# def dfs(n,c):
+#     global small
+#     if n==a-1:
+#         if small>total-c:
+#             small=total-c
+#         return
+#     for j in range(2):
+#         if j==1:
+#             c=c+b[n]
+#         dfs(n+1,c)
+
+
+
+
+# a=int(input())
+# b=list(map(int,input().split()))
+# total=0
+# for i in range(len(b)):
+#     total=total+b[i]
+# small=total
+
+# dfs(0,0)
+# print(small)
+
+
 
 # st = ""
 # def dfs(l,n):
@@ -237,7 +267,21 @@ f(n,m)
 f(0) = 0
 f(1) = 1
 f(n) = f(n-1) + f(n-2)
+
+
 '''
+def f(n):
+    if n==0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return f(n-1)+f(n-2)
+
+n=int(input())
+print(f(n))
+
+
 
 # def f(n):
 #     if n == 0:
@@ -330,6 +374,26 @@ f(n) = f(n-1) + f(n-2)
 https://leetcode.com/problems/climbing-stairs/submissions/
 https://leetcode-cn.com/problems/climbing-stairs/submissions/
 '''
+
+
+def f(n):
+    global count
+    if n==a:
+        count=count+1
+        return
+    elif n+1==a:
+        count=count+1
+        return
+    else:
+        for i in range(2):
+            f(n+i+1)
+
+a=int(input())
+count=0
+f(0)
+print(count)
+
+
 # def f(n):
 #     global count 
 
@@ -816,37 +880,37 @@ https://judge.tcirc.tw/ShowProblem?problemid=d069
 
 # 記憶優化
 
-w = int(input())
-a = list(map(int,input().split()))
-b = list(map(int,input().split()))
-dp = [[0]*(w+1) for i in range(len(a))]
+# w = int(input())
+# a = list(map(int,input().split()))
+# b = list(map(int,input().split()))
+# dp = [[0]*(w+1) for i in range(len(a))]
 
-def dfs(i, j):
-    if i == -1 or j == 0:
-        return 0
+# def dfs(i, j):
+#     if i == -1 or j == 0:
+#         return 0
         
-    print(i, j)
-    if dp[i][j] != 0 :
-        return dp[i][j]
+#     print(i, j)
+#     if dp[i][j] != 0 :
+#         return dp[i][j]
 
 
     
-    maxv = dfs(i - 1, j)
+#     maxv = dfs(i - 1, j)
 
-    if j >= a[i]:
-        maxv = max(maxv, dfs(i - 1, j - a[i]) + b[i])
-    dp[i][j] = maxv
-    '''
-    ans = max(dfs(i - 1, j), dfs(i - 1, j - a[i]) + b[i])
+#     if j >= a[i]:
+#         maxv = max(maxv, dfs(i - 1, j - a[i]) + b[i])
+#     dp[i][j] = maxv
+#     '''
+#     ans = max(dfs(i - 1, j), dfs(i - 1, j - a[i]) + b[i])
     
-    '''
-    for i in range(len(a)):
-        print(dp[i])
+#     '''
+#     for i in range(len(a)):
+#         print(dp[i])
 
-    return maxv
+#     return maxv
 
 
-print(dfs(len(a) - 1, w))
+# print(dfs(len(a) - 1, w))
 
 
 '''
@@ -864,18 +928,18 @@ dp[i][j] = dp[i-1]
 dp = [[0]*13 for i in range(4)]
 
 '''
-Limit = int(input())
-Weight = list(map(int,input().split())) #重量
-Scores = list(map(int,input().split())) #分數
-dp = [[0]*(Limit+1) for i in range(len(Weight))]    #表格
+# Limit = int(input())
+# Weight = list(map(int,input().split())) #重量
+# Scores = list(map(int,input().split())) #分數
+# dp = [[0]*(Limit+1) for i in range(len(Weight))]    #表格
 
-for i in range(len(Weight)):
-    for j in range(1,Limit+1):                      
-        if j >= Weight[i]:  #15         7     +  dp[i][10 - 5]  7
-            dp[i][j] = max(dp[i-1][j], Scores[i]+dp[i-1][j-Weight[i]])
-        else:
-            dp[i][j] = dp[i-1][j]
-print(dp[-1][-1])
+# for i in range(len(Weight)):
+#     for j in range(1,Limit+1):                      
+#         if j >= Weight[i]:  #15         7     +  dp[i][10 - 5]  7
+#             dp[i][j] = max(dp[i-1][j], Scores[i]+dp[i-1][j-Weight[i]])
+#         else:
+#             dp[i][j] = dp[i-1][j]
+# print(dp[-1][-1])
 
 '''
     (1) 定義問題    這裡定義的問題 要確保保有最優子結構
