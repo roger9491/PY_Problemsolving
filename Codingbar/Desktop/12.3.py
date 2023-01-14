@@ -264,19 +264,16 @@ if n == 1 return 1
 15
 15
 '''
-def a(n):
-    if n==1:
+# def a(n):
+#     if n==1:
 
-        return n
-    c=a(n-1)+n
-    print(c)
-    return c
+#         return n
+#     c=a(n-1)+n
+#     print(c)
+#     return c
 
-n=int(input())
-a(n)
-
-
-
+# n=int(input())
+# a(n)
 
 
 
