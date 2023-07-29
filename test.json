@@ -1,0 +1,18 @@
+{
+    "message": "<104>1 2023-06-01T18:22:48.351+08:00 up.us shaneIxD 930 ID86 - You're not gonna believe what just happened",
+    "source_type": "demo_logs",
+    "timestamp": "2023-06-01T10:22:48.351820017Z"
+}
+
+{
+    "appname": "meln1ks",
+    "facility": "local5",
+    "hostname": "random.net",
+    "message": "Take a breath, let it go, walk away",
+    "msgid": "ID44",
+    "procid": 5763,
+    "severity": "info",
+    "source_type": "demo_logs",
+    "timestamp": "2023-06-01T10:22:03.998Z",
+    "version": 2
+}

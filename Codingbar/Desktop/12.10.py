@@ -360,3 +360,14 @@ output
 '''
 獨眼怪走迷宮1
 '''
+
+""" 
+練習題
+
+
+血緣關係    40%
+https://zerojudge.tw/ShowProblem?problemid=b967
+
+樹狀圖分析  90%
+https://zerojudge.tw/ShowProblem?problemid=c463
+"""
